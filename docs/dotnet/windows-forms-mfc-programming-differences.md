@@ -6,12 +6,12 @@ helpviewer_keywords:
 - MFC [C++], Windows Forms support
 - Windows Forms [C++], compared to MFC
 ms.assetid: f3bfcf45-cfd4-45a4-8cde-5f4dbb18ee51
-ms.openlocfilehash: a48b4f54e44145abab33990e20ca76ed654659e0
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: abb41a64a894eed682c26b2460259fc6bbc43b56
+ms.sourcegitcommit: 3987d9c39f5a5b4824303a48a6215984ce8949e8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97283935"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99478014"
 ---
 # <a name="windows-formsmfc-programming-differences"></a>Windows 窗体/MFC 编程差异
 
@@ -23,7 +23,7 @@ Windows 窗体用于在 .NET Framework 上创建 Microsoft Windows 应用程序�
 
 有关 Windows 窗体应用程序的详细信息，请参阅 [Windows 窗体简介](/dotnet/framework/winforms/windows-forms-overview)。
 
-有关演示与 MFC 一起使用 Windows 窗体的示例应用程序，请参阅 [mfc 和 Windows 窗体集成](https://www.microsoft.com/download/details.aspx?id=2113)。
+有关演示与 MFC 一起使用 Windows 窗体的示例应用程序，请参阅 [mfc 和 Windows 窗体集成](https://download.cnet.com/MFC-and-WinForms-Integration/3000-2383_4-75453644.html)。
 
 以下 MFC 视图或文档和命令路由功能在 Windows 窗体中没有等效项：
 

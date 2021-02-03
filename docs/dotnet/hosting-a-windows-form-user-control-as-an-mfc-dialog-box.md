@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Windows Forms [C++], hosting as MFC Dialog
 - hosting Windows Forms control [C++]
 ms.assetid: 0434a9d7-8b14-48e6-ad69-9ba9a684677a
-ms.openlocfilehash: 0139e26fee834d47bc0d513c3b64bf3c09368b22
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: 885b63e17140cca7983aeeed26e56eac47091a0d
+ms.sourcegitcommit: 3987d9c39f5a5b4824303a48a6215984ce8949e8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97335463"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99478053"
 ---
 # <a name="hosting-a-windows-form-user-control-as-an-mfc-dialog-box"></a>以 MFC 对话框的形式承载 Windows 窗体用户控件
 
@@ -20,7 +20,7 @@ MFC 提供模板类 [CWinFormsDialog](../mfc/reference/cwinformsdialog-class.md)
 
 `CWinFormsDialog`使用承载用户控件的进程类似于在[MFC 对话框中承载 Windows 窗体用户控件](../dotnet/hosting-a-windows-form-user-control-in-an-mfc-dialog-box.md)中所述的过程。 不过， `CWinFormsDialog` 管理用户控件的初始化和承载，以便不必手动对其进行编程。
 
-有关演示与 MFC 一起使用 Windows 窗体的示例应用程序，请参阅 [mfc 和 Windows 窗体集成](https://www.microsoft.com/download/details.aspx?id=2113)。
+有关演示与 MFC 一起使用 Windows 窗体的示例应用程序，请参阅 [mfc 和 Windows 窗体集成](https://download.cnet.com/MFC-and-WinForms-Integration/3000-2383_4-75453644.html)。
 
 ### <a name="to-create-the-mfc-host-application"></a>创建 MFC 宿主应用程序
 
@@ -36,7 +36,7 @@ MFC 提供模板类 [CWinFormsDialog](../mfc/reference/cwinformsdialog-class.md)
 
    在 **解决方案资源管理器** 中，右键单击 **MFC03** 项目节点，然后选择 " **属性**"。 " **属性页** " 对话框随即出现。
 
-   在 " **属性页** " 对话框的 " **配置属性** " 树控件中，选择 " **常规**"，然后在 " **项目默认值** " 部分中，将 " **公共语言运行时支持** " 设置为 **公共语言运行时支持 (/clr)**。 单击 **“确定”** 。
+   在 " **属性页** " 对话框的 " **配置属性** " 树控件中，选择 " **常规**"，然后在 " **项目默认值** " 部分中，将 " **公共语言运行时支持** " 设置为 **公共语言运行时支持 (/clr)**。 单击“确定”。
 
 1. 添加对 .NET 控件的引用。
 

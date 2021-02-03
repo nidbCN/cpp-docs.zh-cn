@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Windows Forms controls [C++], hosting as an MFC view
 - hosting Windows Forms control [C++]
 ms.assetid: 43c02ab4-1366-434c-a980-0b19326d6ea0
-ms.openlocfilehash: 4e66d4ace83e0026ec7a95cbe1b94462a163dddf
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: 2db44bd4d85150b0a2b8fc1f2206af765770e9ed
+ms.sourcegitcommit: 3987d9c39f5a5b4824303a48a6215984ce8949e8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97164635"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99478121"
 ---
 # <a name="hosting-a-windows-forms-user-control-as-an-mfc-view"></a>以 MFC 视图的形式承载 Windows 窗体用户控件
 
@@ -22,7 +22,7 @@ MFC 使用 CWinFormsView 类在 MFC 视图中承载 Windows 窗体用户控件�
 
 由于 MFC Windows 窗体视图是 ActiveX 控件，因此它们 `hwnd` 与 MFC 视图不同。 此外，不能将它们作为指向 [CView](../mfc/reference/cview-class.md) 视图的指针传递。 通常，使用 .NET Framework 方法来处理 Windows 窗体视图，并在 Win32 上依赖更少。
 
-有关演示与 MFC 一起使用 Windows 窗体的示例应用程序，请参阅 [mfc 和 Windows 窗体集成](https://www.microsoft.com/download/details.aspx?id=2113)。
+有关演示与 MFC 一起使用 Windows 窗体的示例应用程序，请参阅 [mfc 和 Windows 窗体集成](https://download.cnet.com/MFC-and-WinForms-Integration/3000-2383_4-75453644.html)。
 
 ## <a name="in-this-section"></a>本节内容
 

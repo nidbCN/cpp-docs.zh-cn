@@ -10,12 +10,12 @@ helpviewer_keywords:
 - cpuid instruction
 - cpuid intrinsic
 ms.assetid: f8c344d3-91bf-405f-8622-cb0e337a6bdc
-ms.openlocfilehash: cd91207097993ec037e9b79eb27257272f06ee97
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: 1f3030cc3792911cec8e7a7ef1b17dab0a9a3d6b
+ms.sourcegitcommit: 3987d9c39f5a5b4824303a48a6215984ce8949e8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97337119"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99478120"
 ---
 # <a name="__cpuid-__cpuidex"></a>__cpuid、__cpuidex
 
@@ -38,7 +38,7 @@ void __cpuidex(
 );
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *cpuInfo*\
 弄一个包含四个整数的数组，其中包含在 EAX、EBX、ECX 和 EDX 中返回的有关 CPU 支持的功能的信息。
@@ -64,7 +64,7 @@ void __cpuidex(
 
 `__cpuid` 内部函数将在调用 `cpuid` 指令前清除 ECX 寄存器。 `__cpuidex`内部函数在生成指令之前，将 ECX 寄存器的值设置为 subfunction_id `cpuid` 。 它使您能够收集有关处理器的其他信息。
 
-有关在 Intel 处理器上使用的特定参数和这些内部函数所返回的值的详细信息，请参阅 `cpuid` [英特尔64和 IA-32 体系结构软件开发人员手册 Volume 2：指令集引用](https://go.microsoft.com/fwlink/p/?LinkID=510021) 和 [Intel 体系结构指令集扩展编程参考](https://go.microsoft.com/fwlink/p/?LinkID=506627)中的说明文档。 Intel 文档对在 EAX 和 ECX 中传递的 *function_id* 和 *subfunction_id* 参数使用术语 "叶" 和 "subleaf"。
+有关在 Intel 处理器上使用的特定参数和这些内部函数所返回的值的详细信息，请参阅 `cpuid` [英特尔64和 IA-32 体系结构软件开发人员手册 Volume 2：指令集引用](https://go.microsoft.com/fwlink/p/?LinkID=510021) 和 [Intel 体系结构指令集扩展编程参考](https://software.intel.com/content/www/us/en/develop/download/intel-architecture-instruction-set-extensions-programming-reference.html)中的说明文档。 Intel 文档对在 EAX 和 ECX 中传递的 *function_id* 和 *subfunction_id* 参数使用术语 "叶" 和 "subleaf"。
 
 有关使用的特定参数和这些内部函数所返回的值的详细信息，请参阅 `cpuid` AMD64 体系结构程序员手册卷3： General-Purpose 和系统说明以及特定处理器系列的修订指南中的说明文档。 有关这些文档和其他信息的链接，请参阅 AMD [开发人员指南和手册 & ISA 文档](https://go.microsoft.com/fwlink/p/?LinkId=510023) "页。 AMD 文档对 *function_id* 和 *subfunction_id* 参数（在 EAX 和 ECX 中传递）使用术语 "function number" 和 "subfunction number"。
 
