@@ -51,12 +51,12 @@ helpviewer_keywords:
 - mbsnextc_l function
 - wcsnextc function
 ms.assetid: e3086173-9eb5-4540-a23a-5d866bd05340
-ms.openlocfilehash: 8eb1af549e3ef983441870350cbfdc4361f26e9c
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: 7cbe291d19fe09b14cf71989923656f44acff1c7
+ms.sourcegitcommit: c20734f18d3d49bb38b1628c68b53b54b3eeeb03
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97306087"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99522373"
 ---
 # <a name="_strnextc-_wcsnextc-_mbsnextc-_mbsnextc_l"></a>_strnextc、_wcsnextc、_mbsnextc、_mbsnextc_l
 
@@ -71,7 +71,7 @@ ms.locfileid: "97306087"
 unsigned int _strnextc(
    const char *str
 );
-unsigned int _wscnextc(
+unsigned int _wcsnextc(
    const wchar_t *str
 );
 unsigned int _mbsnextc(
@@ -83,7 +83,7 @@ unsigned int _mbsnextc_l(
 );
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *str*<br/>
 资源字符串。
@@ -126,7 +126,7 @@ unsigned int _mbsnextc_l(
 
 有关兼容性的详细信息，请参阅[兼容性](../../c-runtime-library/compatibility.md)。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [字符串操作](../../c-runtime-library/string-manipulation-crt.md)<br/>
 [区域设置](../../c-runtime-library/locale.md)<br/>

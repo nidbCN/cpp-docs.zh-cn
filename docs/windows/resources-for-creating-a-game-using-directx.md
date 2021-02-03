@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Windows applications [C++], games
 - DirectX [C++]
 ms.assetid: 863090ed-6091-45db-aabb-7fd02f76c1df
-ms.openlocfilehash: eb0a1424969f732fb3736387a53ea05dd59427f4
-ms.sourcegitcommit: 3987d9c39f5a5b4824303a48a6215984ce8949e8
+ms.openlocfilehash: 1348a163646e28309c26edfdfe53cf35652bfdb9
+ms.sourcegitcommit: c20734f18d3d49bb38b1628c68b53b54b3eeeb03
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99478092"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99522763"
 ---
 # <a name="resources-for-creating-a-c-game-using-directx"></a>使用 DirectX 创建 c + + 游戏的资源
 
@@ -24,7 +24,7 @@ Visual C++ 包含在 Visual Studio 的所有版本中，但默认情况下不会
 
 对于 Windows 8.1 和更高版本，DirectX SDK 包含在 Windows SDK 中。 不必下载任何其他内容。 有关详细信息，请参阅 [DIRECTX SDK 在哪里？](/windows/win32/directx-sdk--august-2009-)。
 
-若要创建适用于 Windows 7、Windows Vista 或 Windows XP 的 DirectX 应用程序，可以下载独立的 [DIRECTX SDK](https://download.cnet.com/DirectX-Software-Development-Kit-June-2010/3000-2069_4-75453831.html)。
+若要创建适用于 Windows 7、Windows Vista 或 Windows XP 的 DirectX 应用程序，可以下载独立的 [DIRECTX SDK](https://web.archive.org/web/20161026183606/https://www.microsoft.com/en-us/download/details.aspx?displaylang=en&id=6812) (存档链接) 。
 
 [Directx 图形和游戏](/windows/win32/directx) 提供了信息和示例，可帮助你开始进行 DirectX 编程。
 

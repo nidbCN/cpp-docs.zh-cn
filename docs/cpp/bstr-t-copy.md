@@ -1,21 +1,20 @@
 ---
 description: 了解详细信息： _bstr_t：： copy
 title: _bstr_t::copy
-ms.date: 11/04/2016
+ms.date: 02/02/2021
 f1_keywords:
 - _bstr_t::copy
 helpviewer_keywords:
 - Copy method [C++]
 - BSTR object [C++], copy
-ms.assetid: 00ba7311-e82e-4a79-8106-5329fa2f869a
-ms.openlocfilehash: 29ca965730dbcc22b4b725661ece68442d39aeba
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: 98726e0c3100851d1496e532310ece2209d71ae0
+ms.sourcegitcommit: c20734f18d3d49bb38b1628c68b53b54b3eeeb03
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97229335"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99522854"
 ---
-# <a name="_bstr_tcopy"></a>_bstr_t::copy
+# `_bstr_t::copy`
 
 **Microsoft 专用**
 
@@ -23,18 +22,18 @@ ms.locfileid: "97229335"
 
 ## <a name="syntax"></a>语法
 
-```
+```cpp
 BSTR copy( bool fCopy = true ) const;
 ```
 
-#### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*fCopy*<br/>
-如果 **`true`** 为，则 **copy** 返回包含的副本 `BSTR` ，否则 **copy** 返回实际的 BSTR。
+*`fCopy`*\
+如果为 **`true`** ，则 **`copy`** 返回包含的的副本 `BSTR` ，否则 **`copy`** 返回实际的 `BSTR` 。
 
 ## <a name="remarks"></a>备注
 
-返回封装的 `BSTR` 对象的新分配的副本。
+返回封装对象的新分配副本 `BSTR` ，或返回封装的对象本身，具体取决于参数。
 
 ## <a name="example"></a>示例
 
@@ -48,4 +47,4 @@ STDMETHODIMP CAlertMsg::get_ConnectionStr(BSTR *pVal){ //  m_bsConStr is _bstr_t
 
 ## <a name="see-also"></a>请参阅
 
-[_bstr_t 类](../cpp/bstr-t-class.md)
+[`_bstr_t` 班级](../cpp/bstr-t-class.md)

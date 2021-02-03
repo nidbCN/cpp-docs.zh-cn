@@ -7,20 +7,18 @@ helpviewer_keywords:
 - Windows Forms [C++], hosting as MFC Dialog
 - hosting Windows Forms control [C++]
 ms.assetid: 0434a9d7-8b14-48e6-ad69-9ba9a684677a
-ms.openlocfilehash: 885b63e17140cca7983aeeed26e56eac47091a0d
-ms.sourcegitcommit: 3987d9c39f5a5b4824303a48a6215984ce8949e8
+ms.openlocfilehash: 64c68ede565b4248a812d46963f072fbab8bdc3c
+ms.sourcegitcommit: c20734f18d3d49bb38b1628c68b53b54b3eeeb03
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99478053"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99522815"
 ---
 # <a name="hosting-a-windows-form-user-control-as-an-mfc-dialog-box"></a>以 MFC 对话框的形式承载 Windows 窗体用户控件
 
 MFC 提供模板类 [CWinFormsDialog](../mfc/reference/cwinformsdialog-class.md) ，以便可以 <xref:System.Windows.Forms.UserControl> 在模式或无模式 MFC 对话框中 () 承载 Windows 窗体用户控件。 `CWinFormsDialog` 派生自 MFC 类 [CDialog](../mfc/reference/cdialog-class.md)，因此可以将该对话框作为模式或无模式启动。
 
 `CWinFormsDialog`使用承载用户控件的进程类似于在[MFC 对话框中承载 Windows 窗体用户控件](../dotnet/hosting-a-windows-form-user-control-in-an-mfc-dialog-box.md)中所述的过程。 不过， `CWinFormsDialog` 管理用户控件的初始化和承载，以便不必手动对其进行编程。
-
-有关演示与 MFC 一起使用 Windows 窗体的示例应用程序，请参阅 [mfc 和 Windows 窗体集成](https://download.cnet.com/MFC-and-WinForms-Integration/3000-2383_4-75453644.html)。
 
 ### <a name="to-create-the-mfc-host-application"></a>创建 MFC 宿主应用程序
 
@@ -135,7 +133,7 @@ MFC 提供模板类 [CWinFormsDialog](../mfc/reference/cwinformsdialog-class.md)
 
 1. 生成并运行该项目。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 <xref:System.Windows.Forms.UserControl?displayProperty=fullName>
 [在 MFC 中使用 Windows 窗体用户控件](../dotnet/using-a-windows-form-user-control-in-mfc.md)

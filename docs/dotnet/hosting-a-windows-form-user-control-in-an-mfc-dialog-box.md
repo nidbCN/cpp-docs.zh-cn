@@ -7,18 +7,16 @@ helpviewer_keywords:
 - hosting Windows Forms control [C++]
 - Windows Forms [C++], MFC support
 ms.assetid: 9f66ee52-b7cb-4ffd-8306-392a5da990d8
-ms.openlocfilehash: 36e4677622e4c1efe1eebcb8cb9f75d03194de78
-ms.sourcegitcommit: 3987d9c39f5a5b4824303a48a6215984ce8949e8
+ms.openlocfilehash: 1bd1db9d9805c10247840ca6043c94d4e3e3abe7
+ms.sourcegitcommit: c20734f18d3d49bb38b1628c68b53b54b3eeeb03
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99478126"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99522802"
 ---
 # <a name="hosting-a-windows-form-user-control-in-an-mfc-dialog-box"></a>在 MFC 对话框中承载 Windows 窗体用户控件
 
 MFC 将 Windows 窗体控件作为一种特殊类型的 ActiveX 控件承载，并使用 ActiveX 接口以及类的属性和方法与控件进行通信 <xref:System.Windows.Forms.Control> 。 建议使用 .NET Framework 属性和方法来操作控件。
-
-有关演示与 MFC 一起使用 Windows 窗体的示例应用程序，请参阅 [mfc 和 Windows 窗体集成](https://download.cnet.com/MFC-and-WinForms-Integration/3000-2383_4-75453644.html)。
 
 > [!NOTE]
 > 在当前版本中， `CDialogBar` 对象不能承载 Windows 窗体控件。
@@ -35,7 +33,7 @@ MFC 将 Windows 窗体控件作为一种特殊类型的 ActiveX 控件承载，�
 
 [CWinFormsControl 类](../mfc/reference/cwinformscontrol-class.md)&#124; [CWnd 类](../mfc/reference/cwnd-class.md)&#124; [CDialog 类](../mfc/reference/cdialog-class.md)&#124;<xref:System.Windows.Forms.Control>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [在 MFC 中使用 Windows 窗体用户控件](../dotnet/using-a-windows-form-user-control-in-mfc.md)<br/>
 [Windows 窗体/MFC 编程差异](../dotnet/windows-forms-mfc-programming-differences.md)<br/>

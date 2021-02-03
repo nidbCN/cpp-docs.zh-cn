@@ -1,20 +1,19 @@
 ---
 description: 了解详细信息： _bstr_t：： GetAddress
 title: _bstr_t::GetAddress
-ms.date: 11/04/2016
+ms.date: 02/02/2021
 f1_keywords:
 - _bstr_t::GetAddress
 helpviewer_keywords:
 - GetAddress method [C++]
-ms.assetid: 09bc9180-867e-4ee5-b22a-8339dc663142
-ms.openlocfilehash: afb877a6f1b4cfcfb6fe08b36168af745d733b85
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: 23013a6666b8e268a6437532b69050933ffe6b42
+ms.sourcegitcommit: c20734f18d3d49bb38b1628c68b53b54b3eeeb03
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97229309"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99522828"
 ---
-# <a name="_bstr_tgetaddress"></a>_bstr_t::GetAddress
+# `_bstr_t::GetAddress`
 
 **Microsoft 专用**
 
@@ -22,7 +21,7 @@ ms.locfileid: "97229309"
 
 ## <a name="syntax"></a>语法
 
-```
+```cpp
 BSTR* GetAddress( );
 ```
 
@@ -32,14 +31,14 @@ BSTR* GetAddress( );
 
 ## <a name="remarks"></a>备注
 
-**GetAddress** 影响 `_bstr_t` 共享的所有对象 `BSTR` 。 多个 `_bstr_t` 可 `BSTR` 通过使用复制构造函数和 **运算符 =** 来共享。
+**`GetAddress`** 影响 `_bstr_t` 共享的所有对象 `BSTR` 。 多个 `_bstr_t` 可 `BSTR` 通过使用复制构造函数和来共享 **`operator=`** 。
 
 ## <a name="example"></a>示例
 
-有关使用 **GetAddress** 的示例，请参阅 [_Bstr_t：： Assign](../cpp/bstr-t-assign.md) 。
+[`_bstr_t::Assign`](../cpp/bstr-t-assign.md)有关使用的示例，请参阅 **`GetAddress`** 。
 
 **结束 Microsoft 专用**
 
 ## <a name="see-also"></a>请参阅
 
-[_bstr_t 类](../cpp/bstr-t-class.md)
+[`_bstr_t` 班级](../cpp/bstr-t-class.md)

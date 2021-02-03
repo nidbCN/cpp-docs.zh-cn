@@ -1,20 +1,19 @@
 ---
 description: 了解详细信息： _bstr_t：： Assign
 title: _bstr_t::Assign
-ms.date: 11/04/2016
+ms.date: 02/02/2021
 f1_keywords:
 - _bstr_t::Assign
 helpviewer_keywords:
 - Assign method [C++]
-ms.assetid: 2e209bbe-77ca-4598-86d5-6c2ea213f43c
-ms.openlocfilehash: b2081aaf71640a778a479a32f3f1816ca79db147
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: 166b972d4c3de932fee187f33a9f96a578496e35
+ms.sourcegitcommit: c20734f18d3d49bb38b1628c68b53b54b3eeeb03
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97229439"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99522892"
 ---
-# <a name="_bstr_tassign"></a>_bstr_t::Assign
+# <a name="_bstr_tassign"></a>_`bstr_t::Assign`
 
 **Microsoft 专用**
 
@@ -28,14 +27,14 @@ void Assign(
 );
 ```
 
-#### <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-*s*<br/>
+*`s`*\
 要复制到 `BSTR` 包装的 `BSTR` 中的 `_bstr_t`。
 
 ## <a name="remarks"></a>备注
 
-**赋值** 执行二进制复制，这意味着将复制整个长度 `BSTR` ，而不考虑内容。
+**`Assign`** 对的整个长度进行二进制复制 `BSTR` ，无论内容是什么。
 
 ## <a name="example"></a>示例
 
@@ -114,4 +113,4 @@ bstrWrapper2 = some text
 
 ## <a name="see-also"></a>请参阅
 
-[_bstr_t 类](../cpp/bstr-t-class.md)
+[`_bstr_t` 班级](../cpp/bstr-t-class.md)
