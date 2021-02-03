@@ -5,12 +5,12 @@ ms.date: 09/24/2019
 ms.technology: cpp-ide
 author: corob-msft
 ms.author: corob
-ms.openlocfilehash: 7a89966b46efbef9800f3f3ddf836723bbb3b06f
-ms.sourcegitcommit: 12eb6a824dd7187a065d44fceca4c410f58e121e
+ms.openlocfilehash: 49ddc43757e1448e6bbd378a216eee9bcc0e84b2
+ms.sourcegitcommit: 3987d9c39f5a5b4824303a48a6215984ce8949e8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94334242"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99478066"
 ---
 # <a name="how-to-report-a-problem-with-the-microsoft-c-toolset-or-documentation"></a>如何使用 Microsoft C++ 工具集或文档报告问题
 
@@ -111,9 +111,9 @@ cl : Command line error D8003 : missing source filename
 
 - **针对最新版本的编译器。** 重现应尽可能使用最新版本的工具集的最近更新。 或者，使用下一个更新或下一个主要版本的最新预发布版本。 在旧版本工具集中可能会发现的问题很可能已在新版本中得到修复。 只有在特殊情况下，才会将修复向后移植到旧版本。
 
-- **针对其他编译器进行检查** （如果相关）。 在可能的情况下，涉及可移植 C++ 代码的重现，应在其他编译器中验证行为。 C++ 标准最终确定程序的正确性，没有编译器是完美的。 但是，如果 Clang 和 GCC 接受了代码但没有诊断，但 MSVC 未接受，你可能已经在我们的编译器中发现了一个 bug。 （其他可能性包括 Unix 和 Windows 行为的差异，或者 C++ 标准实现的级别不同等。）如果所有编译器都拒绝你的代码，则可能是代码不正确。 查看不同的错误消息可能有助于自行诊断问题。
+- **针对其他编译器进行检查**（如果相关）。 在可能的情况下，涉及可移植 C++ 代码的重现，应在其他编译器中验证行为。 C++ 标准最终确定程序的正确性，没有编译器是完美的。 但是，如果 Clang 和 GCC 接受了代码但没有诊断，但 MSVC 未接受，你可能已经在我们的编译器中发现了一个 bug。 （其他可能性包括 Unix 和 Windows 行为的差异，或者 C++ 标准实现的级别不同等。）如果所有编译器都拒绝你的代码，则可能是代码不正确。 查看不同的错误消息可能有助于自行诊断问题。
 
-   你可以在 ISO C++ 网站上的[在线C++编译器](https://isocpp.org/blog/2013/01/online-c-compilers)中找到在线编译器列表，或查看 GitHub 上的[在线C ++ 编译器列表](https://arnemertz.github.io/online-compilers/)，针对这些编译器来测试代码。 一些具体示例包括 [Wandbox](https://wandbox.org/)、[Compiler Explorer](https://godbolt.org/) 和 [Coliru](https://coliru.stacked-crooked.com/)。
+   你可以在 ISO C++ 网站上的[在线C++编译器](https://isocpp.org/blog/2013/01/online-c-compilers)中找到在线编译器列表，或查看 GitHub 上的[在线C ++ 编译器列表](https://arnemertz.github.io/online-compilers/)，针对这些编译器来测试代码。 一些具体示例包括 [Wandbox](https://wandbox.org/)、[Compiler Explorer](https://godbolt.org/) 和 [Coliru](http://coliru.stacked-crooked.com/)。
 
    > [!NOTE]
    > 在线编译器网站不隶属于 Microsoft。 许多在线编译器网站作为个人项目运行。 当你读取此代码时，其中某些网站可能不可用，但搜索应该能找到可以使用的其他网站。
@@ -388,7 +388,7 @@ Visual Studio 用户可使用 Visual Studio 中的“报告问题”工具报告
 
 ### <a name="reports-and-privacy"></a>报表和隐私
 
-**默认情况下，报告中的所有信息、评论和回复都是公开可见的** 。 一般来说，这是有好处的，因为这样整个社区都能看到其他用户发现的问题、解决方案和解决方法。 但是，如果担心数据或身份公开后会出现隐私或知识产权问题，则可另作选择。
+**默认情况下，报告中的所有信息、评论和回复都是公开可见的**。 一般来说，这是有好处的，因为这样整个社区都能看到其他用户发现的问题、解决方案和解决方法。 但是，如果担心数据或身份公开后会出现隐私或知识产权问题，则可另作选择。
 
 如果担心身份泄露，请[新建一个 Microsoft 帐户](https://signup.live.com/)，该帐户不透露有关你的任何详细信息。 使用此帐户来创建报表。
 
