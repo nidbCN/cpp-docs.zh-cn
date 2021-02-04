@@ -1086,46 +1086,10 @@
           items:
             - name: 链接器的延迟加载 DLL 支持
               href: ../build/reference/linker-support-for-delay-loaded-dlls.md
-            - name: 指定要延迟加载的 DLL
-              href: ../build/reference/specifying-dlls-to-delay-load.md
-            - name: 显式卸载延迟加载的 DLL
-              href: ../build/reference/explicitly-unloading-a-delay-loaded-dll.md
-            - name: 绑定延迟加载的导入
-              href: ../build/reference/binding-imports.md
-            - name: 加载被延迟加载的 DLL 的所有导入
-              href: ../build/reference/loading-all-imports-for-a-delay-loaded-dll.md
             - name: 错误处理和通知
-              expanded: false
-              items:
-                - name: 错误处理和通知
-                  href: ../build/reference/error-handling-and-notification.md
-                - name: 通知挂钩
-                  href: ../build/reference/notification-hooks.md
-                - name: 失败挂钩
-                  href: ../build/reference/failure-hooks.md
-                - name: DLL 加载异常代码 (C/C++)
-                  href: ../build/reference/exceptions-c-cpp.md
-            - name: 转储延迟加载的导入
-              href: ../build/reference/dumping-delay-loaded-imports.md
-            - name: 延迟加载 DLL 的约束
-              href: ../build/reference/constraints-of-delay-loading-dlls.md
+              href: ../build/reference/error-handling-and-notification.md
             - name: 了解针对延迟加载的 helper 函数
-              expanded: false
-              items:
-                - name: 了解 helper 函数
-                  href: ../build/reference/understanding-the-helper-function.md
-                - name: 自 Visual C++ 6.0 以来 DLL 延迟加载 Helper 函数所做的更改
-                  href: ../build/reference/changes-in-the-dll-delayed-loading-helper-function-since-visual-cpp-6-0.md
-                - name: 调用约定、参数和返回类型
-                  href: ../build/reference/calling-conventions-parameters-and-return-type.md
-                - name: 结构和常量定义
-                  href: ../build/reference/structure-and-constant-definitions.md
-                - name: 计算所需值
-                  href: ../build/reference/calculating-necessary-values.md
-                - name: 卸载延迟加载的 DLL
-                  href: ../build/reference/unloading-a-delay-loaded-dll.md
-            - name: 开发自己的 helper 函数
-              href: ../build/reference/developing-your-own-helper-function.md
+              href: ../build/reference/understanding-the-helper-function.md
     - name: 其他 MSVC 生成工具
       expanded: false
       items:
