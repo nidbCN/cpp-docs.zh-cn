@@ -7,6 +7,8 @@
       href: ../overview/overview-of-cpp-development.md
     - name: Visual Studio 中的 C++ 新变化
       href: ../overview/what-s-new-for-visual-cpp-in-visual-studio.md
+    - name: Microsoft C++ 文档的新增功能
+      href: ../overview/whats-new-cpp-docs.md
     - name: Visual Studio 中的 C++ 符合性改进
       href: ../overview/cpp-conformance-improvements.md
     - name: Microsoft C++ 语言符合性
