@@ -1,16 +1,17 @@
 ---
 description: 了解详细信息： "高级" 属性页
 title: "\"高级\" 属性页 (项目) "
-ms.date: 08/10/2020
+ms.date: 02/05/2021
 f1_keywords:
 - VC.Project.VCConfiguration.VCToolsVersion
+- VC.Project.VCConfiguration.LLVMToolsVersion
 ms.description: Use the Advanced property page in Visual Studio 2019 to set various properties for C++ projects.
-ms.openlocfilehash: 916c1f341d148a0f6b426ddf3c31e0d20c59a29c
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: 420dd34088f47e8fa7bfe56fd529769b90401355
+ms.sourcegitcommit: 77235bff6a7b2621c501938e30d93cb15f5733cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97187307"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100006024"
 ---
 # <a name="advanced-property-page"></a>"高级" 属性页
 
@@ -89,6 +90,10 @@ Visual Studio 2019 和更高版本中提供了 "高级" 属性页。
 - **MSVC 工具集版本**
 
    指定用于生成项目的 MSVC 工具集的完整版本。 可能已安装了不同的工具集更新和预览版本。 可以在此处指定要使用的项。
+
+- **LLVM 工具集版本**
+
+   指定用于生成项目的 LLVM 工具集的完整版本。 在 Visual Studio 2019 版本16.9 中选择 **LLVM (clang-cl)** 作为平台工具集时，此属性可用。 有关详细信息，请参阅 [设置自定义 LLVM 工具集版本](..\clang-support-msbuild.md#custom_llvm_toolset)。
 
 ## <a name="ccli-properties"></a>C + +/CLI 属性
 
