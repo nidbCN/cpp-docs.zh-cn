@@ -6,16 +6,16 @@ ms.date: 08/19/2019
 ms.topic: tutorial
 ms.devlang: cpp
 ms.assetid: 45138d70-719d-42dc-90d7-1d0ca31a2f54
-ms.openlocfilehash: 14e1e18da5cdabae5366d4ba97a2260d5e99f076
-ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
+ms.openlocfilehash: 2a0f605d6b415e1b827bd2d983b087bc110eddd8
+ms.sourcegitcommit: 77235bff6a7b2621c501938e30d93cb15f5733cb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90685316"
+ms.lasthandoff: 02/11/2021
+ms.locfileid: "100254412"
 ---
 # <a name="create-a-console-calculator-in-c"></a>用 C++ 创建控制台计算器
 
-::: moniker range=">=vs-2019"
+::: moniker range=">=msvc-160"
 
 C++ 程序员通常从在命令行上运行的“Hello, world!” 应用程序开始。 在本文中，你将首先在 Visual Studio 中创建此内容，然后继续创建更具挑战性的对象：计算器应用。
 
@@ -385,7 +385,7 @@ Visual Studio 使用项目来组织应用的代码，使用解决方案来组织
 
 ::: moniker-end
 
-::: moniker range="<vs-2019"
+::: moniker range="<msvc-160"
 
 C++ 程序员通常从在命令行上运行的“Hello, world!” 应用程序开始。 这就是本文中你将在 Visual Studio 中创建的内容，然后我们将继续介绍更具挑战性的内容：计算器应用。
 

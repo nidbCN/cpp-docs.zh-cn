@@ -3,12 +3,12 @@ title: 配置适用于 Windows XP 的程序
 description: 如何在 Visual Studio 中安装和使用 C++ Windows XP 工具集。
 ms.date: 03/16/2020
 ms.assetid: 1e4487b3-d815-4123-878b-5718b22f0fd5
-ms.openlocfilehash: 8e81e44cbc2194f16851cf73891cae9884ed0525
-ms.sourcegitcommit: 3987d9c39f5a5b4824303a48a6215984ce8949e8
+ms.openlocfilehash: 4ab4363e9c1d1223c8b1744a1a83b9aaa9784446
+ms.sourcegitcommit: c20734f18d3d49bb38b1628c68b53b54b3eeeb03
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99478079"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99522529"
 ---
 # <a name="configuring-programs-for-windows-xp"></a>配置适用于 Windows XP 的程序
 
@@ -84,4 +84,4 @@ Visual Studio 中包含的 Windows XP 平台工具集是 Windows 7 SDK 的一个
 
 - **生成 HLSL**
 
-   默认情况下，Windows XP 工具集不编译 HLSL 源代码文件。 若要编译 HLSL 文件，请下载并安装 2010 年 6 月发行的 DirectX SDK，然后设置项目的 VC 目录以将其包含在内。 有关详细信息，请参阅 [2010 年 6 月 DirectX SDK 下载页](https://download.cnet.com/DirectX-Software-Development-Kit-June-2010/3000-2069_4-75453831.html)的“DirectX SDK 不会使用 Visual Studio 2010 注册 Include/Library 路径”部分。
+   默认情况下，Windows XP 工具集不编译 HLSL 源代码文件。 若要编译 HLSL 文件，请下载并安装 2010 年 6 月发行的 DirectX SDK，然后设置项目的 VC 目录以将其包含在内。 有关详细信息，请参阅 [2010 年 6 月 DirectX SDK 下载页](https://web.archive.org/web/20161026183606/https://www.microsoft.com/en-us/download/details.aspx?displaylang=en&id=6812)（已归档链接）的“DirectX SDK 不会使用 Visual Studio 2010 注册 Include/Library 路径”部分。

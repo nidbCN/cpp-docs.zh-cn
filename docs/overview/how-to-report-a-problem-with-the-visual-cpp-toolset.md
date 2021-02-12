@@ -5,12 +5,12 @@ ms.date: 09/24/2019
 ms.technology: cpp-ide
 author: corob-msft
 ms.author: corob
-ms.openlocfilehash: 49ddc43757e1448e6bbd378a216eee9bcc0e84b2
-ms.sourcegitcommit: 3987d9c39f5a5b4824303a48a6215984ce8949e8
+ms.openlocfilehash: 43c965c3eccc352e740e5f5378257b344d947edb
+ms.sourcegitcommit: c20734f18d3d49bb38b1628c68b53b54b3eeeb03
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99478066"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99522360"
 ---
 # <a name="how-to-report-a-problem-with-the-microsoft-c-toolset-or-documentation"></a>如何使用 Microsoft C++ 工具集或文档报告问题
 
@@ -113,7 +113,7 @@ cl : Command line error D8003 : missing source filename
 
 - **针对其他编译器进行检查**（如果相关）。 在可能的情况下，涉及可移植 C++ 代码的重现，应在其他编译器中验证行为。 C++ 标准最终确定程序的正确性，没有编译器是完美的。 但是，如果 Clang 和 GCC 接受了代码但没有诊断，但 MSVC 未接受，你可能已经在我们的编译器中发现了一个 bug。 （其他可能性包括 Unix 和 Windows 行为的差异，或者 C++ 标准实现的级别不同等。）如果所有编译器都拒绝你的代码，则可能是代码不正确。 查看不同的错误消息可能有助于自行诊断问题。
 
-   你可以在 ISO C++ 网站上的[在线C++编译器](https://isocpp.org/blog/2013/01/online-c-compilers)中找到在线编译器列表，或查看 GitHub 上的[在线C ++ 编译器列表](https://arnemertz.github.io/online-compilers/)，针对这些编译器来测试代码。 一些具体示例包括 [Wandbox](https://wandbox.org/)、[Compiler Explorer](https://godbolt.org/) 和 [Coliru](http://coliru.stacked-crooked.com/)。
+   你可以在 ISO C++ 网站上的[在线C++编译器](https://isocpp.org/blog/2013/01/online-c-compilers)中找到在线编译器列表，或查看 GitHub 上的[在线C ++ 编译器列表](https://arnemertz.github.io/online-compilers/)，针对这些编译器来测试代码。 一些具体示例包括 [Wandbox](https://wandbox.org/) 和 [Compiler Explorer](https://godbolt.org/)。
 
    > [!NOTE]
    > 在线编译器网站不隶属于 Microsoft。 许多在线编译器网站作为个人项目运行。 当你读取此代码时，其中某些网站可能不可用，但搜索应该能找到可以使用的其他网站。
