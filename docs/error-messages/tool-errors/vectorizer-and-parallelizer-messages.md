@@ -1,24 +1,23 @@
 ---
 description: 了解详细信息：向量化和并行消息
 title: 矢量化程序和并行化程序消息
-ms.date: 04/17/2019
+ms.date: 02/16/2021
 f1_keywords:
 - C5011
 - C5002
 - C5021
 - C5001
 - C5012
-ms.assetid: d8f4844a-f414-42ab-b9a5-925a5da9d365
-ms.openlocfilehash: 54465331b3301c8f792763b9d7d1e29b8d62b1a0
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: 3e2d458d177b8a7032276d29940a7ff2dac83b36
+ms.sourcegitcommit: e99db7c3b5f25ece0e152165066c926751a7c2ed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97177128"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100643555"
 ---
 # <a name="vectorizer-and-parallelizer-messages"></a>矢量化程序和并行化程序消息
 
-您可以使用 Microsoft c + + 编译器选项 [/Qpar-report](../../build/reference/qpar-report-auto-parallelizer-reporting-level.md) 和 [/Qvec-report](../../build/reference/qvec-report-auto-vectorizer-reporting-level.md) 来设置 [自动并行化和自动矢量化](../../parallel/auto-parallelization-and-auto-vectorization.md) ，以便输出原因代码以及有关其活动的信息性消息。 本文说明原因代码和消息。
+您可以使用 Microsoft c + + 编译器选项 [`/Qpar-report`](../../build/reference/qpar-report-auto-parallelizer-reporting-level.md) ， [`/Qvec-report`](../../build/reference/qvec-report-auto-vectorizer-reporting-level.md) 将 [自动并行化和自动矢量化](../../parallel/auto-parallelization-and-auto-vectorization.md) 设置为输出原因代码以及有关其活动的信息性消息。 本文说明原因代码和消息。
 
 ## <a name="informational-messages"></a><a name="BKMK_InformationalMessages"></a> 信息性消息
 
@@ -26,13 +25,13 @@ ms.locfileid: "97177128"
 
 有关原因代码的信息，请参见本文的下一部分。
 
-|信息性消息|说明|
-|---------------------------|-----------------|
-|5001|`Loop vectorized.`|
-|5002|`Loop not vectorized due to reason '*description*'.`|
-|5011|`Loop parallelized.`|
-|5012|`Loop not parallelized due to reason '*description*'.`|
-|5021|`Unable to associate loop with pragma.`|
+| 提示消息 | 说明 |
+|--|--|
+| 5001 | 循环已向量化。 |
+| 5002 | 由于原因 "*description*"，循环未向量化。 |
+| 5011 | 循环已并行化。 |
+| 5012 | 由于原因 "*description*"，循环未并行化。 |
+| 5021 | 无法将循环与杂注关联。 |
 
 以下部分列出了并行和向量化的可能原因代码。
 
@@ -40,13 +39,13 @@ ms.locfileid: "97177128"
 
 5 *xx* 原因代码适用于并行和向量化。
 
-|原因代码|说明|
-|-----------------|-----------------|
-|500|一条涵盖几个事例的一般消息，例如，循环包含多个退出，或者循环标头不会通过递增感应变量来结束。|
-|501|`Induction variable is not local; or upper bound is not loop-invariant.`|
-|502|`Induction variable is stepped in some manner other than a simple +1.`|
-|503|`Loop includes exception-handling or switch statements.`|
-|504|`Loop body may throw an exception that requires destruction of a C++ object.`|
+| 原因代码 | 说明 |
+|--|--|
+| 500 | 一条涵盖几个事例的一般消息，例如，循环包含多个退出，或者循环标头不会通过递增感应变量来结束。 |
+| 501 | 感应变量不是本地的;或上限不是循环固定的。 |
+| 502 | 除了简单 +1 外，归纳变量以某种方式单步执行。 |
+| 503 | 循环包含异常处理或 switch 语句。 |
+| 504 | 循环体可能会引发需要析构 C++ 对象的异常。 |
 
 ```cpp
 void code_500(int *A)
@@ -203,19 +202,19 @@ void code_504(int *A) {
 
 10 *xx* 原因代码应用于并行。
 
-|原因代码|说明|
-|-----------------|-----------------|
-|1000|`The compiler detected a data dependency in the loop body.`|
-|1001|`The compiler detected a store to a scalar variable in the loop body, and that scalar has a use beyond the loop.`|
-|1002|`The compiler tried to parallelize a loop that has an inner loop that was already parallelized.`|
-|1003|`The loop body contains an intrinsic call that may read or write to memory.`|
-|1004|`There is a scalar reduction in the loop body. Scalar reduction can occur if the loop has been vectorized.`|
-|1005|`The no_parallel pragma was specified.`|
-|1006|`This function contains openmp. Resolve this by removing any openmp in this function.`|
-|1007|`The loop induction variable or the loop bounds are not signed 32-bit numbers (int or long). Resolve this by changing the type of the induction variable.`|
-|1008|`The compiler detected that this loop does not perform enough work to warrant auto-parallelization.`|
-|1009|`The compiler detected an attempt to parallelize a "do-while" loop. The auto-parallelizer only targets "for" loops.`|
-|1010|`The compiler detected that the loop is using "not-equals" (!=) for its condition.`|
+| 原因代码 | 说明 |
+|--|--|
+| 1000 | 编译器在循环体中检测到数据依赖项。 |
+| 1001 | 编译器在循环体中检测到标量变量的存储，该标量在循环外使用。 |
+| 1002 | 编译器尝试实现具有已并行化的内部循环的循环的并行化。 |
+| 1003 | 循环体包含可读取或写入内存的内部调用。 |
+| 1004 | 循环体中存在标量缩小。 如果循环已向量化，标量会减少。 |
+| 1005 | `no_parallel`指定杂注。 |
+| 1006 | 此函数包含 OpenMP。 通过删除此函数中的任何 OpenMP 来解决该问题。 |
+| 1007 | 循环感应变量或循环边界不是 (或) 签名的32位 `int` 数字 `long` 。 通过更改感应变量的类型来解决该问题。 |
+| 1008 | 编译器检测到此循环未执行足够的工作来论证自动并行度。 |
+| 1009 | 编译器检测到尝试并行 " `do` - `while` " 循环。 自动并行仅面向 " `for` " 循环。 |
+| 1010 | 编译器检测到循环使用 "不等于" (`!=` 其条件) 。 |
 
 ```cpp
 int A[1000];
@@ -412,15 +411,15 @@ void code_1010()
 
 11 *xx* 原因代码应用于向量化。
 
-|原因代码|说明|
-|-----------------|-----------------|
-|1100|`Loop contains control flow—for example, "if" or "?".`|
-|1101|`Loop contains datatype conversion—perhaps implicit—that cannot be vectorized.`|
-|1102|`Loop contains non-arithmetic or other non-vectorizable operations.`|
-|1103|`Loop body includes shift operations whose size might vary within the loop.`|
-|1104|`Loop body includes scalar variables.`|
-|1105|`Loop includes a unrecognized reduction operation.`|
-|1106|`Outer loop not vectorized.`|
+| 原因代码 | 说明 |
+|--|--|
+| 1100 | Loop 包含控制流（例如，" `if` " 或 " `?:` "）。 |
+| 1101 | 循环包含无法向量化的数据类型转换（可能是隐式的）。 |
+| 1102 | 循环包含非算术或其他非向量化操作。 |
+| 1103 | 循环体包括大小在循环内可能会有所不同的移位操作。 |
+| 1104 | 循环体包含标量变量。 |
+| 1105 | 循环包含无法识别的缩减运算。 |
+| 1106 | 未向量化的外部循环。 |
 
 ```cpp
 void code_1100(int *A, int x)
@@ -560,12 +559,13 @@ void code_1106(int *A)
 
 12 *xx* 原因代码应用于向量化。
 
-|原因代码|说明|
-|-----------------|-----------------|
-|1200|`Loop contains loop-carried data dependences that prevent vectorization. Different iterations of the loop interfere with each other such that vectorizing the loop would produce wrong answers, and the auto-vectorizer cannot prove to itself that there are no such data dependences.`|
-|1201|`Array base changes during the loop.`|
-|1202|`Field in a struct is not 32 or 64 bits wide.`|
-|1203|`Loop body includes non-contiguous accesses into an array.`|
+| 原因代码 | 说明 |
+|--|--|
+| 1200 | Loop 包含阻止矢量化的循环的数据依赖关系。 不同的循环迭代会相互干扰，从而向量化循环会产生错误的答案，而自动向量化无法证明没有此类数据依赖项。 |
+| 1201 | 数组基础会在循环时更改。 |
+| 1202 | 结构中的字段的宽度不是32或64。 |
+| 1203 | 循环体包含对数组的非连续访问。 |
+| 1204 | 命中编译器内部数据结构限制：数据依赖关系边缘太多。 |
 
 ```cpp
 void fn();
@@ -629,20 +629,36 @@ void code_1203(int *A)
         A[i] += A[i*2+2] + 2;  // non-contiguous memory access not vectorized
     }
 }
+
+void code_1204(int *A)
+{
+    // Code 1204 is emitted when internal compiler data structures
+    // hit a limit on the number of data dependence edges recorded.
+    // Resolve this by moving the innermost loop to another function.
+
+    for (int i=0; i<1000; i++)
+        for (int j=0; j<1000; j++)
+            for (int k=0; k<1000; k++)
+                for (int l=0; l<1000; l++)
+                {
+                    for (int m=0; m<1000; m++)
+                        A[m] = A[m+i] + A[m+j] + A[m+k] + A[m+l];
+                }
+}
 ```
 
 ## <a name="13xx-reason-codes"></a><a name="BKMK_ReasonCode130x"></a> 13xx 原因代码
 
 13 *xx* 原因代码应用于向量化。
 
-|原因代码|说明|
-|-----------------|-----------------|
-|1300|`Loop body contains no—or very little—computation.`|
-|1301|`Loop stride is not +1.`|
-|1302|`Loop is a "do-while".`|
-|1303|`Too few loop iterations for vectorization to provide value.`|
-|1304|`Loop includes assignments that are of different sizes.`|
-|1305|`Not enough type information.`|
+| 原因代码 | 说明 |
+|--|--|
+| 1300 | 循环体不包含计算或包含非常小的计算。 |
+| 1301 | 循环步幅不能为 + 1。 |
+| 1302 | 循环是一个 " `do` - `while` "。 |
+| 1303 | 向量化的循环迭代太少，无法提供值。 |
+| 1304 | 循环包含不同大小的分配。 |
+| 1305 | 没有足够的类型信息。 |
 
 ```cpp
 void code_1300(int *A, int *B)
@@ -767,14 +783,14 @@ void code_1305( S_1305 *s, S_1305 x)
 
 指定与矢量化不兼容的某个选项时，会出现 14 *xx* 原因代码。
 
-|原因代码|说明|
-|-----------------|-----------------|
-|1400|`#pragma loop(no_vector) is specified.`|
-|1401|`/kernel switch is specified when targeting x86 or ARM.`|
-|1402|`/arch:SSE2 or higher switch is not specified when targeting x86.`|
-|1403|`/arch:ATOM switch is specified and the loop includes operations on doubles.`|
-|1404|`/O1 or /Os switch is specified.`|
-|1405|`Vectorization is disabled to aid in dynamic-initializer-to-static-initializer optimization.`|
+| 原因代码 | 说明 |
+|--|--|
+| 1400 | `#pragma loop(no_vector)`指定 。 |
+| 1401 | `/kernel`在面向 x86 或 ARM 时，指定  开关。 |
+| 1402 | `/arch:SSE2` 在面向 x86 时，不指定或更高版本的开关。 |
+| 1403 | `/arch:ATOM` 已指定开关，并且循环包含对双精度运算的操作。 |
+| 1404 | `/O1``/Os`指定或开关。 |
+| 1405 | 禁用向量化可帮助动态初始值设定项到静态初始值设定项优化。 |
 
 ```cpp
 void code_1400(int *A)
@@ -839,14 +855,14 @@ void code_1404(int *A)
 
 15 *xx* 原因代码应用于别名。 当内存中的位置可由两个不同名称访问时，将出现别名。
 
-|原因代码|说明|
-|-----------------|-----------------|
-|1500|`Possible aliasing on multi-dimensional arrays.`|
-|1501|`Possible aliasing on arrays-of-structs.`|
-|1502|`Possible aliasing and array index is other than n + K.`|
-|1503|`Possible aliasing and array index has multiple offsets.`|
-|1504|`Possible aliasing; would require too many runtime checks.`|
-|1505|`Possible aliasing, but runtime checks are too complex.`|
+| 原因代码 | 说明 |
+|--|--|
+| 1500 | 多维数组中的可能别名。 |
+| 1501 | 数组结构中的可能别名。 |
+| 1502 | 可能的别名和数组索引不包括 n + K。 |
+| 1503 | 可能的别名和数组索引有多个偏移量。 |
+| 1504 | 可能的别名；需要过多的运行时检查。 |
+| 1505 | 可能的别名，但运行时检查太复杂。 |
 
 ```cpp
 void code_1500(int A[100][100], int B[100][100])
@@ -963,12 +979,12 @@ void code_1505(int *A, int *B)
 }
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[C/c + + 编译器和生成工具错误和警告](../compiler-errors-1/c-cpp-build-errors.md) 
-[自动并行化和自动矢量化](../../parallel/auto-parallelization-and-auto-vectorization.md) \
-[Visual Studio 2012 中的自动向量化–概述](/archive/blogs/nativeconcurrency/auto-vectorizer-in-visual-studio-2012-overview) \
-[#pragma 循环 ( # B1 ](../../preprocessor/loop.md) \
-[/Q 选项 (低级别操作) ](../../build/reference/q-options-low-level-operations.md) \
-[/Qpar-report (自动并行报告级别) ](../../build/reference/qpar-report-auto-parallelizer-reporting-level.md) \
-[/Qvec-report (自动向量化报告级别) ](../../build/reference/qvec-report-auto-vectorizer-reporting-level.md)
+[C/c + + 编译器和生成工具错误和警告](../compiler-errors-1/c-cpp-build-errors.md)\
+[自动并行化和自动矢量化](../../parallel/auto-parallelization-and-auto-vectorization.md)\
+[Visual Studio 2012 中的自动向量化–概述](/archive/blogs/nativeconcurrency/auto-vectorizer-in-visual-studio-2012-overview)\
+[`#pragma loop()`](../../preprocessor/loop.md)\
+[`/Q` (低级别操作的选项) ](../../build/reference/q-options-low-level-operations.md)\
+[`/Qpar-report` (自动并行报表级别) ](../../build/reference/qpar-report-auto-parallelizer-reporting-level.md)\
+[`/Qvec-report` (自动向量化报表级别) ](../../build/reference/qvec-report-auto-vectorizer-reporting-level.md)
