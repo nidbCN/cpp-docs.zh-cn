@@ -1,13 +1,13 @@
 ---
 title: C++ 文档的新增内容
 description: Microsoft C/ C++ 编译器、ATL/MFC、C 运行时和标准库文档的新增文档和文档更新。
-ms.date: 02/08/2021
-ms.openlocfilehash: 3b6d248b99415c91b4086b00ecc54fc39d2c348a
-ms.sourcegitcommit: 77235bff6a7b2621c501938e30d93cb15f5733cb
+ms.date: 02/17/2021
+ms.openlocfilehash: b15d286eb7bd2951ab2b8101a752de2beb57f4a4
+ms.sourcegitcommit: e99db7c3b5f25ece0e152165066c926751a7c2ed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100006045"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100643568"
 ---
 # <a name="microsoft-c-docs-whats-new-for-visual-studio-168"></a>Microsoft C++ 文档：Visual Studio 16.8 的新增功能
 
@@ -183,7 +183,7 @@ ms.locfileid: "100006045"
 ### <a name="updated-articles"></a>更新的文章
 
 - [`<ios>` typedef](../standard-library/ios-typedefs.md) - 更新了每个 GitHub 的示例 #2514
-- [`basic_string` 类](../standard-library/basic-string-class.md) - 添加了 `startswith()`、`endswith()`
+- [`basic_string` 类](../standard-library/basic-string-class.md) - 添加了 `_starts_with()`、`ends_with()`
 - [`ios_base Class`](../standard-library/ios-base-class.md)
 - [`map` 类](../standard-library/map-class.md)
 - [`multimap` 类](../standard-library/multimap-class.md) - 添加了 `contains()`
@@ -193,7 +193,7 @@ ms.locfileid: "100006045"
 - [`unordered_multimap` 类](../standard-library/unordered-multimap-class.md) - 添加了 `contains()`
 - [`unordered_multiset` 类](../standard-library/unordered-multiset-class.md) - 添加了 `contains()`
 - [`unordered_set` 类](../standard-library/unordered-set-class.md) - 添加了 `contains()`
-- [`basic_string_view` 类](../standard-library/basic-string-view-class.md) - 添加了 `startswith()`、`endswith()`
+- [`basic_string_view` 类](../standard-library/basic-string-view-class.md) - 添加了 `starts_with()`、`ends_with()`
 - [`<bit>` 函数](../standard-library/bit-functions.md) - 更新了 `nodiscard` 语法
 
 ## <a name="community-contributors"></a>社区参与者
