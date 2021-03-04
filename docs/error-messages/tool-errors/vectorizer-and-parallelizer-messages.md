@@ -8,12 +8,12 @@ f1_keywords:
 - C5021
 - C5001
 - C5012
-ms.openlocfilehash: 3e2d458d177b8a7032276d29940a7ff2dac83b36
-ms.sourcegitcommit: e99db7c3b5f25ece0e152165066c926751a7c2ed
+ms.openlocfilehash: 9cfafe9af4859a2bb4dbd7897a14003d85052f63
+ms.sourcegitcommit: 5efc34c2b98d4d0d3e41aec38b213f062c19d078
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100643555"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101844541"
 ---
 # <a name="vectorizer-and-parallelizer-messages"></a>矢量化程序和并行化程序消息
 
@@ -41,11 +41,12 @@ ms.locfileid: "100643555"
 
 | 原因代码 | 说明 |
 |--|--|
-| 500 | 一条涵盖几个事例的一般消息，例如，循环包含多个退出，或者循环标头不会通过递增感应变量来结束。 |
+| 500 | 涵盖几个事例的一般消息：例如，循环包含多个退出，或者循环标头不会通过递增感应变量来结束。 |
 | 501 | 感应变量不是本地的;或上限不是循环固定的。 |
 | 502 | 除了简单 +1 外，归纳变量以某种方式单步执行。 |
 | 503 | 循环包含异常处理或 switch 语句。 |
 | 504 | 循环体可能会引发需要析构 C++ 对象的异常。 |
+| 505 | 外部循环具有一个预先递增的感应变量。 正在退出分析。 |
 
 ```cpp
 void code_500(int *A)
@@ -83,7 +84,7 @@ void code_501_example1(int *A)
 {
     // Code 501 is emitted if the compiler cannot discern the
     // induction variable of this loop. In this case, when it checks
-    // the upperbound of 'i', the compiler cannot prove that the
+    // the upper bound of 'i', the compiler cannot prove that the
     // function call "bound()" returns the same value each time.
     // Also, the compiler cannot prove that the call to "bound()"
     // does not modify the values of array A.
@@ -94,7 +95,7 @@ void code_501_example1(int *A)
     }
 
     // To resolve code 501, ensure that the induction variable is
-    // a local variable, and ensure that the upperbound is a
+    // a local variable, and ensure that the upper bound is a
     // provably loop invariant value.
 
     for (int i=0, imax = bound(); i<imax; ++i)
@@ -116,7 +117,7 @@ void code_501_example2(int *A)
     }
 
     // To resolve code 501, ensure that the induction variable is
-    // a local variable, and ensure that the upperbound is a
+    // a local variable, and ensure that the upper bound is a
     // provably loop invariant value.
 
     for (int i=0; i<1000; ++i)
@@ -184,7 +185,8 @@ public:
     ~C504();
 };
 
-void code_504(int *A) {
+void code_504(int *A)
+{
     // Code 504 is emitted if a C++ object was created and
     // that object requires EH unwind tracking information under
     // /EHs or /EHsc.
@@ -195,6 +197,23 @@ void code_504(int *A) {
         A[i] = code_504_helper();
     }
 
+}
+
+void code_505(int *A)
+{
+    // Code 505 is emitted on outer loops with pre-incremented
+    // induction variables. The vectorizer/parallelizer analysis
+    // package doesn't support these loops, and they are
+    // intentionally not converted to post-increment loops to
+    // prevent a performance degradation.
+
+    // To parallelize an outer loop that causes code 505, change
+    // it to a post-incremented loop.
+
+    for (int i=100; i--; )
+        for (int j=0; j<100; j++) { // this loop is still vectorized
+            A[j] = A[j] + 1;
+        }                    
 }
 ```
 
@@ -212,7 +231,7 @@ void code_504(int *A) {
 | 1005 | `no_parallel`指定杂注。 |
 | 1006 | 此函数包含 OpenMP。 通过删除此函数中的任何 OpenMP 来解决该问题。 |
 | 1007 | 循环感应变量或循环边界不是 (或) 签名的32位 `int` 数字 `long` 。 通过更改感应变量的类型来解决该问题。 |
-| 1008 | 编译器检测到此循环未执行足够的工作来论证自动并行度。 |
+| 1008 | 编译器检测到此循环没有足够的工作来论证自动并行度。 |
 | 1009 | 编译器检测到尝试并行 " `do` - `while` " 循环。 自动并行仅面向 " `for` " 循环。 |
 | 1010 | 编译器检测到循环使用 "不等于" (`!=` 其条件) 。 |
 
@@ -414,7 +433,7 @@ void code_1010()
 | 原因代码 | 说明 |
 |--|--|
 | 1100 | Loop 包含控制流（例如，" `if` " 或 " `?:` "）。 |
-| 1101 | 循环包含无法向量化的数据类型转换（可能是隐式的）。 |
+| 1101 | 循环包含一个 (可能隐式) 无法向量化的数据类型转换。 |
 | 1102 | 循环包含非算术或其他非向量化操作。 |
 | 1103 | 循环体包括大小在循环内可能会有所不同的移位操作。 |
 | 1104 | 循环体包含标量变量。 |
@@ -434,7 +453,7 @@ void code_1100(int *A, int x)
 
     for (int i=0; i<1000; ++i)
     {
-        // straightline code is more amenable to vectorization
+        // straight line code is more amenable to vectorization
         if (x)
         {
             A[i] = A[i] + 1;
@@ -561,7 +580,7 @@ void code_1106(int *A)
 
 | 原因代码 | 说明 |
 |--|--|
-| 1200 | Loop 包含阻止矢量化的循环的数据依赖关系。 不同的循环迭代会相互干扰，从而向量化循环会产生错误的答案，而自动向量化无法证明没有此类数据依赖项。 |
+| 1200 | Loop 包含阻止矢量化的循环的数据依赖关系。 不同的循环迭代会相互干扰，从而向量化循环会产生错误的答案，而自动向量化无法向自身证明没有此类数据依赖项。 |
 | 1201 | 数组基础会在循环时更改。 |
 | 1202 | 结构中的字段的宽度不是32或64。 |
 | 1203 | 循环体包含对数组的非连续访问。 |
@@ -653,7 +672,7 @@ void code_1204(int *A)
 
 | 原因代码 | 说明 |
 |--|--|
-| 1300 | 循环体不包含计算或包含非常小的计算。 |
+| 1300 | 循环体包含很少的计算。 |
 | 1301 | 循环步幅不能为 + 1。 |
 | 1302 | 循环是一个 " `do` - `while` "。 |
 | 1303 | 向量化的循环迭代太少，无法提供值。 |
@@ -703,7 +722,7 @@ int code_1303(int *A, int *B)
     // make vectorization profitable.
 
     // If the loop computation fits perfectly in
-    // vector registers - for example, the upperbound is 4, or 8 in
+    // vector registers - for example, the upper bound is 4, or 8 in
     // this case - then the loop _may_ be vectorized.
 
     // This loop is not vectorized because there are 5 iterations
