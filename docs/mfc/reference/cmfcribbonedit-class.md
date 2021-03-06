@@ -74,12 +74,12 @@ helpviewer_keywords:
 - CMFCRibbonEdit [MFC], SetTextAlign
 - CMFCRibbonEdit [MFC], SetWidth
 ms.assetid: 9b85f1f2-446b-454e-9af9-104fdad8a897
-ms.openlocfilehash: 83920c9779af10861e32ce964e91af767a3d9e96
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: be88698de9f98c590efebd4e2e8780d810aa8b96
+ms.sourcegitcommit: c0c9cdae79f19655e809a4979227c51bb19cff63
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97193093"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102236558"
 ---
 # <a name="cmfcribbonedit-class"></a>CMFCRibbonEdit 类
 
@@ -177,7 +177,7 @@ CMFCRibbonEdit(
 CMFCRibbonEdit();
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *nID*<br/>
 中控件的命令 ID `CMFCRibbonEdit` 。
@@ -203,7 +203,7 @@ CMFCRibbonEdit();
 virtual void CopyFrom(const CMFCRibbonBaseElement& src);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *src*<br/>
 中源 `CMFCRibbonEdit` 对象。
@@ -222,7 +222,7 @@ virtual CMFCRibbonRichEditCtrl* CreateEdit(
     DWORD dwEditStyle);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *pWndParent*<br/>
 中指向对象的父窗口的指针 `CMFCRibbonEdit` 。
@@ -282,7 +282,7 @@ void EnableSpinButtons(
     int nMax);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *nMin*<br/>
 中数值调节钮的最小值。
@@ -302,7 +302,7 @@ void EnableSpinButtons(
 virtual CSize GetCompactSize(CDC* pDC);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *pDC*<br/>
 中指向对象的设备上下文的指针 `CMFCRibbonEdit` 。
@@ -335,7 +335,7 @@ CString GetEditText() const;
 virtual CSize GetIntermediateSize(CDC* pDC);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *pDC*<br/>
 中指向对象的设备上下文的指针 `CMFCRibbonEdit` 。
@@ -378,7 +378,7 @@ int GetTextAlign() const;
 int GetWidth(BOOL bInFloatyMode = FALSE) const;
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *bInFloatyMode*<br/>
 中如果控件处于 `CMFCRibbonEdit` 浮动模式，则为 TRUE; 否则为 FALSE。
@@ -471,7 +471,7 @@ virtual BOOL IsHighlighted() const;
 virtual void OnAfterChangeRect(CDC* pDC);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *pDC*<br/>
 中指向控件的设备上下文的指针 `CMFCRibbonEdit` 。
@@ -486,7 +486,7 @@ virtual void OnAfterChangeRect(CDC* pDC);
 virtual void OnDraw(CDC* pDC);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *pDC*<br/>
 中指向控件的设备上下文的指针 `CMFCRibbonEdit` 。
@@ -501,7 +501,7 @@ virtual void OnDraw(CDC* pDC);
 virtual void OnDrawLabelAndImage(CDC* pDC);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *pDC*<br/>
 中指向控件的设备上下文的指针 `CMFCRibbonEdit` 。
@@ -522,13 +522,13 @@ virtual void OnDrawOnList(
     BOOL bHighlighted);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *pDC*<br/>
 中指向控件的设备上下文的指针 `CMFCRibbonEdit` 。
 
 *strText*<br/>
-中显示文本 [](../../mfc/reference/cmfcribbonedit-class.md "cmfcribbonedit 类") 。
+中显示文本。
 
 *nTextOffset*<br/>
 中从列表框左侧到显示文本的距离（以像素为单位）。
@@ -554,7 +554,7 @@ virtual void OnDrawOnList(
 virtual void OnEnable(BOOL bEnable);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *bEnable*<br/>
 中如果启用控件，则为 TRUE;若要禁用控件，则为 FALSE。
@@ -569,7 +569,7 @@ virtual void OnEnable(BOOL bEnable);
 virtual void OnHighlight(BOOL bHighlight);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *bHighlight*<br/>
 中如果指针在控件的边界内，则为 TRUE `CMFCRibbonEdit` ; 否则为 FALSE。
@@ -584,7 +584,7 @@ virtual void OnHighlight(BOOL bHighlight);
 virtual BOOL OnKey(BOOL bIsMenuKey);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *bIsMenuKey*<br/>
 中如果 keytip 显示一个弹出菜单，则为 TRUE;否则为 FALSE。
@@ -603,7 +603,7 @@ virtual BOOL OnKey(BOOL bIsMenuKey);
 virtual void OnLButtonDown(CPoint point);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *情况*<br/>
 中未使用此参数。
@@ -618,7 +618,7 @@ virtual void OnLButtonDown(CPoint point);
 virtual void OnLButtonUp(CPoint point);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *情况*<br/>
 中未使用此参数。
@@ -633,7 +633,7 @@ virtual void OnLButtonUp(CPoint point);
 virtual void OnRTLChanged(BOOL bIsRTL);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *bIsRTL*<br/>
 中如果布局为从右向左，则为 TRUE; 否则为。如果从左到右布局布局，则为 FALSE。
@@ -648,7 +648,7 @@ virtual void OnRTLChanged(BOOL bIsRTL);
 virtual void OnShow(BOOL bShow);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *bShow*<br/>
 中如果显示控件，则为 TRUE;如果隐藏控件，则为 FALSE。
@@ -677,7 +677,7 @@ virtual BOOL SetACCData(
     CAccessibilityData& data);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *pParent*<br/>
 指向对象的父窗口的指针 `CMFCRibbonEdit` 。
@@ -699,7 +699,7 @@ virtual BOOL SetACCData(
 void SetEditText(CString strText);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *strText*<br/>
 中文本框的文本。
@@ -712,7 +712,7 @@ void SetEditText(CString strText);
 void SetTextAlign(int nAlign);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *nAlign*<br/>
 中文本对齐枚举值。 有关可能的值，请参阅备注部分。
@@ -739,7 +739,7 @@ void SetWidth(
     BOOL bInFloatyMode = FALSE);
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *nWidth*<br/>
 中文本框的宽度（以像素为单位）。
@@ -754,6 +754,6 @@ void SetWidth(
 ## <a name="see-also"></a>请参阅
 
 [层次结构图](../../mfc/hierarchy-chart.md)<br/>
-[Classes](../../mfc/reference/mfc-classes.md)<br/>
+[类](../../mfc/reference/mfc-classes.md)<br/>
 [CMFCRibbonButton 类](../../mfc/reference/cmfcribbonbutton-class.md)<br/>
 [CMFCRibbonBar 类](../../mfc/reference/cmfcribbonbar-class.md)

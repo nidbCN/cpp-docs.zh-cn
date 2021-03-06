@@ -7,18 +7,18 @@ helpviewer_keywords:
 - constants, literals
 - literals [C++]
 ms.assetid: 17c09fc3-3ad7-47e2-8b48-ba8ae994edc8
-ms.openlocfilehash: 84fdac7010805fc4d0a429231a080ab11d5c595a
-ms.sourcegitcommit: f7fbdc39d73e1fb3793c396fccf7a1602af7248b
+ms.openlocfilehash: f817fcca35a741dac29047e214897758cdc93edb
+ms.sourcegitcommit: c0c9cdae79f19655e809a4979227c51bb19cff63
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91662251"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102236707"
 ---
 # <a name="numeric-boolean-and-pointer-literals"></a>数值、布尔和指针文本
 
-文本是一种直接表示值的程序元素。 本文介绍整型、浮点型、布尔值和指针类型的文字。 有关字符串和字符文本的信息，请参阅 [字符串和字符文本 (c + +) ](../cpp/string-and-character-literals-cpp.md)。 你还可以基于任何这些类别定义你自己的文本。 有关详细信息，请参阅 [ (c + +) 的用户定义的文本 ](../cpp/user-defined-literals-cpp.md)
+文本是一种直接表示值的程序元素。 本文介绍整型、浮点型、布尔值和指针类型的文字。 有关字符串和字符文本的信息，请参阅 [字符串和字符文本 (c + +) ](../cpp/string-and-character-literals-cpp.md)。 你还可以基于任何这些类别定义你自己的文本。 有关详细信息，请参阅 [ (c + +) 的用户定义的文本 ](../cpp/user-defined-literals-cpp.md)。
 
-. 你可以在许多上下文中使用文本，但文本的最常用法是初始化命名变量以及将自变量传递给函数：
+你可以在许多上下文中使用文本，但文本的最常用法是初始化命名变量以及将自变量传递给函数：
 
 ```cpp
 const int answer = 42;      // integer literal
@@ -103,7 +103,7 @@ long long i = 24'847'458'121
 void func( double );
 ```
 
-和
+and
 
 ```cpp
 void func( long double );

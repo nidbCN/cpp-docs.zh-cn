@@ -1,7 +1,7 @@
 ---
 title: fopen_s、_wfopen_s
 description: 介绍用于和的 API `fopen_s``_wfopen_s`
-ms.date: 11/20/2020
+ms.date: 2/24/2021
 api_name:
 - _wfopen_s
 - fopen_s
@@ -39,13 +39,12 @@ helpviewer_keywords:
 - Unicode [C++], writing files
 - files [C++], opening
 - Unicode [C++], files
-ms.assetid: c534857e-39ee-4a3f-bd26-dfe551ac96c3
-ms.openlocfilehash: 1d6d0b739db1177b903c0e8aa8e6f55e49c1df16
-ms.sourcegitcommit: b02c61667ff7f38e7add266d0aabd8463f2dbfa1
+ms.openlocfilehash: a034eda7ad45be30decccee50a104c0565907c41
+ms.sourcegitcommit: c0c9cdae79f19655e809a4979227c51bb19cff63
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95483160"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102236532"
 ---
 # <a name="fopen_s-_wfopen_s"></a>`fopen_s`, `_wfopen_s`
 
@@ -89,7 +88,7 @@ errno_t _wfopen_s(
 |any|**`NULL`**|any|**`EINVAL`**|未更改|
 |any|any|**`NULL`**|**`EINVAL`**|未更改|
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 由打开 **`fopen_s`** 且 **`_wfopen_s`** 不能共享的文件。 如果您要求文件可共享，请使用 [`_fsopen, _wfsopen`](fsopen-wfsopen.md) 与相应的共享模式常量（例如） **`_SH_DENYNO`** 进行读/写共享。
 
@@ -128,7 +127,7 @@ errno_t _wfopen_s(
 
 在 Unicode 模式下打开用于写入的文件将自动在其中写入 BOM。
 
-如果 *`mode`* 是 **`"a, ccs=` _encoding_ 编码 `"`**， **`fopen_s`** 首先会尝试打开具有读取访问权限和写入访问权限的文件。 如果成功，此函数将读取 BOM 以确定文件的编码；如果失败，此函数将使用文件的默认编码。 在任一情况下，都将 **`fopen_s`** 使用只写访问权限重新打开文件。  (仅适用于 **`a`** 模式，而不是 **`a+`** 。 ) 
+如果 *`mode`* 是 **`"a, ccs=` 编码 `"`**， **`fopen_s`** 首先会尝试打开具有读取访问权限和写入访问权限的文件。 如果成功，此函数将读取 BOM 以确定文件的编码；如果失败，此函数将使用文件的默认编码。 在任一情况下，都将 **`fopen_s`** 使用只写访问权限重新打开文件。  (仅适用于 **`a`** 模式，而不是 **`a+`** 。 ) 
 
 ### <a name="generic-text-routine-mappings"></a>一般文本例程映射
 
@@ -138,7 +137,7 @@ errno_t _wfopen_s(
 
 字符串指定为 *`mode`* 文件请求的访问类型，如下所示。
 
-|*`mode`*|Access|
+|*`mode`*|访问|
 |-|-|
 | **`"r"`** | 打开以便读取。 如果文件不存在或找不到，调用将 **`fopen_s`** 失败。 |
 | **`"w"`** | 打开用于写入的空文件。 如果给定文件存在，则其内容会被销毁。 |
@@ -152,6 +151,8 @@ errno_t _wfopen_s(
 在 **`"a"`** 追加到文件之前，模式不会删除 EOF 标记。 在追加后，MS-DOS `TYPE` 命令只显示原始 EOF 标记中的数据，而不显示追加到文件的任何数据。 **`"a+"`** 模式会在将 EOF 标记追加到文件之前将其删除。 追加后，MS-DOS `TYPE` 命令显示文件中的所有数据。 此 **`"a+"`** 模式是附加到以 EOF 标记终止的流文件所必需的 `CTRL+Z` 。
 
 **`"r+"`** **`"w+"`** 指定、或 **`"a+"`** 访问类型时，允许读取和写入。  (该文件被称为 "更新"。 ) 不过，当你从读取切换到写入时，输入操作必须跨越 EOF 标记。 如果没有 EOF 标记，则必须使用对文件定位函数的干预调用。 文件定位函数是 **`fsetpos`** 、 [`fseek`](fseek-fseeki64.md) 和 [`rewind`](rewind.md) 。 当从写入切换到读取时，必须使用对 **`fflush`** 或文件定位函数的干预调用。
+
+从 C11 开始， **`"x"`** 如果文件存在，你可以将添加到 **`"w"`** 或 **`"w+"`** 以导致函数失败，而不是覆盖它。
 
 除了以上值之外，还可以在中包含以下字符 *`mode`* 以指定换行符的转换模式：
 
@@ -177,7 +178,7 @@ errno_t _wfopen_s(
 | **`R`** | 指定缓存针对（但不限于）从磁盘的随机访问进行优化。 |
 | **`t`** | 将文件指定为临时。 如果可能，它不会刷新到磁盘。 |
 | **`D`** | 将文件指定为临时。 当最后一个文件指针关闭时，它将被删除。 |
-| **`ccs=**`_编码器_ | 指定要使用的编码字符集 **`UTF-8`** ， (**`UTF-16LE`** 该文件的、或 **`UNICODE`**) 之一。 如果需要 ANSI 编码，请不要指定此字符集。 |
+| **`ccs=`**_编码器_ | 指定要使用的编码字符集 **`UTF-8`** ， (**`UTF-16LE`** 该文件的、或 **`UNICODE`**) 之一。 如果需要 ANSI 编码，请不要指定此字符集。 |
 
 和中使用的字符串的有效字符 *`mode`* **`fopen_s`** [`_fdopen`](fdopen-wfdopen.md) 与 *`oflag`* 和中使用的参数对应 [`_open`](open-wopen.md) ，如下所示 [`_sopen`](sopen-wsopen.md) 。
 
@@ -201,7 +202,7 @@ errno_t _wfopen_s(
 |**`ccs=UTF-8`**|**`_O_UTF8`**|
 |**`ccs=UTF-16LE`**|**`_O_UTF16`**|
 
-如果你使用的是 **`rb`** 模式，则在不需要移植代码的情况下，可能还会有内存映射的 Win32 文件，因此，你会发现大部分文件，或者不关心网络性能。
+如果你使用 **`rb`** 的是模式，如果不需要移植代码，则内存映射的 Win32 文件可能也是一个选项，你希望读取很多文件，或者不关心网络性能。
 
 ## <a name="requirements"></a>要求
 
@@ -210,13 +211,13 @@ errno_t _wfopen_s(
 |**`fopen_s`**|`<stdio.h>`|
 |**`_wfopen_s`**|`<stdio.h>` 或 `<wchar.h>`|
 
-有关其他兼容性信息，请参阅[兼容性](../../c-runtime-library/compatibility.md)。
+有关兼容性的详细信息，请参阅[兼容性](../../c-runtime-library/compatibility.md)。
 
 ## <a name="libraries"></a>库
 
 [C 运行时库](../../c-runtime-library/crt-library-features.md)的所有版本。
 
-**`c`**、和 **`n`** **`t`** *`mode`* 选项是适用于和的 Microsoft 扩展， **`fopen_s`** [`_fdopen`](fdopen-wfdopen.md) 不应在需要 ANSI 可移植性时使用。
+**`c`**、和 **`n`** **`t`** *`mode`* 选项是适用于和的 Microsoft 扩展，不 **`fopen_s`** 应在 [`_fdopen`](fdopen-wfdopen.md) 需要 ANSI 可移植性的地方使用。
 
 ## <a name="example"></a>示例
 
@@ -282,7 +283,7 @@ The file 'data2' was opened
 Number of files closed by _fcloseall: 1
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [流 i/o](../../c-runtime-library/stream-i-o.md)\
 [`fclose, _fcloseall`](fclose-fcloseall.md)\

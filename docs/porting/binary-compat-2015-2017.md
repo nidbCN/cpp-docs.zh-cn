@@ -4,12 +4,12 @@ description: 介绍 Visual Studio 2015、2017和2019中编译的 c + + 文件之
 ms.date: 02/17/2021
 helpviewer_keywords:
 - binary compatibility, Visual C++
-ms.openlocfilehash: d8c4c0312003496db522e59dba84a9633e94b1b4
-ms.sourcegitcommit: 5efc34c2b98d4d0d3e41aec38b213f062c19d078
+ms.openlocfilehash: a91e339e70843087adc12238edac91332c1a4453
+ms.sourcegitcommit: c0c9cdae79f19655e809a4979227c51bb19cff63
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101844515"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102236571"
 ---
 # <a name="c-binary-compatibility-between-visual-studio-2015-2017-and-2019"></a>Visual Studio 2015、2017和2019之间的 c + + 二进制兼容性
 
@@ -17,7 +17,7 @@ Visual Studio 2013 和更早版本中的 Microsoft c + + (MSVC) 编译器工具�
 
 我们已在 Visual Studio 2015、2017和2019中更改了此行为。 任何这些版本的编译器编译的运行时库和应用都是二进制兼容的。 它反映在 c + + 工具集的主编号（从14开始，适用于所有三个版本）。  (工具集版本是 v140 for Visual Studio 2015、v141 for 2017 和 v142 for 2019) 。 假设你有 Visual Studio 2015 生成的第三方库。 你仍可以在 Visual Studio 2017 或2019生成的应用程序中使用它们。 无需使用匹配的工具集进行重新编译。 最新版本的 Microsoft Visual C++ 可再发行组件包 (可再发行组件) 适用于所有这些包。
 
-## <a name="restrictions-on-binary-compatibility"></a>二进制兼容性的限制
+## <a name="restrictions-on-binary-compatibility"></a><a name="restrictions"></a> 二进制兼容性的限制
 
 对于 v140、v141 和 v142 工具集和次要编号版本更新之间的二进制兼容性，有三个重要的限制：
 
@@ -39,7 +39,7 @@ Visual Studio 2013 和更早版本中的 Microsoft c + + (MSVC) 编译器工具�
 
 此错误是由设计决定的。 建议保留最新版本。 请确保安装程序可在不提示的情况下从此错误恢复。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [Visual C++ 更改历史记录](../porting/visual-cpp-change-history-2003-2015.md)\
 [最新支持的 Visual C++ 可再发行组件下载](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads)
