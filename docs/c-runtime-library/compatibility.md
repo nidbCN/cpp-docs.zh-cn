@@ -8,12 +8,12 @@ helpviewer_keywords:
 - compatibility, C runtime libraries
 - compatibility
 ms.assetid: 346709cb-edda-4909-9a19-3d253eddb6b7
-ms.openlocfilehash: 10c21f3f471c105ac4e40bda449aaf8987edba25
-ms.sourcegitcommit: 9451db8480992017c46f9d2df23fb17b503bbe74
+ms.openlocfilehash: aea87c3a7b82292a5c9c45a960a5a890a1fff3fd
+ms.sourcegitcommit: 90c300b74f6556cb5d989802d2e80d79542f55e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91590038"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102514611"
 ---
 # <a name="compatibility"></a>兼容性
 
@@ -44,4 +44,4 @@ C++ 标准将全局命名空间中以下划线开头的名称保留到实现中�
 |[UNIX](../c-runtime-library/unix.md)|提供将程序移植到 UNIX 的指南。|
 |[Windows 平台 (CRT) ](../c-runtime-library/windows-platforms-crt.md)|列出 CRT 支持的操作系统。|
 |[向后兼容性](../c-runtime-library/backward-compatibility.md)|描述如何将旧 CRT 名称映射到新名称。|
-|[CRT 库功能](../c-runtime-library/crt-library-features.md)|提供 CRT 库 (.lib) 文件和关联的编译器选项的概述。|
+|[C 运行时 (CRT) 和 c + + 标准库 (STL) `.lib` 文件](../c-runtime-library/crt-library-features.md)|提供 CRT 库 (.lib) 文件和关联的编译器选项的概述。|

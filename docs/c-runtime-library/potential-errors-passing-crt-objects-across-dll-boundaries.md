@@ -6,12 +6,12 @@ ms.topic: conceptual
 helpviewer_keywords:
 - DLL conflicts [C++]
 ms.assetid: c217ffd2-5d9a-4678-a1df-62a637a96460
-ms.openlocfilehash: 2d42803b5eca7a43f122d209b7d9e2d4e45c38de
-ms.sourcegitcommit: 43cee7a0d41a062661229043c2f7cbc6ace17fa3
+ms.openlocfilehash: 7af0fe8b5819bf428753c9ec71099113df0fa79e
+ms.sourcegitcommit: 90c300b74f6556cb5d989802d2e80d79542f55e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92008935"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102514546"
 ---
 # <a name="potential-errors-passing-crt-objects-across-dll-boundaries"></a>跨 DLL 边界传递 CRT 对象时可能的错误
 
@@ -31,7 +31,7 @@ CRT 对象（如文件句柄、环境变量和区域设置）仅对在其中分�
 
 由于 CRT 库的每个副本都具有自己的堆管理器，因此分配一个 CRT 库中的内存并跨 DLL 边界传递要由 CRT 库的不同副本释放的指针可能导致堆损坏。 如果您在设计 DLL 时，使其跨 DLL 边界传递 CRT 对象，或分配内存并希望它在 DLL 之外被释放，则 DLL 的客户端必须使用与 DLL 相同的 CRT 库副本。
 
-仅在 DLL 及其客户端都在加载时链接到相同版本的 CRT DLL 时，二者才使用相同的 CRT 库副本。 由于 Visual Studio 2015 所用的通用 CRT 库的 DLL 版本以及 Windows 10 上的更高版本，现已集中部署 Windows 组件 ( # A0) ，这对于使用 Visual Studio 2015 和更高版本生成的应用程序是相同的。 但是，即使 CRT 代码是相同的，也不能向使用不同堆的组件分配一个堆中分配的内存。
+仅在 DLL 及其客户端都在加载时链接到相同版本的 CRT DLL 时，二者才使用相同的 CRT 库副本。 由于 Visual Studio 2015 所用的通用 CRT 库的 DLL 版本和更高版本的 Windows 10 现在是 (ucrtbase.dll) 集中部署的 Windows 组件，因此它对于使用 Visual Studio 2015 和更高版本生成的应用程序是相同的。 但是，即使 CRT 代码是相同的，也不能向使用不同堆的组件分配一个堆中分配的内存。
 
 ## <a name="example-pass-file-handle-across-dll-boundary"></a>示例：跨 DLL 边界传递文件句柄
 
@@ -128,6 +128,6 @@ MYLIB has not been set.
 New MYLIB variable is: c:\mylib;c:\yourlib
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[CRT 库功能](../c-runtime-library/crt-library-features.md)
+[C 运行时 (CRT) 和 c + + 标准库 (STL) `.lib` 文件](../c-runtime-library/crt-library-features.md)

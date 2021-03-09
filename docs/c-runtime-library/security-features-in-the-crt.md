@@ -26,12 +26,12 @@ helpviewer_keywords:
 - CRT, security enhancements
 - parameters [C++], validation
 ms.assetid: d9568b08-9514-49cd-b3dc-2454ded195a3
-ms.openlocfilehash: 963f5510350aa3be25586811889189d28a5f7b66
-ms.sourcegitcommit: 9451db8480992017c46f9d2df23fb17b503bbe74
+ms.openlocfilehash: 96642e5e79f9df7c0a063582408c0463600be20f
+ms.sourcegitcommit: 90c300b74f6556cb5d989802d2e80d79542f55e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91589882"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102514676"
 ---
 # <a name="security-features-in-the-crt"></a>CRT 中的安全功能
 
@@ -90,4 +90,4 @@ strcpy(szBuf, "test"); // warning: deprecated
 
 [参数验证](../c-runtime-library/parameter-validation.md)<br/>
 [安全模板重载](../c-runtime-library/secure-template-overloads.md)<br/>
-[CRT 库功能](../c-runtime-library/crt-library-features.md)
+[C 运行时 (CRT) 和 c + + 标准库 (STL) `.lib` 文件](../c-runtime-library/crt-library-features.md)

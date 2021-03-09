@@ -13,12 +13,12 @@ helpviewer_keywords:
 - _CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES_COUNT
 - secure template overloads
 ms.assetid: 562741d0-39c0-485e-8529-73d740f29f8f
-ms.openlocfilehash: 5e795d4d68aaeb176ba0809a08310def23662028
-ms.sourcegitcommit: 9451db8480992017c46f9d2df23fb17b503bbe74
+ms.openlocfilehash: 69ddeed831bde26de23e0a29ece9f5550de8cf9f
+ms.sourcegitcommit: 90c300b74f6556cb5d989802d2e80d79542f55e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91589635"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102514520"
 ---
 # <a name="secure-template-overloads"></a>安全模板重载
 
@@ -96,4 +96,4 @@ strcpy_s(szBuf, "test"); // doesn't compile; change it to
 ## <a name="see-also"></a>另请参阅
 
 [CRT 中的安全功能](../c-runtime-library/security-features-in-the-crt.md)<br/>
-[CRT 库功能](../c-runtime-library/crt-library-features.md)
+[C 运行时 (CRT) 和 c + + 标准库 (STL) `.lib` 文件](../c-runtime-library/crt-library-features.md)

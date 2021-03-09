@@ -6,12 +6,12 @@ ms.topic: conceptual
 helpviewer_keywords:
 - parameters, validation
 ms.assetid: 019dd5f0-dc61-4d2e-b4e9-b66409ddf1f2
-ms.openlocfilehash: 8378e4bf9bdfc950002c3ed8c3ef50c27a3c162d
-ms.sourcegitcommit: 30792632548d1c71894f9fecbe2f554294b86020
+ms.openlocfilehash: 6926da8ccc1974352b926227daba0eea1d8a560d
+ms.sourcegitcommit: 90c300b74f6556cb5d989802d2e80d79542f55e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91765254"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102514650"
 ---
 # <a name="parameter-validation"></a>参数验证
 
@@ -29,7 +29,7 @@ ms.locfileid: "91765254"
 
 有关 `errno` 的详细信息，请参阅 [errno、_doserrno、_sys_errlist 和 _sys_nerr](../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [CRT 中的安全功能](../c-runtime-library/security-features-in-the-crt.md)\
-[CRT 库功能](../c-runtime-library/crt-library-features.md)
+[C 运行时 (CRT) 和 c + + 标准库 (STL) `.lib` 文件](../c-runtime-library/crt-library-features.md)

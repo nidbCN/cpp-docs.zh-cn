@@ -26,12 +26,12 @@ helpviewer_keywords:
 - _CrtMemDumpStatistics function
 - CrtMemDumpStatistics function
 ms.assetid: 27b9d731-3184-4a2d-b9a7-6566ab28a9fe
-ms.openlocfilehash: 2f02c35ff61dc2bc5ac7e8dfbe921fa48731c2b3
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: 684b5ac50af453dbe2800ded595c5747370717a6
+ms.sourcegitcommit: 90c300b74f6556cb5d989802d2e80d79542f55e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97319607"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102514585"
 ---
 # <a name="_crtmemdumpstatistics"></a>_CrtMemDumpStatistics
 
@@ -45,12 +45,12 @@ void _CrtMemDumpStatistics(
 );
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-*state*<br/>
+State <br/>
 指向要转储的堆状态的指针。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 **_CrtMemDumpStatistics** 函数以用户可读的形式转储指定堆状态的调试标头信息。 应用程序可以使用转储统计信息来跟踪分配并检测内存问题。 内存状态可以包含特定的堆状态或两个状态之间的差异。 未定义 [_DEBUG](../../c-runtime-library/debug.md) 时，将在预处理过程中删除对 **_CrtMemDumpStatistics** 的调用。
 
@@ -66,8 +66,8 @@ void _CrtMemDumpStatistics(
 
 有关兼容性的详细信息，请参阅[兼容性](../../c-runtime-library/compatibility.md)。
 
-**库：** 仅限 [CRT 库功能](../../c-runtime-library/crt-library-features.md)的调试版本。
+**库：** 仅限 [C 运行时库](../../c-runtime-library/crt-library-features.md) 的调试版本。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [调试例程](../../c-runtime-library/debug-routines.md)<br/>

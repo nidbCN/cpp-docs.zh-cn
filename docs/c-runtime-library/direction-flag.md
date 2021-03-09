@@ -6,12 +6,12 @@ ms.topic: conceptual
 helpviewer_keywords:
 - direction flag
 ms.assetid: 0836b4af-dbbb-4ab8-a4b2-156f2e2099e2
-ms.openlocfilehash: a8f06b3b8caf08e1d3db2159bfc730e25229733b
-ms.sourcegitcommit: 9451db8480992017c46f9d2df23fb17b503bbe74
+ms.openlocfilehash: ce4198abd944d538261b9d89bfa9ecea6129a991
+ms.sourcegitcommit: 90c300b74f6556cb5d989802d2e80d79542f55e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91589986"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102514702"
 ---
 # <a name="direction-flag"></a>方向标志
 
@@ -23,4 +23,4 @@ C 运行库函数（如字符串操作和缓冲区操作例程）期望方向标
 
 ## <a name="see-also"></a>另请参阅
 
-[CRT 库功能](../c-runtime-library/crt-library-features.md)
+[C 运行时 (CRT) 和 c + + 标准库 (STL) `.lib` 文件](../c-runtime-library/crt-library-features.md)

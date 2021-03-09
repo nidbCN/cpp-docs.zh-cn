@@ -28,12 +28,12 @@ helpviewer_keywords:
 - Streaming SIMD Extensions 2 instructions
 - set_SSE2_enable function
 ms.assetid: 55db895d-fc1e-475a-9110-b781a9bb51c5
-ms.openlocfilehash: a9c82b2f17d90bc158ac77b8d7ad9625491856aa
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: f5b7bc8c0d18423ac981275e08dceef85197af4e
+ms.sourcegitcommit: 90c300b74f6556cb5d989802d2e80d79542f55e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97211201"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102514507"
 ---
 # <a name="_set_sse2_enable"></a>_set_SSE2_enable
 
@@ -47,7 +47,7 @@ int _set_SSE2_enable(
 );
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 flag <br/>
 1 表示启用 SSE2 实现；0 表示禁用 SSE2 实现。 默认情况下，在支持 SSE2 实现的处理器上启用 SSE2 实现。
@@ -56,7 +56,7 @@ flag <br/>
 
 如果启用 SSE2 实现，则值为非零；如果禁用 SSE2 实现，则值为零。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 以下函数具有可使用 **_set_SSE2_enable** 启用的 SSE2 实现：
 
@@ -114,6 +114,6 @@ int main()
 SSE2 enabled.
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[CRT 库功能](../../c-runtime-library/crt-library-features.md)<br/>
+[C 运行时 (CRT) 和 c + + 标准库 (STL) `.lib` 文件](../../c-runtime-library/crt-library-features.md)

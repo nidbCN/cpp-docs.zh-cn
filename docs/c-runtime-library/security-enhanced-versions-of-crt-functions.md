@@ -7,12 +7,12 @@ helpviewer_keywords:
 - security-enhanced CRT
 - CRT, security enhancements
 ms.assetid: f87e5a01-4cb2-4379-9e8f-d4693828c55a
-ms.openlocfilehash: 95e94eb7790ef589fee3287b6cee8997faac7ab6
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: eda9a98593bb0951c9be357c35492eaf129e3582
+ms.sourcegitcommit: 90c300b74f6556cb5d989802d2e80d79542f55e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97277201"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102514715"
 ---
 # <a name="security-enhanced-versions-of-crt-functions"></a>CRT 函数的安全增强版本
 
@@ -20,7 +20,7 @@ ms.locfileid: "97277201"
 
 ## <a name="secure-functions"></a>安全函数
 
-|CRT 函数|安全性增强的函数|使用|
+|CRT 函数|安全性增强的函数|用途|
 |------------------|--------------------------------|---------|
 |[_access、_waccess](../c-runtime-library/reference/access-waccess.md)|[_access_s、_waccess_s](../c-runtime-library/reference/access-s-waccess-s.md)|确定文件访问权限|
 |[_alloca](../c-runtime-library/reference/alloca.md)|[_malloca](../c-runtime-library/reference/malloca.md)|在堆栈上分配内存|
@@ -100,6 +100,6 @@ ms.locfileid: "97277201"
 |[wcstombs、_wcstombs_l](../c-runtime-library/reference/wcstombs-wcstombs-l.md)|[wcstombs_s、_wcstombs_s_l](../c-runtime-library/reference/wcstombs-s-wcstombs-s-l.md)|将宽字符序列转换为对应的多字节字符序列|
 |[wctomb、_wctomb_l](../c-runtime-library/reference/wctomb-wctomb-l.md)|[wctomb_s、_wctomb_s_l](../c-runtime-library/reference/wctomb-s-wctomb-s-l.md)|将宽字符转换为对应的多字节字符|
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[CRT 库功能](../c-runtime-library/crt-library-features.md)
+[C 运行时 (CRT) 和 c + + 标准库 (STL) `.lib` 文件](../c-runtime-library/crt-library-features.md)

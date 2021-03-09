@@ -9,12 +9,12 @@ helpviewer_keywords:
 - variable argument functions
 - type checking
 ms.assetid: 1ba7590b-d1c0-4636-b6a0-e231395abdad
-ms.openlocfilehash: cf27847bf2aeef278fb4699cea5a0cf74a961086
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: 9afb4146f7bbd08b35df20972345285bb353e4d3
+ms.sourcegitcommit: 90c300b74f6556cb5d989802d2e80d79542f55e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97162347"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102514221"
 ---
 # <a name="type-checking-crt"></a>类型检查 (CRT)
 
@@ -32,6 +32,6 @@ ms.locfileid: "97162347"
 
 编译器会对这些函数的宽字符对等执行相同的有限类型检查。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[CRT 库功能](../c-runtime-library/crt-library-features.md)
+[C 运行时 (CRT) 和 c + + 标准库 (STL) `.lib` 文件](../c-runtime-library/crt-library-features.md)

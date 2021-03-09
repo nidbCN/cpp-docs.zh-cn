@@ -8,12 +8,12 @@ helpviewer_keywords:
 - CRT
 - runtime libraries
 - CRT, reference
-ms.openlocfilehash: c574230d5d2861dd8734d8927f0e91402bc224bf
-ms.sourcegitcommit: 6ed44d9c3fb32e965e363b9c69686739a90a2117
+ms.openlocfilehash: f613f70ed39947605a4ce2b8524c8a0f6d069c68
+ms.sourcegitcommit: 90c300b74f6556cb5d989802d2e80d79542f55e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102465562"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102514403"
 ---
 # <a name="microsoft-c-runtime-library-crt-reference"></a>Microsoft C 运行时库 (CRT) 参考
 
@@ -47,8 +47,8 @@ Microsoft 运行时库为 Microsoft Windows 操作系统编程提供了例程。
 [语言和国家/地区字符串](locale-names-languages-and-country-region-strings.md)\
 介绍如何使用 `setlocale` 函数设置语言和国家/地区字符串。
 
-[C 运行时 (CRT) 和 c + + 标准库 `.lib` 文件](crt-library-features.md)\
-讨论 `.lib` 组成 C 运行时库及其关联编译器选项和预处理器指令的文件。
+[C 运行时 (CRT) 和 c + + 标准库 (STL) `.lib` 文件](crt-library-features.md)\
+`.lib`组成 C 运行时库及其关联编译器选项和预处理器指令的文件列表。
 
 ## <a name="related-sections"></a>相关章节
 

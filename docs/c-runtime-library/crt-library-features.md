@@ -17,14 +17,14 @@ helpviewer_keywords:
 - libraries [C++]
 - libraries [C++], run-time
 - linking [C++], libraries
-ms.openlocfilehash: 395158a3db37e431f0972bb35f1e5161c9f4bc81
-ms.sourcegitcommit: 6ed44d9c3fb32e965e363b9c69686739a90a2117
+ms.openlocfilehash: dab3d767865b91f8a8e567488698a197c35c9b74
+ms.sourcegitcommit: 90c300b74f6556cb5d989802d2e80d79542f55e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102465549"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102514689"
 ---
-# <a name="c-runtime-crt-and-c-standard-library-lib-files"></a>C 运行时 (CRT) 和 c + + 标准库 `.lib` 文件
+# <a name="c-runtime-crt-and-c-standard-library-stl-lib-files"></a>C 运行时 (CRT) 和 c + + 标准库 (STL) `.lib` 文件
 
 本主题列出了在 `.lib` 开发应用程序时可以链接的 Microsoft C 运行时库文件，以及其关联的编译器选项和预处理器指令。
 

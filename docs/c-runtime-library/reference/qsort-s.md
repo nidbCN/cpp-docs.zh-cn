@@ -31,12 +31,12 @@ helpviewer_keywords:
 - qsort_s function
 - sorting arrays
 ms.assetid: 6ee817b0-4408-4355-a5d4-6605e419ab91
-ms.openlocfilehash: 01890db21bc1eb470b57aa796313da4c6f0c50a8
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: 0f0132cbb1210d6289f676f3474683803b58a5a6
+ms.sourcegitcommit: 90c300b74f6556cb5d989802d2e80d79542f55e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97137158"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102514468"
 ---
 # <a name="qsort_s"></a>qsort_s
 
@@ -54,7 +54,7 @@ void qsort_s(
 );
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *base*<br/>
 目标数组的开头。
@@ -71,7 +71,7 @@ width <br/>
 *上下文*<br/>
 指向上下文的指针，它可以是 *比较* 例程需要访问的任何对象。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 **Qsort_s** 函数实现了一种快速排序算法，用于对 *数字* 元素数组（每个 *宽度* 字节）进行排序。 参数 *基* 是指向要排序的数组基的指针。 **qsort_s** 用已排序的元素覆盖此数组。 参数 *比较* 是指向用户提供的例程的指针，它比较两个数组元素，并返回指定其关系的值。 **qsort_s** 在排序过程中一次或多次调用 *比较* 例程，将指针传递给每个调用上的两个数组元素：
 
@@ -81,7 +81,7 @@ compare( context, (void *) & elem1, (void *) & elem2 );
 
 该例程必须比较这些元素，然后返回下列值之一：
 
-|返回值|描述|
+|返回值|说明|
 |------------------|-----------------|
 |< 0|**elem1** 小于 **elem2**|
 |0|**elem1** 等效于 **elem2**|
@@ -112,7 +112,7 @@ compare( context, (void *) & elem1, (void *) & elem2 );
 
 有关其他兼容性信息，请参阅[兼容性](../../c-runtime-library/compatibility.md)。
 
-**库：**[CRT 库功能](../../c-runtime-library/crt-library-features.md)的所有版本。
+**库：** 所有版本的 [C 运行](../../c-runtime-library/crt-library-features.md)库。
 
 ## <a name="example"></a>示例
 
@@ -268,7 +268,7 @@ España Español espantado
 table tablet tableux
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [搜索和排序](../../c-runtime-library/searching-and-sorting.md)<br/>
 [bsearch_s](bsearch-s.md)<br/>

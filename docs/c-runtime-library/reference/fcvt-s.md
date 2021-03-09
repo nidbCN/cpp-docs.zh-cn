@@ -31,12 +31,12 @@ helpviewer_keywords:
 - floating-point functions, converting number to string
 - _fcvt_s function
 ms.assetid: 48671197-1d29-4c2b-a5d8-d2368f5f68a1
-ms.openlocfilehash: dd4d58b39d4c18f2fff7da54c5fbd0f2346dfdd4
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: 62b72a9f71f967077169086371ebf36542b154ed
+ms.sourcegitcommit: 90c300b74f6556cb5d989802d2e80d79542f55e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97235874"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102514442"
 ---
 # <a name="_fcvt_s"></a>_fcvt_s
 
@@ -63,7 +63,7 @@ errno_t _fcvt_s(
 ); // C++ only
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *宽限*<br/>
 所提供的缓冲区将保留转换的结果。
@@ -91,7 +91,7 @@ errno_t _fcvt_s(
 
 ### <a name="error-conditions"></a>错误条件
 
-|*宽限*|*sizeInBytes*|值|count|dec|Sign|返回|*缓冲区* 中的值|
+|*宽限*|*sizeInBytes*|value|计数|dec|签名|返回|*缓冲区* 中的值|
 |--------------|-------------------|-----------|-----------|---------|----------|------------|-----------------------|
 |**NULL**|any|any|any|any|any|**EINVAL**|未修改。|
 |Not **NULL** (指向有效内存) |<=0|any|any|any|any|**EINVAL**|未修改。|
@@ -102,7 +102,7 @@ errno_t _fcvt_s(
 
 如果 *缓冲区* 未指向有效内存且不为 **NULL**，则 **_fcvt_s** 可能会产生访问冲突。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 **_Fcvt_s** 函数将浮点数转换为以 null 值结束的字符串。 *值* 参数是要转换的浮点数。 **_fcvt_s** 将 *值* 的位数存储为字符串，并在 ( "\ 0" ) 追加 null 字符。 *Count* 参数指定小数点后要存储的位数。 多余的数字被舍入到 *计数* 位置。 如果精度小于 *计数* 位数，则用零填充字符串。
 
@@ -126,7 +126,7 @@ errno_t _fcvt_s(
 
 有关兼容性的详细信息，请参阅[兼容性](../../c-runtime-library/compatibility.md)。
 
-**库：**[CRT 库功能](../../c-runtime-library/crt-library-features.md)的所有版本。
+**库：** 所有版本的 [C 运行](../../c-runtime-library/crt-library-features.md)库。
 
 ## <a name="example"></a>示例
 
@@ -160,7 +160,7 @@ int main()
 Converted value: 120000
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [数据转换](../../c-runtime-library/data-conversion.md)<br/>
 [浮点支持](../../c-runtime-library/floating-point-support.md)<br/>
