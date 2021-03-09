@@ -6,12 +6,12 @@ ms.date: 07/25/2020
 helpviewer_keywords:
 - keywords [C++]
 ms.assetid: d7ca94a8-f785-41ce-9f73-d3c4fd508489
-ms.openlocfilehash: b875b4df797985dc21f54f48ceeaa86574f31ac6
-ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
+ms.openlocfilehash: 1144558a6a4847e158579bf453e3bf3b45c0a199
+ms.sourcegitcommit: 6ed44d9c3fb32e965e363b9c69686739a90a2117
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91498753"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102465510"
 ---
 # <a name="keywords-c"></a>关键字 (C++)
 
@@ -122,11 +122,11 @@ ms.locfileid: "91498753"
     :::column-end:::
 :::row-end:::
 
-Microsoft<sup>特定的</sup> **`__asm`** 关键字替代 c + + **`asm`** 语法。 **`asm`** 保留以与其他 c + + 实现兼容，但未实现。 用于 **`__asm`** x86 目标上的内联程序集。 对于其他目标，Microsoft c + + 不支持内联程序集。
+Microsoft <sup>特定的</sup> **`__asm`** 关键字替代 c + + **`asm`** 语法。 **`asm`** 保留以与其他 c + + 实现兼容，但未实现。 用于 **`__asm`** x86 目标上的内联程序集。 对于其他目标，Microsoft c + + 不支持内联程序集。
 
 <sup>b</sup> [`/permissive-`](../build/reference/permissive-standards-conformance.md)) 指定或[ `/Za` \( 禁用语言扩展](../build/reference/za-ze-disable-language-extensions.md)时，扩展运算符同义词为关键字。 启用 Microsoft 扩展后，它们不是关键字。
 
-<sup>c</sup>如果 [`/std:c++latest`](../build/reference/std-specify-language-standard-version.md) 指定，则支持 c。
+<sup></sup>如果 [`/std:c++latest`](../build/reference/std-specify-language-standard-version.md) 指定，则支持 c。
 
 ## <a name="microsoft-specific-c-keywords"></a>特定于 Microsoft 的 c + + 关键字
 
@@ -221,13 +221,14 @@ Microsoft<sup>特定的</sup> **`__asm`** 关键字替代 c + + **`asm`** 语法
     :::column-end:::
     :::column:::
         [`noreturn`](noreturn.md)\
+        [`no_sanitize_address`](no-sanitize-address.md)\
         [`nothrow`](nothrow-cpp.md)\
         [`novtable`](novtable.md)\
         [`process`](process.md)\
-        [`property`](property-cpp.md)\
-        [`restrict`](restrict.md)
+        [`property`](property-cpp.md)
     :::column-end:::
     :::column:::
+        [`restrict`](restrict.md)\
         [`safebuffers`](safebuffers.md)\
         [`selectany`](selectany.md)\
         [`spectre`](spectre.md)\
@@ -290,7 +291,7 @@ Microsoft<sup>特定的</sup> **`__asm`** 关键字替代 c + + **`asm`** 语法
 
 <sup>g</sup> 适用于 c + +/cli
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [词法约定](lexical-conventions.md)<br/>
 [C + + 内置运算符、优先级和结合性](cpp-built-in-operators-precedence-and-associativity.md)

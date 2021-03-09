@@ -4,12 +4,12 @@ description: Microsoft C/c + + 编译器命令行选项的按字母顺序排列�
 ms.date: 07/29/2020
 helpviewer_keywords:
 - compiler options, C++
-ms.openlocfilehash: 532ee4aceef281f7aa52fee6cd405a3520409218
-ms.sourcegitcommit: 48b897797b3132ae934b1d191e3870c3c2466335
+ms.openlocfilehash: de83cd5e2d649b88de4e21f3d828f68504705dc2
+ms.sourcegitcommit: 6ed44d9c3fb32e965e363b9c69686739a90a2117
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97514549"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102465361"
 ---
 # <a name="compiler-options-listed-alphabetically"></a>按字母顺序列出的编译器选项
 
@@ -56,6 +56,7 @@ ms.locfileid: "97514549"
 | [`/Fp`](fp-name-dot-pch-file.md) | 指定预编译头文件名。 |
 | [`/FR`](fr-fr-create-dot-sbr-file.md)<br /><br /> [`/Fr`](fr-fr-create-dot-sbr-file.md) | 生成浏览器文件。 **`/Fr`** 已弃用。 |
 | [`/FS`](fs-force-synchronous-pdb-writes.md) | 通过 MSPDBSRV.EXE (PDB) 文件强制对程序数据库执行所有写入操作的序列化。 |
+| [`/fsanitize`](fsanitize.md) | 启用 sanitizer 检测的编译，如 AddressSanitizer。 |
 | [`/FU`](fu-name-forced-hash-using-file.md) | 强制使用文件名，就像它已被传递到 [`#using`](../../preprocessor/hash-using-directive-cpp.md) 指令一样。 |
 | [`/Fx`](fx-merge-injected-code.md) | 将插入的代码与源文件合并。 |
 | [`/GA`](ga-optimize-for-windows-application.md) | 优化 Windows 应用程序的代码。 |

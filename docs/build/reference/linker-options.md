@@ -10,12 +10,12 @@ helpviewer_keywords:
 - libraries [C++], linking to COFF
 - LINK tool [C++], linker options
 ms.assetid: c1d51b8a-bd23-416d-81e4-900e02b2c129
-ms.openlocfilehash: 0d85361b8d4b5896d9ed7beae0d310fe28dc98e9
-ms.sourcegitcommit: e58918c45316d799c1952ca7797a85adbcd0c472
+ms.openlocfilehash: e426c085acdd0d7bcfeb00b17dcf733a9b856993
+ms.sourcegitcommit: 6ed44d9c3fb32e965e363b9c69686739a90a2117
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89281791"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102465309"
 ---
 # <a name="linker-options"></a>链接器选项
 
@@ -67,7 +67,7 @@ LINK.exe 将通用对象文件格式 (COFF) 对象文件和库链接起来，以
 |[/DRIVER](driver-windows-nt-kernel-mode-driver.md)|创建内核模式驱动程序。|
 |[/DYNAMICBASE](dynamicbase-use-address-space-layout-randomization.md)|指定是否在加载时使用地址空间布局随机化 (ASLR) 功能生成变基的可执行映像。|
 |[/ENTRY](entry-entry-point-symbol.md)|设置起始地址。|
-|[/ERRORREPORT](errorreport-report-internal-linker-errors.md)| 已否决。 错误报告由 [Windows 错误报告 (WER) ](/windows/win32/wer/windows-error-reporting) 设置控制。 |
+|[/ERRORREPORT](errorreport-report-internal-linker-errors.md)| 已弃用。 错误报告由 [Windows 错误报告 (WER) ](/windows/win32/wer/windows-error-reporting) 设置控制。 |
 |[/EXPORT](export-exports-a-function.md)|导出函数。|
 |[/FILEALIGN](filealign.md)|将输出文件中的部分与指定值的倍数对齐。|
 |[/FIXED](fixed-fixed-base-address.md)|创建只能在其首选基址加载的程序。|
@@ -83,6 +83,7 @@ LINK.exe 将通用对象文件格式 (COFF) 对象文件和库链接起来，以
 |[/IMPLIB](implib-name-import-library.md)|重写默认的导入库名。|
 |[/INCLUDE](include-force-symbol-references.md)|强制符号引用。|
 |[/INCREMENTAL](incremental-link-incrementally.md)|控制增量链接。|
+|[/INFERASANLIBS](inferasanlibs.md)|使用推断的 sanitizer 库。|
 |[/INTEGRITYCHECK](integritycheck-require-signature-check.md)|指定模块需要在加载时进行签名检查。|
 |[/KEYCONTAINER](keycontainer-specify-a-key-container-to-sign-an-assembly.md)|指定用来对程序集进行签名的密钥容器。|
 |[/KEYFILE](keyfile-specify-key-or-key-pair-to-sign-an-assembly.md)|指定用来对程序集进行签名的密钥或密钥对。|
@@ -142,5 +143,5 @@ LINK.exe 将通用对象文件格式 (COFF) 对象文件和库链接起来，以
 
 ## <a name="see-also"></a>另请参阅
 
-[C/c + + 生成参考](c-cpp-building-reference.md)\
+[C/C++ 生成参考](c-cpp-building-reference.md)\
 [MSVC 链接器参考](linking.md)

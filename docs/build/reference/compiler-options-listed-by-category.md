@@ -5,12 +5,12 @@ ms.date: 07/29/2020
 helpviewer_keywords:
 - compiler options, C++
 ms.assetid: c4750dcf-dba0-4229-99b6-45cdecc11729
-ms.openlocfilehash: bf12948658b5f7e3211c423b5302bc52d1b87729
-ms.sourcegitcommit: 48b897797b3132ae934b1d191e3870c3c2466335
+ms.openlocfilehash: b892575719d97ed4a0acb061aae0182ff2d576eb
+ms.sourcegitcommit: 6ed44d9c3fb32e965e363b9c69686739a90a2117
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97514558"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102465374"
 ---
 # <a name="compiler-options-listed-by-category"></a>按类别列出的编译器选项
 
@@ -162,6 +162,7 @@ ms.locfileid: "97514558"
 | [`/errorReport`](errorreport-report-internal-compiler-errors.md) | 已弃用。 错误报告由 [Windows 错误报告 (WER) ](/windows/win32/wer/windows-error-reporting) 设置控制。 |
 | [`/FC`](fc-full-path-of-source-code-file-in-diagnostics.md) | 在诊断文本中显示传递给 *cl.exe* 的源代码文件的完整路径。 |
 | [`/FS`](fs-force-synchronous-pdb-writes.md) | 强制写入 PDB 文件，以便通过 *MSPDBSRV.EXE* 进行序列化。 |
+| [`/fsanitize`](fsanitize.md) | 启用 sanitizer 检测的编译，如 AddressSanitizer。 |
 | [`/H`](h-restrict-length-of-external-names.md) | 已弃用。 限制外部（公共）名称的长度。 |
 | [`/HELP`](help-compiler-command-line-help.md) | 列出编译器选项。 |
 | [`/J`](j-default-char-type-is-unsigned.md) | 更改默认 **`char`** 类型。 |

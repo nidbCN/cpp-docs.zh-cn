@@ -1,31 +1,27 @@
 ---
 title: C 运行时库参考
 description: Microsoft C 运行时库函数的信息和引用的链接。
-ms.date: 10/05/2020
+ms.date: 3/5/2021
 f1_keywords:
 - c.runtime
 helpviewer_keywords:
 - CRT
 - runtime libraries
 - CRT, reference
-ms.assetid: a503e11c-8dca-4846-84fb-025a826c32b8
-ms.openlocfilehash: 2e5fcadca5dcca30370b0f03917650136ab46ee8
-ms.sourcegitcommit: 8caaf5e00aeb727741a273aecafa15de293426cf
+ms.openlocfilehash: c574230d5d2861dd8734d8927f0e91402bc224bf
+ms.sourcegitcommit: 6ed44d9c3fb32e965e363b9c69686739a90a2117
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91806521"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102465562"
 ---
-# <a name="c-runtime-library-reference"></a>C 运行时库引用
+# <a name="microsoft-c-runtime-library-crt-reference"></a>Microsoft C 运行时库 (CRT) 参考
 
-Microsoft 运行时库为 Microsoft Windows 操作系统的编程提供了例程。 这些例程自动执行许多不采用 C 和 C++ 语言提供的常见编程任务。
+Microsoft 运行时库为 Microsoft Windows 操作系统编程提供了例程。 这些例程自动执行许多不采用 C 和 C++ 语言提供的常见编程任务。
 
 库中大部分例程的示例程序包含在独立参考主题中。
 
 ## <a name="in-this-section"></a>本节内容
-
-[C 运行时库](crt-library-features.md)\
-讨论组成 C 运行库的 .lib 文件。
 
 [按类别列出的通用 C 运行时例程](run-time-routines-by-category.md)\
 按类别提供指向运行库的链接。
@@ -50,6 +46,9 @@ Microsoft 运行时库为 Microsoft Windows 操作系统的编程提供了例程
 
 [语言和国家/地区字符串](locale-names-languages-and-country-region-strings.md)\
 介绍如何使用 `setlocale` 函数设置语言和国家/地区字符串。
+
+[C 运行时 (CRT) 和 c + + 标准库 `.lib` 文件](crt-library-features.md)\
+讨论 `.lib` 组成 C 运行时库及其关联编译器选项和预处理器指令的文件。
 
 ## <a name="related-sections"></a>相关章节
 
