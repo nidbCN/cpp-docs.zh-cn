@@ -1,0 +1,47 @@
+### YamlMime:Landing
+title: C/C++ 擦除器 | 用于运行时 bug 检测的检测代码
+summary: 使用 C 和 C++ 擦除器进行缺陷报告、分析和预防。
+metadata:
+  title: C/C++ 擦除器
+  description: 了解如何使用擦除器进行缺陷报告、分析和预防。
+  ms.topic: landing-page
+  author: corob-msft
+  ms.author: corob
+  ms.date: 02/26/2021
+  ms.openlocfilehash: 792d71e8aabdeb72a673d9084a9fe521e6a98ee5
+  ms.sourcegitcommit: 6ed44d9c3fb32e965e363b9c69686739a90a2117
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 03/08/2021
+  ms.locfileid: "102469307"
+landingContent:
+- title: 使用代码擦除器查找 bug
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 了解 AddressSanitizer
+      url: asan.md
+  - linkListType: tutorial
+    links:
+    - text: AddressSanitizer 影子字节
+      url: ./asan-shadow-bytes.md
+    - text: AddressSanitizer 云或分布式测试
+      url: ./asan-offline-crash-dumps.md
+- title: 检测生成
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: AddressSanitizer 生成和语言参考
+      url: ./asan-building.md
+    - text: AddressSanitizer 运行时参考
+      url: ./asan-runtime.md
+    - text: AddressSanitizer 错误示例
+      url: ./asan-error-examples.md
+    - text: AddressSanitizer 已知问题
+      url: ./asan-known-issues.md
+- title: 调试结果
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: AddressSanitizer 调试程序集成
+      url: ./asan-debugger-integration.md

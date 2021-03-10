@@ -10,12 +10,12 @@ metadata:
   author: corob-msft
   ms.author: corob
   ms.date: 06/04/2020
-  ms.openlocfilehash: 487556549e382e6ce8b763229b1c037749263dc7
-  ms.sourcegitcommit: 12eb6a824dd7187a065d44fceca4c410f58e121e
+  ms.openlocfilehash: 6b241b86bfcd4fd16ba80f97bba0500bad59dec1
+  ms.sourcegitcommit: 6ed44d9c3fb32e965e363b9c69686739a90a2117
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 11/06/2020
-  ms.locfileid: "94334128"
+  ms.lasthandoff: 03/08/2021
+  ms.locfileid: "102465574"
 highlightedContent:
   items:
   - title: 安装 Visual Studio 并选择你的 C++ 工作负载
@@ -164,10 +164,12 @@ additionalContent:
         url: /visualstudio/debugger/debugging-native-code
       - text: 分析代码
         url: code-quality/index.yml
-      - text: 提高应用性能
+      - text: 配置文件应用性能
         url: /visualstudio/profiling
       - text: 移植和升级代码
         url: porting/visual-cpp-porting-and-upgrading-guide.md
+      - text: 擦除存在 bug 的代码
+        url: sanitizers/index.yml
     - title: 库
       links:
       - text: C++ 标准库参考

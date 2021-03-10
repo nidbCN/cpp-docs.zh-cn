@@ -1,0 +1,58 @@
+- name: 代码擦除器
+  href: ../sanitizers/index.yml
+- name: AddressSanitizer
+  expanded: true
+  items:
+    - name: AddressSanitizer 概述
+      href: ../sanitizers/asan.md
+    - name: 生成和语言参考
+      href: ../sanitizers/asan-building.md
+    - name: 运行时参考
+      href: ../sanitizers/asan-runtime.md
+    - name: 调试程序集成
+      href: ../sanitizers/asan-debugger-integration.md
+    - name: 影子字节
+      href: ../sanitizers/asan-shadow-bytes.md
+    - name: 云或分布式测试
+      href: ../sanitizers/asan-offline-crash-dumps.md
+    - name: AddressSanitizer 错误示例
+      expanded: true
+      items:
+        - name: AddressSanitizer 错误示例
+          href: ../sanitizers/asan-error-examples.md
+        - name: alloc-dealloc-mismatch 错误
+          href: ../sanitizers/error-alloc-dealloc-mismatch.md
+        - name: allocation-size-too-big 错误
+          href: ../sanitizers/error-allocation-size-too-big.md
+        - name: calloc-overflow 错误
+          href: ../sanitizers/error-calloc-overflow.md
+        - name: double-free 错误
+          href: ../sanitizers/error-double-free.md
+        - name: dynamic-stack-buffer-overflow 错误
+          href: ../sanitizers/error-dynamic-stack-buffer-overflow.md
+        - name: global-buffer-overflow 错误
+          href: ../sanitizers/error-global-buffer-overflow.md
+        - name: heap-buffer-overflow 错误
+          href: ../sanitizers/error-heap-buffer-overflow.md
+        - name: heap-use-after-free 错误
+          href: ../sanitizers/error-heap-use-after-free.md
+        - name: invalid-allocation-alignment 错误
+          href: ../sanitizers/error-invalid-allocation-alignment.md
+        - name: memcpy-param-overlap 错误
+          href: ../sanitizers/error-memcpy-param-overlap.md
+        - name: new-delete-type-mismatch 错误
+          href: ../sanitizers/error-new-delete-type-mismatch.md
+        - name: stack-buffer-overflow 错误
+          href: ../sanitizers/error-stack-buffer-overflow.md
+        - name: stack-buffer-underflow 错误
+          href: ../sanitizers/error-stack-buffer-underflow.md
+        - name: stack-use-after-return 错误
+          href: ../sanitizers/error-stack-use-after-return.md
+        - name: stack-use-after-scope 错误
+          href: ../sanitizers/error-stack-use-after-scope.md
+        - name: strcat-param-overlap 错误
+          href: ../sanitizers/error-strncat-param-overlap.md
+        - name: use-after-poison 错误
+          href: ../sanitizers/error-use-after-poison.md
+    - name: 已知问题
+      href: ../sanitizers/asan-known-issues.md
