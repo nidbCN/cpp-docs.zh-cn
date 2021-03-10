@@ -3,12 +3,12 @@ title: 教程：在远程 Windows 计算机上调试 CMake 项目
 ms.date: 12/4/2020
 ms.topic: tutorial
 description: 如何在 Windows 上使用 Visual Studio C++ 来创建和生成 CMake 项目。 然后在远程 Windows 计算机上部署和调试它。
-ms.openlocfilehash: 742ee831fc30ffe291d68ff97ad4238e57c7e21d
-ms.sourcegitcommit: 3d9cfde85df33002e3b3d7f3509ff6a8dc4c0a21
+ms.openlocfilehash: 575b815559cbe70384b4669c94cf003daa3ee7d7
+ms.sourcegitcommit: 5efc34c2b98d4d0d3e41aec38b213f062c19d078
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98668824"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101844502"
 ---
 # <a name="tutorial-debug-a-cmake-project-on-a-remote-windows-machine"></a>教程：在远程 Windows 计算机上调试 CMake 项目
 
@@ -31,7 +31,7 @@ ms.locfileid: "98668824"
 
 若要设置 Visual Studio 以用于进行跨平台 C++ 开发，请安装目标体系结构的生成工具。 对于本教程，请执行以下操作安装 ARM64 生成工具：
 
-1. 运行 Visual Studio 安装程序。 如果尚未安装 Visual Studio，请参阅[安装 Visual Studio](https://docs.microsoft.com/visualstudio/install/install-visual-studio#:~:text=Install%20Visual%20Studio%201%20Make%20sure%20your%20computer,...%204%20Choose%20workloads.%20...%20More%20items...%20)
+1. 运行 Visual Studio 安装程序。 如果尚未安装 Visual Studio，请参阅[安装 Visual Studio](/visualstudio/install/install-visual-studio)
 1. 在 Visual Studio 安装程序主屏幕上，选择“修改”。
 1. 在顶部的选项中，选择“单个组件”。
 1. 向下滚动到“编译器、生成工具和运行时”部分。
@@ -42,8 +42,8 @@ ms.locfileid: "98668824"
 
 ### <a name="on-the-remote-machine"></a>在远程计算机上
 
-1. 在远程计算机上安装远程工具。 对于本教程，请按照[下载并安装远程工具](https://docs.microsoft.com/visualstudio/debugger/remote-debugging-cpp?%23download-and-install-the-remote-tools#download-and-install-the-remote-tools)中的说明安装 ARM64 工具。
-1. 在远程计算机上启动并配置远程调试器。 对于本教程，请遵循远程 Windows 计算机上[设置远程调试器](https://docs.microsoft.com/visualstudio/debugger/remote-debugging-cpp?%23download-and-install-the-remote-tools#BKMK_setup)中的说明进行操作。
+1. 在远程计算机上安装远程工具。 对于本教程，请按照[下载并安装远程工具](/visualstudio/debugger/remote-debugging-cpp#download-and-install-the-remote-tools)中的说明安装 ARM64 工具。
+1. 在远程计算机上启动并配置远程调试器。 对于本教程，请遵循远程 Windows 计算机上[设置远程调试器](/visualstudio/debugger/remote-debugging-cpp#BKMK_setup)中的说明进行操作。
 
 ## <a name="create-a-cmake-project"></a>创建 CMake 项目
 

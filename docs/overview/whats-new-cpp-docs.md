@@ -2,12 +2,12 @@
 title: C++ 文档的新增内容
 description: Microsoft C/ C++ 编译器、ATL/MFC、C 运行时和标准库文档的新增文档和文档更新。
 ms.date: 02/17/2021
-ms.openlocfilehash: b15d286eb7bd2951ab2b8101a752de2beb57f4a4
-ms.sourcegitcommit: e99db7c3b5f25ece0e152165066c926751a7c2ed
+ms.openlocfilehash: ad626dc598cd17de091801b2c313b7339db4cbc7
+ms.sourcegitcommit: 5efc34c2b98d4d0d3e41aec38b213f062c19d078
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100643568"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101844528"
 ---
 # <a name="microsoft-c-docs-whats-new-for-visual-studio-168"></a>Microsoft C++ 文档：Visual Studio 16.8 的新增功能
 
@@ -198,7 +198,7 @@ ms.locfileid: "100643568"
 
 ## <a name="community-contributors"></a>社区参与者
 
-在此期间，以下人员参与编著了 C++、C 和汇编程序文档。 谢谢！ 如果想要了解如何参与，请参阅 [Microsoft Docs 参与者指南概述](https://docs.microsoft.com/contribute/)。
+在此期间，以下人员参与编著了 C++、C 和汇编程序文档。 谢谢！ 如果想要了解如何参与，请参阅 [Microsoft Docs 参与者指南概述](/contribute/)。
 
 - [yecril71pl](https://github.com/yecril71pl) - Christopher Yeleighton (4)
 - [definedrisk](https://github.com/definedrisk) - Ben (3)
