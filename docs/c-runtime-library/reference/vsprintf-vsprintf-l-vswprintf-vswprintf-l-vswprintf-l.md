@@ -1,7 +1,7 @@
 ---
 description: 了解详细信息： vsprintf、_vsprintf_l、vswprintf、_vswprintf_l、__vswprintf_l
 title: vsprintf、_vsprintf_l、vswprintf、_vswprintf_l、__vswprintf_l
-ms.date: 09/03/2019
+ms.date: 3/9/2021
 api_name:
 - _vswprintf_l
 - _vsprintf_l
@@ -49,13 +49,12 @@ helpviewer_keywords:
 - vswprintf function
 - vsprintf function
 - _vstprintf function
-ms.assetid: b8ef1c0d-58f9-4a18-841a-f1a989e1c29b
-ms.openlocfilehash: dd7e06817049f26e80c4be9f1d3f3df40444feaf
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: 299df4fc02e0761d97e8b64d650af0953a866316
+ms.sourcegitcommit: b04b39940b0c1e265f80fc1951278fdb05a1b30a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97342109"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102621745"
 ---
 # <a name="vsprintf-_vsprintf_l-vswprintf-_vswprintf_l-__vswprintf_l"></a>vsprintf、_vsprintf_l、vswprintf、_vswprintf_l、__vswprintf_l
 
@@ -122,7 +121,7 @@ int _vswprintf_l(
 ); // C++ only
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *宽限*\
 输出的存储位置
@@ -145,7 +144,7 @@ int _vswprintf_l(
 
 有关这些代码及其他错误代码的信息，请参阅 [_doserrno、errno、_sys_errlist 和 _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 其中每个函数都采用一个指向参数列表的指针，然后将给定数据格式化并写入 *缓冲区* 指向的内存。
 
@@ -153,6 +152,7 @@ int _vswprintf_l(
 
 > [!IMPORTANT]
 > 使用 **vsprintf**，无法限制写入的字符数，这意味着使用此函数的代码容易受到缓冲区溢出的影响。 改用 [_vsnprintf](vsnprintf-vsnprintf-vsnprintf-l-vsnwprintf-vsnwprintf-l.md) 或调用 [_vscprintf](vscprintf-vscprintf-l-vscwprintf-vscwprintf-l.md) 以确定需要多大的缓冲区。 此外，请确保该 *格式* 不是用户定义的字符串。 有关详细信息，请参阅 [避免缓冲区溢出](/windows/win32/SecBP/avoiding-buffer-overruns)。
+> 从 Windows 10 版本2004开始， (生成 19041) ， `printf` 函数系列按用于舍入的 IEEE 754 规则打印完全可表示的浮点数。 在以前版本的 Windows 中，准确地表示以 "5" 结尾的浮点数始终向上舍入。 IEEE 754 指出它们必须舍入到最接近的偶数 (也称为 "银行家舍入" ) 。 例如，和都 `printf("%1.0f", 1.5)` `printf("%1.0f", 2.5)` 应该舍入为2。 以前，1.5 将舍入为2，2.5 将舍入为3。 此更改只影响精确的可表示数字。 例如，2.35 (当在内存中表示时，) 将继续向上舍入到2.4。 这些函数所做的舍入现在还遵循由设置的浮点舍入模式 [`fesetround`](fegetround-fesetround2.md) 。 以前，舍入始终选择 `FE_TONEAREST` 行为。 此更改仅影响使用 Visual Studio 2019 版本16.2 和更高版本生成的程序。 若要使用旧的浮点舍入行为，请使用 ["legacy_stdio_float_rounding .obj"](../link-options.md)链接。
 
 **vswprintf** 符合 ISO C 标准，该标准需要 **size_t** 类型的第二个参数 *count*。 若要强制使用旧的非标准行为，请定义 **_CRT_NON_CONFORMING_SWPRINTFS**。 旧的行为可能不在未来的版本中，因此应将代码更改为使用新的符合的行为。
 
@@ -225,7 +225,7 @@ int main( void )
 This is a string
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [流 i/o](../../c-runtime-library/stream-i-o.md)\
 [vprintf 函数](../../c-runtime-library/vprintf-functions.md)\

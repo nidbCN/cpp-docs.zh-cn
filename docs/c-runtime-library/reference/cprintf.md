@@ -1,7 +1,7 @@
 ---
 description: 了解详细信息： cprintf
 title: cprintf
-ms.date: 12/16/2019
+ms.date: 3/9/2021
 api_name:
 - cprintf
 api_location:
@@ -23,13 +23,12 @@ f1_keywords:
 - cprintf
 helpviewer_keywords:
 - cprintf function
-ms.assetid: 573e6634-d7e5-4856-8c01-627dcfbd5fc8
-ms.openlocfilehash: c42a02afaaa820e58f32b251ad760cf3bee825ef
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: b31865ac14653b80ff79f89df968128b727c9991
+ms.sourcegitcommit: b04b39940b0c1e265f80fc1951278fdb05a1b30a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97155899"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102621914"
 ---
 # <a name="cprintf"></a>cprintf
 
@@ -39,3 +38,5 @@ ms.locfileid: "97155899"
 
 > [!IMPORTANT]
 > 此 API 不能用于在 Windows 运行时中执行的应用程序。 有关详细信息，请参阅[通用 Windows 平台应用中不支持的 CRT 函数](../../cppcx/crt-functions-not-supported-in-universal-windows-platform-apps.md)。
+>
+> 从 Windows 10 版本2004开始， (生成 19041) ， `printf` 函数系列按用于舍入的 IEEE 754 规则打印完全可表示的浮点数。 在以前版本的 Windows 中，准确地表示以 "5" 结尾的浮点数始终向上舍入。 IEEE 754 指出它们必须舍入到最接近的偶数 (也称为 "银行家舍入" ) 。 例如，和都 `printf("%1.0f", 1.5)` `printf("%1.0f", 2.5)` 应该舍入为2。 以前，1.5 将舍入为2，2.5 将舍入为3。 此更改只影响精确的可表示数字。 例如，2.35 (当在内存中表示时，) 将继续向上舍入到2.4。 这些函数所做的舍入现在还遵循由设置的浮点舍入模式 [`fesetround`](fegetround-fesetround2.md) 。 以前，舍入始终选择 `FE_TONEAREST` 行为。 此更改仅影响使用 Visual Studio 2019 版本16.2 和更高版本生成的程序。 若要使用旧的浮点舍入行为，请使用链接 [`legacy_stdio_float_rounding.obj`](../link-options.md) 。

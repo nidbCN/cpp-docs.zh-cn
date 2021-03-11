@@ -1,7 +1,7 @@
 ---
 description: 了解详细信息： _cprintf_p、_cprintf_p_l、_cwprintf_p、_cwprintf_p_l
 title: _cprintf_p、_cprintf_p_l、_cwprintf_p、_cwprintf_p_l
-ms.date: 11/04/2016
+ms.date: 3/9/2021
 api_name:
 - _cprintf_p_l
 - _cwprintf_p_l
@@ -46,13 +46,12 @@ helpviewer_keywords:
 - _cwprintf_p function
 - tcprintf_p function
 - cprintf_p function
-ms.assetid: 1f82fd7d-13c8-4c4a-a3e4-db0df3873564
-ms.openlocfilehash: 63b02da66c3eb8856e735eb8445bd688fc1636aa
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: 155e6d0a9842c7ade999979e44418eecd5fd0439
+ms.sourcegitcommit: b04b39940b0c1e265f80fc1951278fdb05a1b30a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97155991"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102621901"
 ---
 # <a name="_cprintf_p-_cprintf_p_l-_cwprintf_p-_cwprintf_p_l"></a>_cprintf_p、_cprintf_p_l、_cwprintf_p、_cwprintf_p_l
 
@@ -84,7 +83,7 @@ int _cwprintf_p_l(
 );
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *format*<br/>
 窗体控件字符串。
@@ -99,7 +98,7 @@ argument <br/>
 
 打印的字符数或负值（如果出错）。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 这些函数使用 **_putch** 和 **_putwch** 函数输出字符，将一系列字符和值直接格式化并打印到控制台。 如果任何) 根据 *格式* 规范的相应格式规范进行转换和输出，则每个 *参数* (。 格式与 [printf_p](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)函数的 *格式* 参数具有相同的形式和函数。 **_Cprintf_p** 和 **cprintf_s** 之间的区别在于 **_cprintf_p** 支持位置参数，这允许指定在格式字符串中使用参数的顺序。 有关详细信息，请参阅 [printf_p 位置参数](../../c-runtime-library/printf-p-positional-parameters.md)。
 
@@ -107,10 +106,13 @@ argument <br/>
 
 这些具有 **_l** 后缀的函数的版本相同，只不过它们使用传入的区域设置参数而不是当前区域设置。
 
+同样， **_cprintf_s** 和 **_cwprintf_s**，它们会验证输入指针和格式字符串。 如果 *格式* 或 *参数* 为 **NULL**，或者格式字符串包含无效的格式字符，则这些函数将调用无效参数处理程序，如 [参数验证](../../c-runtime-library/parameter-validation.md)中所述。 如果允许执行继续，则这些函数将返回-1，并将 **errno** 设置为 **EINVAL**。
+
 > [!IMPORTANT]
 > 确保 format 不是用户定义的字符串。
-
-同样， **_cprintf_s** 和 **_cwprintf_s**，它们会验证输入指针和格式字符串。 如果 *格式* 或 *参数* 为 **NULL**，或者格式字符串包含无效的格式字符，则这些函数将调用无效参数处理程序，如 [参数验证](../../c-runtime-library/parameter-validation.md)中所述。 如果允许执行继续，则这些函数将返回-1，并将 **errno** 设置为 **EINVAL**。
+>
+>
+> 从 Windows 10 版本2004开始， (生成 19041) ， `printf` 函数系列按用于舍入的 IEEE 754 规则打印完全可表示的浮点数。 在以前版本的 Windows 中，准确地表示以 "5" 结尾的浮点数始终向上舍入。 IEEE 754 指出它们必须舍入到最接近的偶数 (也称为 "银行家舍入" ) 。 例如，和都 `printf("%1.0f", 1.5)` `printf("%1.0f", 2.5)` 应该舍入为2。 以前，1.5 将舍入为2，2.5 将舍入为3。 此更改只影响精确的可表示数字。 例如，2.35 (当在内存中表示时，) 将继续向上舍入到2.4。 这些函数所做的舍入现在还遵循由设置的浮点舍入模式 [`fesetround`](fegetround-fesetround2.md) 。 以前，舍入始终选择 `FE_TONEAREST` 行为。 此更改仅影响使用 Visual Studio 2019 版本16.2 和更高版本生成的程序。 若要使用旧的浮点舍入行为，请使用链接 [`legacy_stdio_float_rounding.obj`](../link-options.md) 。
 
 ### <a name="generic-text-routine-mappings"></a>一般文本例程映射
 
@@ -156,7 +158,7 @@ int main( void )
 -16  001d  62511  A Test
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [控制台和端口 i/o](../../c-runtime-library/console-and-port-i-o.md)<br/>
 [_cscanf、_cscanf_l、_cwscanf、_cwscanf_l](cscanf-cscanf-l-cwscanf-cwscanf-l.md)<br/>

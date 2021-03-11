@@ -1,7 +1,7 @@
 ---
 description: 了解详细信息： fprintf、_fprintf_l、fwprintf、_fwprintf_l
 title: fprintf、_fprintf_l、fwprintf、_fwprintf_l
-ms.date: 11/04/2016
+ms.date: 3/9/2021
 api_name:
 - fwprintf
 - fprintf
@@ -38,13 +38,12 @@ helpviewer_keywords:
 - _ftprintf_l function
 - print formatted data to streams
 - fwprintf_l function
-ms.assetid: 34a87e1c-6e4d-4d48-a611-58314dd4dc4b
-ms.openlocfilehash: 05896f56ac7058be1618833d6f50a8935a61a14f
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: 4e56182a9e32beb826cb7257cc2199e3ebe19e77
+ms.sourcegitcommit: b04b39940b0c1e265f80fc1951278fdb05a1b30a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97178675"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102621953"
 ---
 # <a name="fprintf-_fprintf_l-fwprintf-_fwprintf_l"></a>fprintf、_fprintf_l、fwprintf、_fwprintf_l
 
@@ -77,7 +76,7 @@ int _fwprintf_l(
 );
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *流*<br/>
 指向 **文件** 结构的指针。
@@ -97,7 +96,7 @@ argument <br/>
 
 有关这些代码以及其他错误代码的详细信息，请参阅 [_doserrno、errno、_sys_errlist 和 _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 **fprintf** 设置格式并将一系列字符和值输出到输出 *流* 中。 如果根据 *格式* 规范转换和输出任何) ，则每个函数 *参数* (。 对于 **fprintf**， *格式* 参数具有相同的语法，并使用它在 **printf** 中。
 
@@ -107,6 +106,9 @@ argument <br/>
 
 > [!IMPORTANT]
 > 确保 format 不是用户定义的字符串。
+>
+>
+> 从 Windows 10 版本2004开始， (生成 19041) ， `printf` 函数系列按用于舍入的 IEEE 754 规则打印完全可表示的浮点数。 在以前版本的 Windows 中，准确地表示以 "5" 结尾的浮点数始终向上舍入。 IEEE 754 指出它们必须舍入到最接近的偶数 (也称为 "银行家舍入" ) 。 例如，和都 `printf("%1.0f", 1.5)` `printf("%1.0f", 2.5)` 应该舍入为2。 以前，1.5 将舍入为2，2.5 将舍入为3。 此更改只影响精确的可表示数字。 例如，2.35 (当在内存中表示时，) 将继续向上舍入到2.4。 这些函数所做的舍入现在还遵循由设置的浮点舍入模式 [`fesetround`](fegetround-fesetround2.md) 。 以前，舍入始终选择 `FE_TONEAREST` 行为。 此更改仅影响使用 Visual Studio 2019 版本16.2 和更高版本生成的程序。 若要使用旧的浮点舍入行为，请使用 ["legacy_stdio_float_rounding .obj"](../link-options.md)链接。
 
 ### <a name="generic-text-routine-mappings"></a>一般文本例程映射
 
@@ -163,7 +165,7 @@ this is a string
 1.500000
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [流 I/O](../../c-runtime-library/stream-i-o.md)<br/>
 [_cprintf、_cprintf_l、_cwprintf、_cwprintf_l](cprintf-cprintf-l-cwprintf-cwprintf-l.md)<br/>

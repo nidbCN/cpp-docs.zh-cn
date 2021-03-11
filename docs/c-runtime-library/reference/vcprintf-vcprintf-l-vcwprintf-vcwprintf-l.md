@@ -1,7 +1,7 @@
 ---
 description: 了解详细信息： _vcprintf、_vcprintf_l、_vcwprintf、_vcwprintf_l
 title: _vcprintf、_vcprintf_l、_vcwprintf、_vcwprintf_l
-ms.date: 11/04/2016
+ms.date: 3/9/2021
 api_name:
 - _vcwprintf
 - _vcprintf_l
@@ -46,13 +46,12 @@ helpviewer_keywords:
 - vcwprintf_l function
 - vtcprintf function
 - formatted text [C++]
-ms.assetid: 4ef8d237-6200-4b66-8731-8c57e5624bb1
-ms.openlocfilehash: 84bc79f113d13882811368aaf8918a936dab7f3a
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: 576a4ed7b600fa7533433c03797cd34d1ce9cbf0
+ms.sourcegitcommit: b04b39940b0c1e265f80fc1951278fdb05a1b30a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97299197"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102621407"
 ---
 # <a name="_vcprintf-_vcprintf_l-_vcwprintf-_vcwprintf_l"></a>_vcprintf、_vcprintf_l、_vcwprintf、_vcwprintf_l
 
@@ -84,7 +83,7 @@ int _vcwprintf_l(
 );
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *format*<br/>
 格式规范。
@@ -101,7 +100,7 @@ int _vcwprintf_l(
 
 写入的字符数，如果发生输出错误，则为一个负值。 如果 *format* 为空指针，则将调用无效参数处理程序，如 [参数验证](../../c-runtime-library/parameter-validation.md)中所述。 如果允许执行继续，则将 **errno** 设置为 **EINVAL** ，并返回-1。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 每个函数均采用一个指向参数列表的指针，然后将给定数据格式化并写入到控制台。 **_vcwprintf** 是 **_vcprintf** 的宽字符版本。 它将采用一个宽字符字符串作为参数。
 
@@ -109,6 +108,7 @@ int _vcwprintf_l(
 
 > [!IMPORTANT]
 > 确保 format 不是用户定义的字符串。 有关详细信息，请参阅 [避免缓冲区溢出](/windows/win32/SecBP/avoiding-buffer-overruns)。
+> 从 Windows 10 版本2004开始， (生成 19041) ， `printf` 函数系列按用于舍入的 IEEE 754 规则打印完全可表示的浮点数。 在以前版本的 Windows 中，准确地表示以 "5" 结尾的浮点数始终向上舍入。 IEEE 754 指出它们必须舍入到最接近的偶数 (也称为 "银行家舍入" ) 。 例如，和都 `printf("%1.0f", 1.5)` `printf("%1.0f", 2.5)` 应该舍入为2。 以前，1.5 将舍入为2，2.5 将舍入为3。 此更改只影响精确的可表示数字。 例如，2.35 (当在内存中表示时，) 将继续向上舍入到2.4。 这些函数所做的舍入现在还遵循由设置的浮点舍入模式 [`fesetround`](fegetround-fesetround2.md) 。 以前，舍入始终选择 `FE_TONEAREST` 行为。 此更改仅影响使用 Visual Studio 2019 版本16.2 和更高版本生成的程序。 若要使用旧的浮点舍入行为，请使用 ["legacy_stdio_float_rounding .obj"](../link-options.md)链接。
 
 ### <a name="generic-text-routine-mappings"></a>一般文本例程映射
 
@@ -160,7 +160,7 @@ int main()
     (Related to symbol '<symbol>' defined on line 5).
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [流 I/O](../../c-runtime-library/stream-i-o.md)<br/>
 [vprintf 函数](../../c-runtime-library/vprintf-functions.md)<br/>

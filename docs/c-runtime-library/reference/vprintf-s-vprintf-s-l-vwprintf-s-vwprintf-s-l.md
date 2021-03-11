@@ -1,7 +1,7 @@
 ---
 description: 了解详细信息： vprintf_s、_vprintf_s_l、vwprintf_s、_vwprintf_s_l
 title: vprintf_s、_vprintf_s_l、vwprintf_s、_vwprintf_s_l
-ms.date: 11/04/2016
+ms.date: 3/9/2021
 api_name:
 - _vwprintf_s_l
 - vwprintf_s
@@ -38,13 +38,12 @@ helpviewer_keywords:
 - _vprintf_s_l function
 - formatted text [C++]
 - vprintf_s function
-ms.assetid: cf864996-a530-4b40-9c30-54c4cef439c8
-ms.openlocfilehash: 4bbe0d6220ad0dbf00e03fcd092cc57736806d8e
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: 8d6641b72e0d55ba9f5432df77ce099a95d320f9
+ms.sourcegitcommit: b04b39940b0c1e265f80fc1951278fdb05a1b30a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97155756"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102621693"
 ---
 # <a name="vprintf_s-_vprintf_s_l-vwprintf_s-_vwprintf_s_l"></a>vprintf_s、_vprintf_s_l、vwprintf_s、_vwprintf_s_l
 
@@ -73,7 +72,7 @@ int _vwprintf_s_l(
 );
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *format*<br/>
 格式规范。
@@ -92,7 +91,7 @@ int _vwprintf_s_l(
 
 有关这些代码及其他错误代码的信息，请参阅 [_doserrno、errno、_sys_errlist 和 _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 其中每个函数都采用一个指向参数列表的指针，然后将给定数据格式化并写入 **stdout**。
 
@@ -104,6 +103,7 @@ int _vwprintf_s_l(
 
 > [!IMPORTANT]
 > 确保 format 不是用户定义的字符串。 有关详细信息，请参阅 [避免缓冲区溢出](/windows/win32/SecBP/avoiding-buffer-overruns)。
+> 从 Windows 10 版本2004开始， (生成 19041) ， `printf` 函数系列按用于舍入的 IEEE 754 规则打印完全可表示的浮点数。 在以前版本的 Windows 中，准确地表示以 "5" 结尾的浮点数始终向上舍入。 IEEE 754 指出它们必须舍入到最接近的偶数 (也称为 "银行家舍入" ) 。 例如，和都 `printf("%1.0f", 1.5)` `printf("%1.0f", 2.5)` 应该舍入为2。 以前，1.5 将舍入为2，2.5 将舍入为3。 此更改只影响精确的可表示数字。 例如，2.35 (当在内存中表示时，) 将继续向上舍入到2.4。 这些函数所做的舍入现在还遵循由设置的浮点舍入模式 [`fesetround`](fegetround-fesetround2.md) 。 以前，舍入始终选择 `FE_TONEAREST` 行为。 此更改仅影响使用 Visual Studio 2019 版本16.2 和更高版本生成的程序。 若要使用旧的浮点舍入行为，请使用 ["legacy_stdio_float_rounding .obj"](../link-options.md)链接。
 
 ### <a name="generic-text-routine-mappings"></a>一般文本例程映射
 
@@ -123,7 +123,7 @@ int _vwprintf_s_l(
 
 通用 Windows 平台 (UWP) 应用中不支持控制台。 与控制台、 **stdin**、 **stdout** 和 **stderr** 关联的标准流句柄必须重定向，然后 C 运行时函数才能在 UWP 应用中使用它们。 有关其他兼容性信息，请参阅[兼容性](../../c-runtime-library/compatibility.md)。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [流 I/O](../../c-runtime-library/stream-i-o.md)<br/>
 [vprintf 函数](../../c-runtime-library/vprintf-functions.md)<br/>

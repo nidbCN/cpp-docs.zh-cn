@@ -1,7 +1,7 @@
 ---
 description: 了解详细信息： _fprintf_p、_fprintf_p_l、_fwprintf_p、_fwprintf_p_l
 title: _fprintf_p、_fprintf_p_l、_fwprintf_p、_fwprintf_p_l
-ms.date: 11/04/2016
+ms.date: 3/9/2021
 api_name:
 - _fwprintf_p
 - _fprintf_p_l
@@ -44,13 +44,12 @@ helpviewer_keywords:
 - printing [C++], formatted data to streams
 - ftprintf_p_l function
 - fwprintf_p_l function
-ms.assetid: 46b082e1-45ba-4383-9ee4-97015aa50bc6
-ms.openlocfilehash: 543589a864c19e1c1fddde0c6837f680903666cf
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: 70a9ba70c3a9bd45a79d3f203b7dc7da8a9632c0
+ms.sourcegitcommit: b04b39940b0c1e265f80fc1951278fdb05a1b30a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97178623"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102621927"
 ---
 # <a name="_fprintf_p-_fprintf_p_l-_fwprintf_p-_fwprintf_p_l"></a>_fprintf_p、_fprintf_p_l、_fwprintf_p、_fwprintf_p_l
 
@@ -83,7 +82,7 @@ int _fwprintf_p_l(
 );
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *流*<br/>
 指向 **文件** 结构的指针。
@@ -101,7 +100,7 @@ argument <br/>
 
 **_fprintf_p** 和 **_fwprintf_p** 返回在出现输出错误时写入的字符数或返回一个负值。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 **_fprintf_p** 设置格式并将一系列字符和值输出到输出 *流* 中。 如果根据 *格式* 规范转换和输出任何) ，则每个函数 *参数* (。 对于 **_fprintf_p**， *格式* 参数具有相同的语法，并使用它在 **_printf_p** 中。 这些函数支持位置参数，即可以更改格式字符串所使用的参数顺序。 有关位置参数的详细信息，请参阅 [printf_p 位置参数](../../c-runtime-library/printf-p-positional-parameters.md)。
 
@@ -111,6 +110,9 @@ argument <br/>
 
 > [!IMPORTANT]
 > 确保 format 不是用户定义的字符串。
+>
+>
+> 从 Windows 10 版本2004开始， (生成 19041) ， `printf` 函数系列按用于舍入的 IEEE 754 规则打印完全可表示的浮点数。 在以前版本的 Windows 中，准确地表示以 "5" 结尾的浮点数始终向上舍入。 IEEE 754 指出它们必须舍入到最接近的偶数 (也称为 "银行家舍入" ) 。 例如，和都 `printf("%1.0f", 1.5)` `printf("%1.0f", 2.5)` 应该舍入为2。 以前，1.5 将舍入为2，2.5 将舍入为3。 此更改只影响精确的可表示数字。 例如，2.35 (当在内存中表示时，) 将继续向上舍入到2.4。 这些函数所做的舍入现在还遵循由设置的浮点舍入模式 [`fesetround`](fegetround-fesetround2.md) 。 以前，舍入始终选择 `FE_TONEAREST` 行为。 此更改仅影响使用 Visual Studio 2019 版本16.2 和更高版本生成的程序。 若要使用旧的浮点舍入行为，请使用 ["legacy_stdio_float_rounding .obj"](../link-options.md)链接。
 
 与不安全版本一样 (参阅 [fprintf、_fprintf_l、fwprintf _fwprintf_l](fprintf-fprintf-l-fwprintf-fwprintf-l.md)) ，这些函数将验证其参数并调用无效参数处理程序，如 [参数验证](../../c-runtime-library/parameter-validation.md)中所述，如果 *stream* 或 *format* 为 null 指针，或者存在任何未知或格式不正确的格式说明符。 如果允许执行继续，则函数将返回-1，并将 **errno** 设置为 **EINVAL**。
 
@@ -176,7 +178,7 @@ this is a string
 1.500000
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [流 I/O](../../c-runtime-library/stream-i-o.md)<br/>
 [_cprintf、_cprintf_l、_cwprintf、_cwprintf_l](cprintf-cprintf-l-cwprintf-cwprintf-l.md)<br/>

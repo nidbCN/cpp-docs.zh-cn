@@ -1,7 +1,7 @@
 ---
 description: 了解详细信息： sprintf、_sprintf_l、swprintf、_swprintf_l、__swprintf_l
 title: sprintf、_sprintf_l、swprintf、_swprintf_l、__swprintf_l
-ms.date: 06/23/2020
+ms.date: 3/9/2021
 api_name:
 - __swprintf_l
 - sprintf
@@ -49,13 +49,12 @@ helpviewer_keywords:
 - stprintf_l function
 - sprintf_l function
 - formatted text [C++]
-ms.assetid: f6efe66f-3563-4c74-9455-5411ed939b81
-ms.openlocfilehash: 12c7560a57c126e2e35cf78b0d11b1262c14a9e5
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: e8a83a8c92ab873c250e94e9e9317a18c36673a2
+ms.sourcegitcommit: b04b39940b0c1e265f80fc1951278fdb05a1b30a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97292203"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102622096"
 ---
 # <a name="sprintf-_sprintf_l-swprintf-_swprintf_l-__swprintf_l"></a>sprintf、_sprintf_l、swprintf、_swprintf_l、__swprintf_l
 
@@ -109,7 +108,7 @@ int _sprintf_l(
 ); // C++ only
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *宽限*<br/>
 输出的存储位置
@@ -134,12 +133,14 @@ argument <br/>
 
 **sprintf** 返回 *缓冲区* 中存储的字节数，不包括终止 null 字符。 **swprintf** 返回存储在 *缓冲区* 中的宽字符数，不包括终止 null 宽字符。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 **Sprintf** 函数将一系列字符和值存储到 *缓冲区* 中。 如果任何) 根据 *格式* 规范的相应格式规范进行转换和输出，则每个 *参数* (。 该格式包括普通字符，其形式和函数与 [printf](printf-printf-l-wprintf-wprintf-l.md)的 *format* 参数相同。 null 字符追加在写入的最后一个字符后。 如果在重叠的字符串之间发生复制，则此行为不确定。
 
 > [!IMPORTANT]
 > 使用 **sprintf**，无法限制写入的字符数，这意味着使用 **sprintf** 的代码容易受到缓冲区溢出的影响。 请考虑使用相关的函数 [_snprintf](snprintf-snprintf-snprintf-l-snwprintf-snwprintf-l.md)，该函数指定要写入 *缓冲区* 的最大字符数，或使用 [_scprintf](scprintf-scprintf-l-scwprintf-scwprintf-l.md) 确定缓冲区大小。 此外，请确保该 *格式* 不是用户定义的字符串。
+>
+> 从 Windows 10 版本2004开始， (生成 19041) ， `printf` 函数系列按用于舍入的 IEEE 754 规则打印完全可表示的浮点数。 在以前版本的 Windows 中，准确地表示以 "5" 结尾的浮点数始终向上舍入。 IEEE 754 指出它们必须舍入到最接近的偶数 (也称为 "银行家舍入" ) 。 例如，和都 `printf("%1.0f", 1.5)` `printf("%1.0f", 2.5)` 应该舍入为2。 以前，1.5 将舍入为2，2.5 将舍入为3。 此更改只影响精确的可表示数字。 例如，2.35 (当在内存中表示时，) 将继续向上舍入到2.4。 这些函数所做的舍入现在还遵循由设置的浮点舍入模式 [`fesetround`](fegetround-fesetround2.md) 。 以前，舍入始终选择 `FE_TONEAREST` 行为。 此更改仅影响使用 Visual Studio 2019 版本16.2 和更高版本生成的程序。 若要使用旧的浮点舍入行为，请使用 ["legacy_stdio_float_rounding .obj"](../link-options.md)链接。
 
 **swprintf** 是 **sprintf** 的宽字符版本; **swprintf** 的指针参数是宽字符字符串。 **Swprintf** 中的编码错误检测可能与 **sprintf** 不同。 **swprintf** 和 **fwprintf** 的行为相同，只是 **swprintf** 将输出写入字符串而不是类型 **文件** 的目标，而 **swprintf** 要求使用 *count* 参数来指定要写入的最大字符数。 这些具有 **_l** 后缀的函数的版本相同，只不过它们使用传入的区域设置参数而不是当前线程区域设置。
 
@@ -224,7 +225,7 @@ wrote 11 characters
 wrote -1 characters
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [流 I/O](../../c-runtime-library/stream-i-o.md)<br/>
 [fprintf、_fprintf_l、fwprintf、_fwprintf_l](fprintf-fprintf-l-fwprintf-fwprintf-l.md)<br/>

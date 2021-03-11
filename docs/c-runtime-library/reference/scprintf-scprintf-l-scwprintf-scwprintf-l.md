@@ -1,7 +1,7 @@
 ---
 description: 了解详细信息： _scprintf、_scprintf_l、_scwprintf、_scwprintf_l
 title: _scprintf、_scprintf_l、_scwprintf、_scwprintf_l
-ms.date: 11/04/2016
+ms.date: 3/9/2021
 api_name:
 - _scprintf_l
 - _scwprintf
@@ -47,13 +47,12 @@ helpviewer_keywords:
 - formatted text [C++]
 - _scprintf function
 - scwprintf function
-ms.assetid: ecbb0ba6-5f4c-4ce6-a64b-144ad8b5fe92
-ms.openlocfilehash: 8082c2281069b2350cecf032d6378baff7b93557
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: 371b6053354e8b2bdc1b582c0088123a2d57c17d
+ms.sourcegitcommit: b04b39940b0c1e265f80fc1951278fdb05a1b30a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97277227"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102621719"
 ---
 # <a name="_scprintf-_scprintf_l-_scwprintf-_scwprintf_l"></a>_scprintf、_scprintf_l、_scwprintf、_scwprintf_l
 
@@ -82,7 +81,7 @@ int _scwprintf_l(
 );
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *format*<br/>
 窗体控件字符串。
@@ -103,7 +102,7 @@ argument <br/>
 
 有关这些及其他错误代码的信息，请参阅 [_doserrno、errno、_sys_errlist 和 _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 如果根据 *格式* 的相应格式规范转换了任何) ，则每个 *参数* (。 该格式包括普通字符，其形式和函数与 [printf](printf-printf-l-wprintf-wprintf-l.md)的 *format* 参数相同。
 
@@ -111,6 +110,9 @@ argument <br/>
 
 > [!IMPORTANT]
 > 确保 format 不是用户定义的字符串。
+>
+>
+> 从 Windows 10 版本2004开始， (生成 19041) ， `printf` 函数系列按用于舍入的 IEEE 754 规则打印完全可表示的浮点数。 在以前版本的 Windows 中，准确地表示以 "5" 结尾的浮点数始终向上舍入。 IEEE 754 指出它们必须舍入到最接近的偶数 (也称为 "银行家舍入" ) 。 例如，和都 `printf("%1.0f", 1.5)` `printf("%1.0f", 2.5)` 应该舍入为2。 以前，1.5 将舍入为2，2.5 将舍入为3。 此更改只影响精确的可表示数字。 例如，2.35 (当在内存中表示时，) 将继续向上舍入到2.4。 这些函数所做的舍入现在还遵循由设置的浮点舍入模式 [`fesetround`](fegetround-fesetround2.md) 。 以前，舍入始终选择 `FE_TONEAREST` 行为。 此更改仅影响使用 Visual Studio 2019 版本16.2 和更高版本生成的程序。 若要使用旧的浮点舍入行为，请使用 ["legacy_stdio_float_rounding .obj"](../link-options.md)链接。
 
 ### <a name="generic-text-routine-mappings"></a>一般文本例程映射
 
@@ -163,7 +165,7 @@ The length of the following string will be 46.
 The value of Pi is calculated to be 3.141593.
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [流 I/O](../../c-runtime-library/stream-i-o.md)<br/>
 [fprintf、_fprintf_l、fwprintf、_fwprintf_l](fprintf-fprintf-l-fwprintf-fwprintf-l.md)<br/>

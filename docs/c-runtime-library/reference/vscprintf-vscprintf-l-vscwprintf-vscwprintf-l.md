@@ -1,7 +1,7 @@
 ---
 description: 了解详细信息： _vscprintf、_vscprintf_l、_vscwprintf、_vscwprintf_l
 title: _vscprintf、_vscprintf_l、_vscwprintf、_vscwprintf_l
-ms.date: 11/04/2016
+ms.date: 3/9/2021
 api_name:
 - _vscprintf
 - _vscprintf_l
@@ -45,13 +45,12 @@ helpviewer_keywords:
 - formatted text [C++]
 - vscprintf function
 - vscprintf_l function
-ms.assetid: 1bc67d3d-21d5-49c9-ac8d-69e26b16a3c3
-ms.openlocfilehash: 434a444b7b2c8a552c148c7c369a63b0c4a9acf2
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: c516de0a37b7b56f071abed1dc780bf79ac85d89
+ms.sourcegitcommit: b04b39940b0c1e265f80fc1951278fdb05a1b30a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97342161"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102621979"
 ---
 # <a name="_vscprintf-_vscprintf_l-_vscwprintf-_vscwprintf_l"></a>_vscprintf、_vscprintf_l、_vscwprintf、_vscwprintf_l
 
@@ -80,7 +79,7 @@ int _vscwprintf_l(
 );
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *format*<br/>
 窗体控件字符串。
@@ -101,12 +100,14 @@ int _vscwprintf_l(
 
 如果 *format* 为空指针，则将调用无效参数处理程序，如 [参数验证](../../c-runtime-library/parameter-validation.md)中所述。 如果允许执行继续，则函数将返回-1，并将 **errno** 设置为 **EINVAL**。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 如果根据 *格式* 的相应格式规范转换了任何) ，则每个 *参数* (。 该格式包括普通字符，其形式和函数与 [printf](printf-printf-l-wprintf-wprintf-l.md)的 *format* 参数相同。
 
 > [!IMPORTANT]
 > 确保 *format* 是用户定义的字符串，它是 null 终止的并且具有正确的参数数量和类型。 有关详细信息，请参阅 [避免缓冲区溢出](/windows/win32/SecBP/avoiding-buffer-overruns)。
+>
+> 从 Windows 10 版本2004开始， (生成 19041) ， `printf` 函数系列按用于舍入的 IEEE 754 规则打印完全可表示的浮点数。 在以前版本的 Windows 中，准确地表示以 "5" 结尾的浮点数始终向上舍入。 IEEE 754 指出它们必须舍入到最接近的偶数 (也称为 "银行家舍入" ) 。 例如，和都 `printf("%1.0f", 1.5)` `printf("%1.0f", 2.5)` 应该舍入为2。 以前，1.5 将舍入为2，2.5 将舍入为3。 此更改只影响精确的可表示数字。 例如，2.35 (当在内存中表示时，) 将继续向上舍入到2.4。 这些函数所做的舍入现在还遵循由设置的浮点舍入模式 [`fesetround`](fegetround-fesetround2.md) 。 以前，舍入始终选择 `FE_TONEAREST` 行为。 此更改仅影响使用 Visual Studio 2019 版本16.2 和更高版本生成的程序。 若要使用旧的浮点舍入行为，请使用链接 [`legacy_stdio_float_rounding.obj`](../link-options.md) 。
 
 ### <a name="generic-text-routine-mappings"></a>一般文本例程映射
 
@@ -128,7 +129,7 @@ int _vscwprintf_l(
 
 请参阅 [vsprintf](vsprintf-vsprintf-l-vswprintf-vswprintf-l-vswprintf-l.md) 的示例。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [流 I/O](../../c-runtime-library/stream-i-o.md)<br/>
 [fprintf、_fprintf_l、fwprintf、_fwprintf_l](fprintf-fprintf-l-fwprintf-fwprintf-l.md)<br/>

@@ -1,7 +1,7 @@
 ---
 description: 了解详细信息： _cprintf、_cprintf_l、_cwprintf、_cwprintf_l
 title: _cprintf、_cprintf_l、_cwprintf、_cwprintf_l
-ms.date: 11/04/2016
+ms.date: 3/9/2021
 api_name:
 - _cwprintf_l
 - _cprintf_l
@@ -48,13 +48,12 @@ helpviewer_keywords:
 - _cwprintf function
 - cwprintf_l function
 - _cprintf function
-ms.assetid: 67ffefd4-45b3-4be0-9833-d8d26ac7c4e2
-ms.openlocfilehash: a935f43c00fab31a582012e938db16e3aa1a5f6e
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: 95a73090bcf76f56b7310396bce2e1562d2e7723
+ms.sourcegitcommit: b04b39940b0c1e265f80fc1951278fdb05a1b30a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97162373"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102622057"
 ---
 # <a name="_cprintf-_cprintf_l-_cwprintf-_cwprintf_l"></a>_cprintf、_cprintf_l、_cwprintf、_cwprintf_l
 
@@ -82,7 +81,7 @@ int _cwprintf_l(
 );
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *format*<br/>
 窗体控件字符串。
@@ -97,7 +96,7 @@ int _cwprintf_l(
 
 打印的字符数。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 这些函数将一系列字符和值直接设置为控制台，并使用 **_putch** 函数 (**_putwch** 用于 **_cwprintf**) 输出字符。 *Argument_list* 中的每个参数 (根据 *格式* 规范中的相应格式规范转换和输出任何) 。 *Format* 参数将 [格式规范语法用于 printf 和 wprintf 函数](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)。 与 **fprintf**、 **printf** 和 **sprintf** 函数不同，在输出时， **_cprintf** 和 **_cwprintf** 都不会将换行符转换为回车换行符 (CR) 组合。
 
@@ -109,6 +108,10 @@ int _cwprintf_l(
 
 > [!IMPORTANT]
 > 确保 format 不是用户定义的字符串。
+>
+>
+> 从 Windows 10 版本2004开始， (生成 19041) ， `printf` 函数系列按用于舍入的 IEEE 754 规则打印完全可表示的浮点数。 在以前版本的 Windows 中，准确地表示以 "5" 结尾的浮点数始终向上舍入。 IEEE 754 指出它们必须舍入到最接近的偶数 (也称为 "银行家舍入" ) 。 例如，和都 `printf("%1.0f", 1.5)` `printf("%1.0f", 2.5)` 应该舍入为2。 以前，1.5 将舍入为2，2.5 将舍入为3。 此更改只影响精确的可表示数字。 例如，2.35 (当在内存中表示时，) 将继续向上舍入到2.4。 这些函数所做的舍入现在还遵循由设置的浮点舍入模式 [`fesetround`](fegetround-fesetround2.md) 。 以前，舍入始终选择 `FE_TONEAREST` 行为。 此更改仅影响使用 Visual Studio 2019 版本16.2 和更高版本生成的程序。 若要使用旧的浮点舍入行为，请使用链接 [`legacy_stdio_float_rounding.obj`](../link-options.md) 。
+
 
 ### <a name="generic-text-routine-mappings"></a>一般文本例程映射
 
@@ -154,7 +157,7 @@ int main( void )
 -16  001d  62511  A Test
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [控制台和端口 i/o](../../c-runtime-library/console-and-port-i-o.md)<br/>
 [_cscanf、_cscanf_l、_cwscanf、_cwscanf_l](cscanf-cscanf-l-cwscanf-cwscanf-l.md)<br/>

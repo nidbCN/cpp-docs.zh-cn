@@ -1,7 +1,7 @@
 ---
 description: 了解详细信息： _printf_p、_printf_p_l、_wprintf_p、_wprintf_p_l
 title: _printf_p、_printf_p_l、_wprintf_p、_wprintf_p_l
-ms.date: 11/04/2016
+ms.date: 3/9/2021
 api_name:
 - _printf_p
 - _wprintf_p
@@ -42,13 +42,12 @@ helpviewer_keywords:
 - _printf_p function
 - tprintf_p_l function
 - _printf_p_l function
-ms.assetid: 1b7e9ef9-a069-45db-af9d-c2730168322e
-ms.openlocfilehash: 1249395c883306c04eb0b294d06ec73c4f04447c
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: 74c611eb1ea817c7fee7589f735dc78f595b8d1a
+ms.sourcegitcommit: b04b39940b0c1e265f80fc1951278fdb05a1b30a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97252839"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102621486"
 ---
 # <a name="_printf_p-_printf_p_l-_wprintf_p-_wprintf_p_l"></a>_printf_p、_printf_p_l、_wprintf_p、_wprintf_p_l
 
@@ -77,7 +76,7 @@ int _wprintf_p_l(
 );
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *format*<br/>
 设置控件格式。
@@ -92,7 +91,7 @@ argument <br/>
 
 返回输出的字符数或负值（如果出错）。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 **_Printf_p** 函数将一系列字符和值输出到标准输出流（ **stdout**）。 如果参数跟在 *格式* 字符串之后， *格式* 字符串必须包含确定自变量的输出格式的规范 (参阅 [printf_p 位置参数](../../c-runtime-library/printf-p-positional-parameters.md)) 。
 
@@ -122,6 +121,9 @@ argument <br/>
 |**_wprintf_p**， **_wprintf_p_l**|\<stdio.h> 或 \<wchar.h>|
 
 通用 Windows 平台 (UWP) 应用中不支持控制台。 与控制台、 **stdin**、 **stdout** 和 **stderr** 关联的标准流句柄必须重定向，然后 C 运行时函数才能在 UWP 应用中使用它们。 有关其他兼容性信息，请参阅[兼容性](../../c-runtime-library/compatibility.md)。
+
+> [!IMPORTANT]
+> 从 Windows 10 版本2004开始， (生成 19041) ， `printf` 函数系列按用于舍入的 IEEE 754 规则打印完全可表示的浮点数。 在以前版本的 Windows 中，准确地表示以 "5" 结尾的浮点数始终向上舍入。 IEEE 754 指出它们必须舍入到最接近的偶数 (也称为 "银行家舍入" ) 。 例如，和都 `printf("%1.0f", 1.5)` `printf("%1.0f", 2.5)` 应该舍入为2。 以前，1.5 将舍入为2，2.5 将舍入为3。 此更改只影响精确的可表示数字。 例如，2.35 (当在内存中表示时，) 将继续向上舍入到2.4。 这些函数所做的舍入现在还遵循由设置的浮点舍入模式 [`fesetround`](fegetround-fesetround2.md) 。 以前，舍入始终选择 `FE_TONEAREST` 行为。 此更改仅影响使用 Visual Studio 2019 版本16.2 和更高版本生成的程序。 若要使用旧的浮点舍入行为，请使用链接 [`legacy_stdio_float_rounding.obj`](../link-options.md) 。
 
 ## <a name="example"></a>示例
 
@@ -153,7 +155,7 @@ Reusing arguments: 10 10 10 10
 Width specifiers:     Hello
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [浮点支持](../../c-runtime-library/floating-point-support.md)<br/>
 [流 I/O](../../c-runtime-library/stream-i-o.md)<br/>

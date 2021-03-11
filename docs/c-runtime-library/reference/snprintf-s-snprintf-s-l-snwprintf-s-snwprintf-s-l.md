@@ -1,7 +1,7 @@
 ---
 description: 了解详细信息： _snprintf_s、_snprintf_s_l、_snwprintf_s、_snwprintf_s_l
 title: _snprintf_s、_snprintf_s_l、_snwprintf_s、_snwprintf_s_l
-ms.date: 11/04/2016
+ms.date: 3/9/2021
 api_name:
 - _snprintf_s
 - _snprintf_s_l
@@ -50,13 +50,12 @@ helpviewer_keywords:
 - snwprintf_s function
 - _snwprintf_s function
 - formatted text [C++]
-ms.assetid: 9336ab86-13e5-4a29-a3cd-074adfee6891
-ms.openlocfilehash: 366614f69305080ee29ed8b903d17b5cc24765d8
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: 7bee7b376deda021dd1d03909ebd0d9b088689b9
+ms.sourcegitcommit: b04b39940b0c1e265f80fc1951278fdb05a1b30a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97322469"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102621433"
 ---
 # <a name="_snprintf_s-_snprintf_s_l-_snwprintf_s-_snwprintf_s_l"></a>_snprintf_s、_snprintf_s_l、_snwprintf_s、_snwprintf_s_l
 
@@ -111,7 +110,7 @@ int _snwprintf_s(
 ); // C++ only
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *宽限*<br/>
 输出的存储位置。
@@ -141,7 +140,7 @@ argument <br/>
 
 有关这些及其他错误代码的信息，请参阅 [_doserrno、errno、_sys_errlist 和 _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 **_Snprintf_s** 函数在 *缓冲区* 中格式化 *和存储更少的字符*，并追加一个终止 null。 如果任何) 根据 *格式* 规范的相应格式规范进行转换和输出，则每个参数 (。 格式设置与 **printf** 系列函数一致;请参阅 [格式规范语法： printf 和 Wprintf 函数](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)。 如果在重叠的字符串之间发生复制，则此行为不确定。
 
@@ -149,6 +148,9 @@ argument <br/>
 
 > [!IMPORTANT]
 > 确保 format 不是用户定义的字符串。
+>
+>
+> 从 Windows 10 版本2004开始， (生成 19041) ， `printf` 函数系列按用于舍入的 IEEE 754 规则打印完全可表示的浮点数。 在以前版本的 Windows 中，准确地表示以 "5" 结尾的浮点数始终向上舍入。 IEEE 754 指出它们必须舍入到最接近的偶数 (也称为 "银行家舍入" ) 。 例如，和都 `printf("%1.0f", 1.5)` `printf("%1.0f", 2.5)` 应该舍入为2。 以前，1.5 将舍入为2，2.5 将舍入为3。 此更改只影响精确的可表示数字。 例如，2.35 (当在内存中表示时，) 将继续向上舍入到2.4。 这些函数所做的舍入现在还遵循由设置的浮点舍入模式 [`fesetround`](fegetround-fesetround2.md) 。 以前，舍入始终选择 `FE_TONEAREST` 行为。 此更改仅影响使用 Visual Studio 2019 版本16.2 和更高版本生成的程序。 若要使用旧的浮点舍入行为，请使用 ["legacy_stdio_float_rounding .obj"](../link-options.md)链接。
 
 **_snwprintf_s** 是 **_snprintf_s** 的宽字符版本; **_snwprintf_s** 的指针参数是宽字符字符串。 **_Snwprintf_s** 中的编码错误检测可能与 **_snprintf_s** 中的不同。 **_snwprintf_s**（如 **swprintf_s**）将输出写入字符串，而不是写入到类型 **文件** 的目标。
 
@@ -300,7 +302,7 @@ Invalid parameter handler invoked: ("Buffer too small", 0)
     new contents of dest: ''
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [流 I/O](../../c-runtime-library/stream-i-o.md)<br/>
 [sprintf、_sprintf_l、swprintf、_swprintf_l、 \_ _swprintf_l](sprintf-sprintf-l-swprintf-swprintf-l-swprintf-l.md)<br/>

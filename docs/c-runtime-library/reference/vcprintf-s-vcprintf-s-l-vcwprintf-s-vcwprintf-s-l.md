@@ -1,7 +1,7 @@
 ---
 description: 了解详细信息： _vcprintf_s、_vcprintf_s_l、_vcwprintf_s、_vcwprintf_s_l
 title: _vcprintf_s、_vcprintf_s_l、_vcwprintf_s、_vcwprintf_s_l
-ms.date: 11/04/2016
+ms.date: 3/9/2021
 api_name:
 - _vcprintf_s
 - _vcprintf_s_l
@@ -46,13 +46,12 @@ helpviewer_keywords:
 - _vcprintf_s_l function
 - vtcprintf_s function
 - formatted text [C++]
-ms.assetid: 5a46d45a-30db-45df-9850-455cbdac5636
-ms.openlocfilehash: 68ac12f9c9ddbebe613ea92ade0b05eeb8e1ab01
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: 1b427d0e56d6d1866f72d101e3f7c2c3562d3d42
+ms.sourcegitcommit: b04b39940b0c1e265f80fc1951278fdb05a1b30a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97339587"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102621487"
 ---
 # <a name="_vcprintf_s-_vcprintf_s_l-_vcwprintf_s-_vcwprintf_s_l"></a>_vcprintf_s、_vcprintf_s_l、_vcwprintf_s、_vcwprintf_s_l
 
@@ -84,7 +83,7 @@ int _vcwprintf_s_l(
 );
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *format*<br/>
 格式规范。
@@ -103,7 +102,7 @@ int _vcwprintf_s_l(
 
 与这些函数的不安全版本一样，如果 *format* 为空指针，则将调用无效参数处理程序，如 [参数验证](../../c-runtime-library/parameter-validation.md)中所述。 此外，与这些函数的不太安全版本不同的是，如果 *格式* 不指定有效的格式，则会生成无效的参数异常。 如果允许执行继续，则这些函数将返回错误代码并将 **errno** 设置为该错误代码。 如果更具体的值不适用，则默认错误代码为 **EINVAL** 。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 每个函数均采用一个指向参数列表的指针，然后将给定数据格式化并写入到控制台。 **_vcwprintf_s** 是 **_vcprintf_s** 的宽字符版本。 它将采用一个宽字符字符串作为参数。
 
@@ -129,6 +128,9 @@ int _vcwprintf_s_l(
 \* 仅对 UNIX V 兼容性是必需的。
 
 有关其他兼容性信息，请参阅[兼容性](../../c-runtime-library/compatibility.md)。
+
+> [!IMPORTANT]
+> 从 Windows 10 版本2004开始， (生成 19041) ， `printf` 函数系列按用于舍入的 IEEE 754 规则打印完全可表示的浮点数。 在以前版本的 Windows 中，准确地表示以 "5" 结尾的浮点数始终向上舍入。 IEEE 754 指出它们必须舍入到最接近的偶数 (也称为 "银行家舍入" ) 。 例如，和都 `printf("%1.0f", 1.5)` `printf("%1.0f", 2.5)` 应该舍入为2。 以前，1.5 将舍入为2，2.5 将舍入为3。 此更改只影响精确的可表示数字。 例如，2.35 (当在内存中表示时，) 将继续向上舍入到2.4。 这些函数所做的舍入现在还遵循由设置的浮点舍入模式 [`fesetround`](fegetround-fesetround2.md) 。 以前，舍入始终选择 `FE_TONEAREST` 行为。 此更改仅影响使用 Visual Studio 2019 版本16.2 和更高版本生成的程序。 若要使用旧的浮点舍入行为，请使用链接 [`legacy_stdio_float_rounding.obj`](../link-options.md) 。
 
 ## <a name="example"></a>示例
 
@@ -161,7 +163,7 @@ int main()
     (Related to symbol '<symbol>' defined on line 5).
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [流 I/O](../../c-runtime-library/stream-i-o.md)<br/>
 [vprintf 函数](../../c-runtime-library/vprintf-functions.md)<br/>

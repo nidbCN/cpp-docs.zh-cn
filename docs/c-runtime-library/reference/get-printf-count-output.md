@@ -1,7 +1,7 @@
 ---
 description: 了解详细信息： _get_printf_count_output
 title: _get_printf_count_output
-ms.date: 11/04/2016
+ms.date: 3/9/2021
 api_name:
 - _get_printf_count_output
 api_location:
@@ -27,13 +27,12 @@ helpviewer_keywords:
 - '%n format'
 - get_printf_count_output function
 - _get_printf_count_output function
-ms.assetid: 850f9f33-8319-433e-98d8-6a694200d994
-ms.openlocfilehash: fe5ee728b7bc8400cd93ec4e93131496d59334c5
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: f31c0321d2d7873db20e7d663918aebc002c768d
+ms.sourcegitcommit: b04b39940b0c1e265f80fc1951278fdb05a1b30a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97339012"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102622122"
 ---
 # <a name="_get_printf_count_output"></a>_get_printf_count_output
 
@@ -49,9 +48,12 @@ int _get_printf_count_output();
 
 如果支持 **% n** ，则为非零值; 如果不支持 **% n** ，则为0。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 如果不支持 **% n** (默认) ，则在任何 **printf** 函数的格式字符串中遇到 **% n** 时，将调用无效参数处理程序，如 [参数验证](../../c-runtime-library/parameter-validation.md)中所述。 如果启用了 **% n** 支持 (请参阅 [_set_printf_count_output](set-printf-count-output.md)) ， **% n** 将按 [格式规范语法： printf 和 wprintf 函数](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)中所述的方式运行。
+
+> [!IMPORTANT]
+> 从 Windows 10 版本2004开始， (生成 19041) ， `printf` 函数系列按用于舍入的 IEEE 754 规则打印完全可表示的浮点数。 在以前版本的 Windows 中，准确地表示以 "5" 结尾的浮点数始终向上舍入。 IEEE 754 指出它们必须舍入到最接近的偶数 (也称为 "银行家舍入" ) 。 例如，和都 `printf("%1.0f", 1.5)` `printf("%1.0f", 2.5)` 应该舍入为2。 以前，1.5 将舍入为2，2.5 将舍入为3。 此更改只影响精确的可表示数字。 例如，2.35 (当在内存中表示时，) 将继续向上舍入到2.4。 这些函数所做的舍入现在还遵循由设置的浮点舍入模式 [`fesetround`](fegetround-fesetround2.md) 。 以前，舍入始终选择 `FE_TONEAREST` 行为。 此更改仅影响使用 Visual Studio 2019 版本16.2 和更高版本生成的程序。 若要使用旧的浮点舍入行为，请使用 ["legacy_stdio_float_rounding .obj"](../link-options.md)链接。
 
 ## <a name="requirements"></a>要求
 
@@ -65,6 +67,6 @@ int _get_printf_count_output();
 
 请参阅 [_set_printf_count_output](set-printf-count-output.md) 示例。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [_set_printf_count_output](set-printf-count-output.md)<br/>

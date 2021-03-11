@@ -1,7 +1,7 @@
 ---
 description: 了解详细信息： _cprintf_s、_cprintf_s_l、_cwprintf_s、_cwprintf_s_l
 title: _cprintf_s、_cprintf_s_l、_cwprintf_s、_cwprintf_s_l
-ms.date: 11/04/2016
+ms.date: 3/9/2021
 api_name:
 - _cwprintf_s_l
 - _cprintf_s_l
@@ -46,13 +46,12 @@ helpviewer_keywords:
 - _tcprintf_s function
 - cprintf_s_l function
 - cwprintf_s_l function
-ms.assetid: c28504fe-0d20-4f06-8f97-ee33225922ad
-ms.openlocfilehash: 0a6529a6a2861829028f11dd25e2b044faa498a5
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: 0f8e01af59422fe586b9a3c74399ca7cfbc3ac97
+ms.sourcegitcommit: b04b39940b0c1e265f80fc1951278fdb05a1b30a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97155951"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102621940"
 ---
 # <a name="_cprintf_s-_cprintf_s_l-_cwprintf_s-_cwprintf_s_l"></a>_cprintf_s、_cprintf_s_l、_cwprintf_s、_cwprintf_s_l
 
@@ -84,7 +83,7 @@ int _cwprintf_s_l(
 );
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *format*<br/>
 窗体控件字符串。
@@ -99,7 +98,7 @@ argument <br/>
 
 打印的字符数。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 这些函数将一系列字符和值直接设置为控制台，并使用 **_putch** 函数 (**_putwch** 用于 **_cwprintf_s**) 输出字符。 如果任何) 根据 *格式* 规范的相应格式规范进行转换和输出，则每个 *参数* (。 格式与 [printf_s](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md)函数的 *格式* 参数具有相同的形式和函数。 与 **fprintf_s**、 **printf_s** 和 **sprintf_s** 函数不同，在输出时， **_cprintf_s** 或 **_cwprintf_s** 不会将换行符转换为回车换行符 (的回车符。
 
@@ -109,6 +108,9 @@ argument <br/>
 
 > [!IMPORTANT]
 > 确保 format 不是用户定义的字符串。
+>
+>
+> 从 Windows 10 版本2004开始， (生成 19041) ， `printf` 函数系列按用于舍入的 IEEE 754 规则打印完全可表示的浮点数。 在以前版本的 Windows 中，准确地表示以 "5" 结尾的浮点数始终向上舍入。 IEEE 754 指出它们必须舍入到最接近的偶数 (也称为 "银行家舍入" ) 。 例如，和都 `printf("%1.0f", 1.5)` `printf("%1.0f", 2.5)` 应该舍入为2。 以前，1.5 将舍入为2，2.5 将舍入为3。 此更改只影响精确的可表示数字。 例如，2.35 (当在内存中表示时，) 将继续向上舍入到2.4。 这些函数所做的舍入现在还遵循由设置的浮点舍入模式 [`fesetround`](fegetround-fesetround2.md) 。 以前，舍入始终选择 `FE_TONEAREST` 行为。 此更改仅影响使用 Visual Studio 2019 版本16.2 和更高版本生成的程序。 若要使用旧的浮点舍入行为，请使用 ["legacy_stdio_float_rounding .obj"](../link-options.md)链接。
 
 与不安全版本一样 (参阅 [_cprintf，_cprintf_l _cwprintf](cprintf-cprintf-l-cwprintf-cwprintf-l.md) _cwprintf_l) 中，这些函数将验证其参数并调用无效参数处理程序，如 [参数验证](../../c-runtime-library/parameter-validation.md)中所述（如果 *format* 为空指针）。 这些函数与不安全版本的不同之处在于，格式字符串本身也需进行验证。 如果有任何未知或格式错误的格式化说明符，则这些函数将调用无效参数处理程序。 在所有情况下，如果允许执行继续，则函数将返回-1，并将 **errno** 设置为 **EINVAL**。
 
@@ -159,7 +161,7 @@ int main( void )
 -16  001d  62511  A Test
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [控制台和端口 i/o](../../c-runtime-library/console-and-port-i-o.md)<br/>
 [_cscanf、_cscanf_l、_cwscanf、_cwscanf_l](cscanf-cscanf-l-cwscanf-cwscanf-l.md)<br/>

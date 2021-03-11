@@ -1,7 +1,7 @@
 ---
 description: 了解详细信息： vsnprintf_s、_vsnprintf_s、_vsnprintf_s_l、_vsnwprintf_s、_vsnwprintf_s_l
 title: vsnprintf_s、_vsnprintf_s、_vsnprintf_s_l、_vsnwprintf_s、_vsnwprintf_s_l
-ms.date: 11/04/2016
+ms.date: 3/9/2021
 api_name:
 - _vsnwprintf_s
 - _vsnwprintf_s_l
@@ -43,13 +43,12 @@ helpviewer_keywords:
 - _vsnprintf_s_l function
 - _vsnwprintf_s function
 - formatted text [C++]
-ms.assetid: 147ccfce-58c7-4681-a726-ef54ac1c604e
-ms.openlocfilehash: 27c91d6064b4a92da8a6f09e7d7e5b6bfb8bf95f
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: c5f472c1ff481d4d940ac081bf04986cb18e5a78
+ms.sourcegitcommit: b04b39940b0c1e265f80fc1951278fdb05a1b30a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97342148"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102622005"
 ---
 # <a name="vsnprintf_s-_vsnprintf_s-_vsnprintf_s_l-_vsnwprintf_s-_vsnwprintf_s_l"></a>vsnprintf_s、_vsnprintf_s、_vsnprintf_s_l、_vsnwprintf_s、_vsnwprintf_s_l
 
@@ -111,7 +110,7 @@ int _vsnwprintf_s(
 ); // C++ only
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 *宽限*<br/>
 输出的存储位置
@@ -151,14 +150,14 @@ int _vsnwprintf_s(
 
 ### <a name="error-conditions"></a>错误条件
 
-|Condition|返回|**errno**|
+|**条件**|返回|**errno**|
 |-----------------|------------|-------------|
 |*缓冲区* 为 **NULL**|-1|**EINVAL**|
 |*格式* 为 **NULL**|-1|**EINVAL**|
 |*计数* <= 0|-1|**EINVAL**|
 |*sizeOfBuffer* 太小 (和 *count* ！ = **_TRUNCATE**) |-1 (，并将 *缓冲区* 设置为空字符串) |**ERANGE**|
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 **vsnprintf_s** 与 **_vsnprintf_s** 相同。 包含 **vsnprintf_s** 是为了符合 ANSI 标准。 保留 **_vnsprintf** 以便向后兼容。
 
@@ -170,6 +169,7 @@ int _vsnwprintf_s(
 
 > [!IMPORTANT]
 > 确保 format 不是用户定义的字符串。 有关详细信息，请参阅 [避免缓冲区溢出](/windows/win32/SecBP/avoiding-buffer-overruns)。
+> 从 Windows 10 版本2004开始， (生成 19041) ， `printf` 函数系列按用于舍入的 IEEE 754 规则打印完全可表示的浮点数。 在以前版本的 Windows 中，准确地表示以 "5" 结尾的浮点数始终向上舍入。 IEEE 754 指出它们必须舍入到最接近的偶数 (也称为 "银行家舍入" ) 。 例如，和都 `printf("%1.0f", 1.5)` `printf("%1.0f", 2.5)` 应该舍入为2。 以前，1.5 将舍入为2，2.5 将舍入为3。 此更改只影响精确的可表示数字。 例如，2.35 (当在内存中表示时，) 将继续向上舍入到2.4。 这些函数所做的舍入现在还遵循由设置的浮点舍入模式 [`fesetround`](fegetround-fesetround2.md) 。 以前，舍入始终选择 `FE_TONEAREST` 行为。 此更改仅影响使用 Visual Studio 2019 版本16.2 和更高版本生成的程序。 若要使用旧的浮点舍入行为，请使用 ["legacy_stdio_float_rounding .obj"](../link-options.md)链接。
 
 > [!NOTE]
 > 若要确保终止 null 的空间，请确保 *计数* 严格小于缓冲区长度，或使用 **_TRUNCATE**。
@@ -227,7 +227,7 @@ nSize: 9, buff: Hi there!
 nSize: -1, buff: Hi there!
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [流 I/O](../../c-runtime-library/stream-i-o.md)<br/>
 [vprintf 函数](../../c-runtime-library/vprintf-functions.md)<br/>
