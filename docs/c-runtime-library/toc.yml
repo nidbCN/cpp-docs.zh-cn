@@ -64,7 +64,7 @@
       href: ../c-runtime-library/global-state.md
     - name: 泛型类型数学
       href: ../c-runtime-library/tgmath.md
-    - name: C 运行时 (CRT) 和 C++ 标准库 .lib 文件
+    - name: C 运行时 (CRT) 和 C++ 标准库 (STL) .lib 文件
       href: ../c-runtime-library/crt-library-features.md
 - name: 按类别分的通用 C 运行时例程
   expanded: false

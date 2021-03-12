@@ -5,12 +5,12 @@ ms.date: 02/05/2021
 ms.description: Configure a Visual Studio MSBuild project to use the Clang/LLVM toolchain.
 helpviewer_keywords:
 - Clang support for C++ MSBuild projects
-ms.openlocfilehash: 7492d2c75e458fb4a8a94e009f40b49edf1a8204
-ms.sourcegitcommit: 77235bff6a7b2621c501938e30d93cb15f5733cb
+ms.openlocfilehash: 31f79280e51bcf277bd3a992c4d7d2e39e679f30
+ms.sourcegitcommit: c0c9cdae79f19655e809a4979227c51bb19cff63
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100006055"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102236616"
 ---
 # <a name="clangllvm-support-in-visual-studio-projects"></a>Visual Studio 项目中的 Clang/LLVM 支持
 
@@ -22,15 +22,17 @@ Visual Studio 2019 中提供对 CMake 和 MSBuild 项目的 Clang 支持。
 
 ::: moniker range="msvc-160"
 
-可以将 Visual Studio 2019 版本 16.2 与 Clang 配合使用来编辑、生成和调试面向 Windows 或 Linux 的 C++ Visual Studio 项目 (MSBuild)。
+可以将 Visual Studio 2019 版本 16.2 及更高版本与 Clang 配合使用来编辑、生成和调试面向 Windows 或 Linux 的 C++ Visual Studio 项目 (MSBuild)。
 
 ## <a name="install"></a>安装
 
 若要在 Visual Studio 中获得最佳 IDE 支持，建议使用适用于 Windows 的最新 Clang 编译器工具。 如果尚未安装这些工具，在可以通过打开 Visual Studio 安装程序并在“使用 C++ 的桌面开发”可选组件下选择“适用于 Windows 的 C++ Clang 工具”来安装它们 。 你可能希望使用计算机上的现有 Clang 安装；如果是这样，请选择“适用于 v142 生成工具的 C++ Clang-cl”。 可选组件。
 
-Microsoft C++ 标准库当前至少需要 Clang 8.0.0。 Clang 的捆绑版本会自动更新，以随时了解标准库的 Microsoft 实现中的更新。
+Microsoft C++ 标准库至少需要 Clang 8.0.0。
 
 ![已选中“单个组件”选项卡并使 C++ Clang 组件可见的 Visual Studio 安装程序的屏幕截图。](media/clang-install-vs2019.png)
+
+更高版本的 Visual Studio 提供更新版本的 Clang 工具集。 Clang 的捆绑版本会自动更新，以随时了解标准库的 Microsoft 实现中的更新。 例如，Visual Studio 2019 版本 16.9 包括了 Clang v11。
 
 ## <a name="configure-a-windows-project-to-use-clang-tools"></a>配置 Windows 项目以使用 Clang 工具
 

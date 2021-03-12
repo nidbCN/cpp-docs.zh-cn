@@ -5,12 +5,12 @@ ms.date: 11/22/2019
 helpviewer_keywords:
 - CMake in Visual C++
 ms.assetid: 444d50df-215e-4d31-933a-b41841f186f8
-ms.openlocfilehash: 2be5edb616764d56e7c08a51be19aab11a62f227
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: e68154d84123d416aa9d9d18f538c4b62fddce18
+ms.sourcegitcommit: 6ed44d9c3fb32e965e363b9c69686739a90a2117
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97156900"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102465348"
 ---
 # <a name="cmakesettingsjson-schema-reference"></a>CMakeSettings.json 架构引用
 
@@ -32,8 +32,8 @@ CMakeSettings.json 文件包含 Visual Studio 为 IntelliSense 使用的信息�
 
 `configuration` 具有以下属性：
 
-- `addressSanitizerEnabled`：如果为 `true`，则使用 Address Sanitizer（Windows 上的实验性工具）编译程序。 在 Linux 上，使用 -fno-omit-frame-pointer 和编译器优化级别 -Os 或 -Oo 进行编译，以获得最佳结果。
-- `addressSanitizerRuntimeFlags`：通过 ASAN_OPTIONS 环境变量传递给 AddressSanitizer 的运行时标志。 格式：flag1=value:flag2=value2。
+- `addressSanitizerEnabled`：如果 `true` 使用 [AddressSanitizer](../sanitizers/asan.md) 编译程序。 在 Linux 上，使用 -fno-omit-frame-pointer 和编译器优化级别 -Os 或 -Oo 进行编译，以获得最佳结果。
+- `addressSanitizerRuntimeFlags`：通过 ASAN_OPTIONS 环境变量传递给 [AddressSanitizer](../sanitizers/asan.md) 的运行时标志。 格式：flag1=value:flag2=value2。
 - `buildCommandArgs`：指定在“生成”后传递给 CMake 的本机生成开关。 例如，使用 Ninja 生成器强制输出命令行使用 Ninja 时，传递 -v。 请参阅 [Ninja 命令行参数](#ninja)，详细了解 Ninja 命令。
 - `buildRoot`：指定 CMake 生成器要在其中为所选生成器生成脚本的目录。  映射到 -DCMAKE_BINARY_DIR 开关，并指定要创建 CMakeCache.txt 的位置。 如果文件夹不存在，则会创建一个。 支持的宏包括 `${workspaceRoot}`、`${workspaceHash}`、`${projectFile}`、`${projectDir}`、`${thisFile}`、`${thisFileDir}`、`${name}`、`${generator}`、`${env.VARIABLE}`。
 - `cacheGenerationCommand`：指定命令行工具和参数，例如，指定 gencache.bat debug 来生成缓存。 当用户显式请求重新生成或者修改了 CMakeLists.txt 或 CMakeSettings.json 文件时，系统会从配置的指定环境中的 shell 运行该命令。
