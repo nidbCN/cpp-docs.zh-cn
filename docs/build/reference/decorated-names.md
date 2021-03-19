@@ -7,12 +7,12 @@ helpviewer_keywords:
 - name decoration [C++]
 - names [C++], decorated
 ms.assetid: a4e9ae8e-b239-4454-b401-4102793cb344
-ms.openlocfilehash: 65135b4f5b85cfae7a25513763b998d304e79a0c
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: 95b98bf9a9bde876cfb403351197ab2ef1b9b5b8
+ms.sourcegitcommit: 92120d0c418b6d3d85d32ffc050c59c5f5f9d5b6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97201711"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104670775"
 ---
 # <a name="decorated-names"></a>修饰名
 
@@ -79,9 +79,9 @@ C 函数的修饰形式取决于其声明中使用的调用约定，如下表所
 
 #### <a name="to-use-dumpbin-to-view-decorated-names"></a>若要使用 DUMPBIN 查看修饰名
 
-1. 若要查看 .obj 或 .lib 文件中的导出符号，请 `dumpbin /symbols` `objfile` 在开发人员命令提示符下输入。
+1. 若要查看 .obj 或 .lib 文件中的导出符号，请 `dumpbin /exports <obj-or-lib-file>` 在开发人员命令提示符下输入。
 
-2. 若要查找符号的修饰形式，请查找括号中的未修饰名。 修饰名在同一行上，在管道 ( # A0) 字符之后，在未修饰名称之前。
+2. 若要查找符号的修饰形式，请查找括号中的未修饰名。 修饰名在同一行上，在未修饰名称之前。
 
 ## <a name="viewing-undecorated-names"></a><a name="Undecorated"></a> 查看未修饰名称
 

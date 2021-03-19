@@ -4,16 +4,16 @@ description: 将 Microsoft c + + 代码升级到最新版本的 Visual Studio。
 ms.date: 09/10/2020
 ms.assetid: f5fbcc3d-aa72-41a6-ad9a-a706af2166fb
 ms.topic: overview
-ms.openlocfilehash: b6cd3461ee16a44162fdb641170a2f05d9b77369
-ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
+ms.openlocfilehash: 624d5a7d85cfc6387f7668cd2fcf6f8f8746a402
+ms.sourcegitcommit: 92120d0c418b6d3d85d32ffc050c59c5f5f9d5b6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2020
-ms.locfileid: "90039529"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104670812"
 ---
 # <a name="microsoft-c-porting-and-upgrading-guide"></a>Microsoft c + + 移植和升级指南
 
-本文提供将 Microsoft c + + 代码升级到最新版本的 Visual Studio 的指南。 对于在 Visual Studio 2010 到2015中创建的项目，只需在 Visual Studio 2019 中打开该项目。 可以通过两个步骤升级 Visual Studio 2008 或更早版本的项目。 首先，使用 Visual Studio 2010 将项目转换为 MSBuild 格式。 然后在 Visual Studio 2019 中打开该项目。 有关完整说明，请参阅 [从早期版本的 Visual Studio 升级 c + + 项目](upgrading-projects-from-earlier-versions-of-visual-cpp.md)。
+本文提供将 Microsoft c + + 代码升级到最新版本的 Visual Studio 的指南。 对于在 Visual Studio 2010 到2017中创建的项目，只需在 Visual Studio 2019 中打开该项目。 可以通过两个步骤升级 Visual Studio 2008 或更早版本的项目。 首先，使用 Visual Studio 2010 将项目转换为 MSBuild 格式。 然后在 Visual Studio 2019 中打开该项目。 有关完整说明，请参阅 [从早期版本的 Visual Studio 升级 c + + 项目](upgrading-projects-from-earlier-versions-of-visual-cpp.md)。
 
 Visual Studio 2015、Visual Studio 2017 和 Visual Studio 2019 中的工具集与二进制兼容。 现在，你可以升级到较新版本的编译器，而不必升级库依赖项。 有关详细信息，请参阅 [c + + 二进制兼容性 2015-2019](binary-compat-2015-2017.md)。
 
@@ -58,7 +58,7 @@ Visual Studio 2015、Visual Studio 2017 和 Visual Studio 2019 中的工具集�
 |[Visual C++ 简介（针对 UNIX 用户）](introduction-to-visual-cpp-for-unix-users.md)|为不熟悉 Visual C++ 并想要有效率的使用它的 UNIX 用户提供信息。|
 |[在 Windows 上运行 Linux 程序](porting-from-unix-to-win32.md)|讨论用于将 UNIX 应用程序迁移到 Windows 的选项。|
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [Visual Studio 中的 C++](../overview/visual-cpp-in-visual-studio.md)<br/>
 [Visual Studio 中 C++ 编译器的新增功能](../overview/what-s-new-for-visual-cpp-in-visual-studio.md)<br/>
