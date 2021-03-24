@@ -4,12 +4,12 @@ description: 了解如何在 Windows、macOS 和 Linux 上安装和更新 vcpkg�
 ms.date: 12/17/2020
 ms.topic: reference
 ms.technology: cpp-ide
-ms.openlocfilehash: aee9561dc94164c08e4d69ec49f60961392c1854
-ms.sourcegitcommit: 2b2c3fa9244e31db35ea33554dea0efcab490f3c
+ms.openlocfilehash: b508134693d5687898f0e5202f54ee35b91680bb
+ms.sourcegitcommit: 977b5151e7dae7584112328bab515fb15622a6cc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97684102"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104883852"
 ---
 # <a name="install-vcpkg-on-windows-linux-and-macos"></a>在 Windows、Linux 和 macOS 上安装 vcpkg
 
@@ -160,5 +160,5 @@ vcpkg 包管理器在 GitHub 上定期更新。 若要将 vcpkg 的克隆更新�
 [集成 vcpkg](integrate-vcpkg.md)\
 [使用 vcpkg 管理库](manage-libraries-with-vcpkg.md)\
 [vcpkg 命令行参考](vcpkg-command-line-reference.md)\
-[快速入门](https://github.com/microsoft/vcpkg/blob/master/docs/index.md)\
+[快速入门](https://github.com/microsoft/vcpkg/blob/master/docs/README.md)\
 [常见问题解答](https://github.com/microsoft/vcpkg/blob/master/docs/about/faq.md)
