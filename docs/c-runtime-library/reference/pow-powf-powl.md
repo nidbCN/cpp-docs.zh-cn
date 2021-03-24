@@ -40,16 +40,16 @@ helpviewer_keywords:
 - powf function
 - pow function
 ms.assetid: e75c33ed-2e59-48b1-be40-81da917324f1
-ms.openlocfilehash: 8fb6679e2b509274b4ea60c410a81b54df866416
-ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
+ms.openlocfilehash: 0e05cd243c88f9f3862f6acaa517bee8e7b0bdb8
+ms.sourcegitcommit: 977b5151e7dae7584112328bab515fb15622a6cc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91505570"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104883891"
 ---
 # <a name="pow-powf-powl"></a>pow、powf、powl
 
-计算 *x* 的 *y*次幂。
+计算 *x* 的 *y* 次幂。
 
 ## <a name="syntax"></a>语法
 
@@ -84,17 +84,19 @@ Exponent。
 |*x* = = 0.0， *y* = = 0。0|1|
 |*x* = = 0.0， *y* < 0|INF|
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
-**pow** 不识别大于 2<sup>64</sup> 的整数浮点值 (例如，1.0 e100) 。
+**pow** 不识别大于 2 <sup>64</sup> 的整数浮点值 (例如，1.0 e100) 。
 
 **pow** 具有使用流式处理 simd 扩展 2 (SSE2) 的实现。 有关使用 SSE2 实现的信息和限制，请参阅 [_set_SSE2_enable](set-sse2-enable.md)。
 
-由于 c + + 允许重载，因此可以调用 **pow**的任何不同重载。 在 C 程序中，除非使用 \<tgmath.h> 宏调用此函数，否则 **pow** 将始终采用两个 **`double`** 值，并返回一个 **`double`** 值。
+由于 c + + 允许重载，因此可以调用 **pow** 的任何不同重载。 在 C 程序中，除非使用 \<tgmath.h> 宏调用此函数，否则 **pow** 将始终采用两个 **`double`** 值，并返回一个 **`double`** 值。
 
 如果使用 \<tgmath.h> `pow()` 宏，则参数的类型将决定选择哪个版本的函数。 有关详细信息，请参阅 [类型-泛型数学](../../c-runtime-library/tgmath.md) 。
 
 `pow(int, int)` 将不再可用。 如果使用此重载，编译器可能会发出 [C2668](../../error-messages/compiler-errors-2/compiler-error-c2668.md)。 若要避免此问题，请将第一个参数强制转换为 **`double`** 、 **`float`** 或 **`long double`** 。
+
+最初， `pow(T, int)` 重载会将调用展开为 `pow` 一系列内联乘法运算。 尽管速度更快，但在 Visual Studio 2015 Update 1 中删除的准确性也明显降低。 有关详细信息，请参阅 [Visual Studio 2015 Update 1 中的符合性改进](../../porting/visual-cpp-what-s-new-2003-through-2015.md)。
 
 默认情况下，此函数的全局状态的作用域限定为应用程序。 若要更改此项，请参阅 [CRT 中的全局状态](../global-state.md)。
 
@@ -131,7 +133,7 @@ int main( void )
 ## <a name="see-also"></a>请参阅
 
 [浮点支持](../../c-runtime-library/floating-point-support.md) <br/>
-[exp、expf、expl](exp-expf.md) <br/>
-[log、logf、log10、log10f](log-logf-log10-log10f.md) <br/>
-[sqrt、sqrtf、sqrtl](sqrt-sqrtf-sqrtl.md) <br/>
-[_CIpow](../../c-runtime-library/cipow.md)<br/>
+[`exp`, `expf`, `expl`](exp-expf.md) <br/>
+[`log`, `logf`, `log10`, `log10f`](log-logf-log10-log10f.md) <br/>
+[`sqrt`, `sqrtf`, `sqrtl`](sqrt-sqrtf-sqrtl.md) <br/>
+[`_CIpow`](../../c-runtime-library/cipow.md)<br/>

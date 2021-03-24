@@ -3,12 +3,12 @@ description: 了解详细信息： Visual C++&#39;的新2003至2015
 title: Visual C++ 新增功能（2003 - 2015）
 ms.date: 07/02/2019
 ms.assetid: c4afde6f-3d75-40bf-986f-be57e3818e26
-ms.openlocfilehash: ea126f3138ae437c3338e695fcebdf1cde037a50
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: e9a036e79ba90e289e40144c4f5291c43358b850
+ms.sourcegitcommit: 977b5151e7dae7584112328bab515fb15622a6cc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97301108"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104883904"
 ---
 # <a name="visual-c-what39s-new-2003-through-2015"></a>Visual C++ 新增功能（2003 - 2015）
 
@@ -128,7 +128,7 @@ ms.locfileid: "97301108"
     }
    ```
 
-   当前编译器可以准确报告错误，因为模板参数类型不匹配模板参数（该参数是指向 const 成员的指针，但函数为非 const）：
+   当前编译器正确地提供错误，因为模板参数类型不匹配模板参数 (参数是指向 const 成员的指针，但函数 f 是非常量) ：
 
    ```Output
     error C2893: Failed to specialize function template 'void S2::f(void)'note: With the following template arguments:note: 'C=S1'note: 'Function=S1::f'
@@ -587,7 +587,7 @@ ms.locfileid: "97301108"
     void * __cdecl operator new(size_t cb, const std::nothrow_t&)  // removed 'static inline'
    ```
 
-   此外，尽管编译器不能进行具体诊断，但内联运算符 new 会被视为格式不正确。
+   此外，尽管编译器没有给予特定诊断，但内联运算符 new 被视为格式不正确。
 
 - **对非类类型调用“operator type()”（用户定义的转换）** 早期版本的编译器允许以无提示忽略的方式对非类类型调用“operator type()”。 这种旧行为会导致无提示代码生成错误风险，从而导致不可预知的运行时行为。 编译器不再接受这种方式编写的代码，因此会发出编译器错误 C2228。
 
@@ -1014,11 +1014,37 @@ ms.locfileid: "97301108"
     }
    ```
 
+- * * 删除 `pow(T, int)` 展开优化 * *
+
+   以前版本的 c + + 标准库定义了一个 `pow(T, int)` 函数模板，该模板会将 `pow` 函数调用展开为一系列乘法运算。 由于浮点运算的性质，这种方法会导致大量的导致，从而导致最终结果明显不准确。 在 Visual Studio 2015 Update 1 中，此行为已被删除，以避免在使用函数时意外丢失准确性 `pow` 。 但是，此版本的 `pow` 比正确的计算快得多。 如果此更改导致显著的性能回归，并且你的项目不需要精确的浮点结果 (例如，你的项目已经用/fp： fast) 进行了编译，则请考虑将对的调用替换为以下 `pow` 解决函数：
+   
+   ```cpp
+   template <class T> 
+   inline T pow_int(T x, int y) throw() {
+       unsigned int n;
+       if (y >= 0) {
+           n = (unsigned int)(y);
+       } else {
+           n = (unsigned int)(-y);
+       }
+       for (T z = T(1); ; x *= x) {
+           if ((n & 1) != 0) {
+               z *= x;
+           }
+           if ((n >>= 1) == 0) {
+               return (y < 0 ? T(1) / z : z);
+           }
+       }
+   }
+   ```
+
+   此实现与 Visual Studio 的早期版本中所包含的实现完全相同。
+
 ### <a name="conformance-improvements-in-visual-studio-2015-update-2"></a><a name="VS_Update2"></a>Visual Studio 2015 Update 2 的符合性改进
 
 - **可能会因对表达式 SFINAE 的部分支持而发出其他警告和错误**
 
-   **`decltype`** 由于缺少对表达式 SFINAE 的支持，早期版本的编译器不会分析说明符内的某些类型的表达式。 这种旧行为不正确，也不符合 C++ 标准。 由于持续的符合性改进，此编译器现已可分析这些表达式，并能为表达式 SFINAE 提供部分支持。 因此，此编译器现在可发出在编译器的早期版本无法分析的表达式中找到的警告和错误。
+   **`decltype`** 由于缺少对表达式 SFINAE 的支持，早期版本的编译器不会分析说明符内的某些类型的表达式。 这种旧行为不正确，也不符合 C++ 标准。 由于持续的符合性改进，此编译器现已可分析这些表达式，并能为表达式 SFINAE 提供部分支持。 因此，编译器现在会发出警告和在以前版本的编译器未分析的表达式中发现的错误。
 
    此新行为分析包含尚未 **`decltype`** 声明的类型的表达式时，编译器会发出编译器错误 C2039。
 
@@ -2215,7 +2241,7 @@ __sptr、__uptr
 - _InterlockedIncrement 内部函数现已记录。
 - 添加了 _ReadWriteBarrier 内部函数。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 - `implements` 属性现已记录。
 
