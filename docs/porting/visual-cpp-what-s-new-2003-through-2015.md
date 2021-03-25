@@ -3,12 +3,12 @@ description: 了解详细信息： Visual C++&#39;的新2003至2015
 title: Visual C++ 新增功能（2003 - 2015）
 ms.date: 07/02/2019
 ms.assetid: c4afde6f-3d75-40bf-986f-be57e3818e26
-ms.openlocfilehash: e9a036e79ba90e289e40144c4f5291c43358b850
-ms.sourcegitcommit: 977b5151e7dae7584112328bab515fb15622a6cc
+ms.openlocfilehash: 5f6a05d18b22c1861762df6c6d8231c28ce8437e
+ms.sourcegitcommit: d775eac25552bd0fb7276703efa6931d6a1a59fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104883904"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105099705"
 ---
 # <a name="visual-c-what39s-new-2003-through-2015"></a>Visual C++ 新增功能（2003 - 2015）
 
@@ -1014,7 +1014,7 @@ ms.locfileid: "104883904"
     }
    ```
 
-- * * 删除 `pow(T, int)` 展开优化 * *
+- **删除 `pow(T, int)` 展开优化**
 
    以前版本的 c + + 标准库定义了一个 `pow(T, int)` 函数模板，该模板会将 `pow` 函数调用展开为一系列乘法运算。 由于浮点运算的性质，这种方法会导致大量的导致，从而导致最终结果明显不准确。 在 Visual Studio 2015 Update 1 中，此行为已被删除，以避免在使用函数时意外丢失准确性 `pow` 。 但是，此版本的 `pow` 比正确的计算快得多。 如果此更改导致显著的性能回归，并且你的项目不需要精确的浮点结果 (例如，你的项目已经用/fp： fast) 进行了编译，则请考虑将对的调用替换为以下 `pow` 解决函数：
    
@@ -2241,7 +2241,7 @@ __sptr、__uptr
 - _InterlockedIncrement 内部函数现已记录。
 - 添加了 _ReadWriteBarrier 内部函数。
 
-### <a name="attributes"></a>属性
+### <a name="attributes"></a>特性
 
 - `implements` 属性现已记录。
 
@@ -2260,6 +2260,6 @@ __sptr、__uptr
 
 添加了 .SAFESEH 指令和 `/safeseh` ml.exe 选项。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [Visual C++ 移植和升级指南](visual-cpp-porting-and-upgrading-guide.md)

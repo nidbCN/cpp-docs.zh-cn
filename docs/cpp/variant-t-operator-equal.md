@@ -9,12 +9,12 @@ helpviewer_keywords:
 - operator = [C++], variant
 - = operator [C++], with specific Visual C++ objects
 ms.assetid: 77622723-6e49-4dec-9e0f-fa74028f1a3c
-ms.openlocfilehash: a304f0904f697ade7d04c6d12f375571a156e989
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: 3218d15f5b787709f1759bfda3a2501bcdda5406
+ms.sourcegitcommit: d775eac25552bd0fb7276703efa6931d6a1a59fd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97161463"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105099679"
 ---
 # <a name="_variant_toperator-"></a>_variant_t::operator =
 
@@ -144,9 +144,9 @@ _variant_t& operator=(
 
 - **operator = (** `bSrc`**)****`bool`** 为 `_variant_t` 对象赋值。  
 
-- **operator = (** *pDispSrc* **)** 将 `VT_DISPATCH` 对象分配给 `_variant_t` 对象。    
+- **operator = (** *pDispSrc* **)** 将 `IDispatch*` 对象分配给 `_variant_t` 对象并调用 `AddRef` 。    
 
-- **operator = (** *pIUnknownSrc* **)** 将 `VT_UNKNOWN` 对象分配给 `_variant_t` 对象。    
+- **operator = (** *pIUnknownSrc* **)** 将 `IUnknown*` 对象分配给 `_variant_t` 对象并调用 `AddRef` 。    
 
 - **operator = (** *decSrc* **)** 将值赋 `DECIMAL` 给 `_variant_t` 对象。    
 
