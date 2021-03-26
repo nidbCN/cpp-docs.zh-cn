@@ -19,12 +19,12 @@ helpviewer_keywords:
 - derived classes [C++], declaring
 - inheritance, keywords
 ms.assetid: bb810f56-7720-4fea-b8b6-9499edd141df
-ms.openlocfilehash: 05d13303064c2857780af62b1b4beba00483b72e
-ms.sourcegitcommit: d6af41e42699628c3e2e6063ec7b03931a49a098
+ms.openlocfilehash: d2cd576d80b3e68eaf2a0d57fecf25309d0719b0
+ms.sourcegitcommit: bf6d8a220f6392f1f19c0c0605d1467d0221ef6c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97340458"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105551730"
 ---
 # <a name="inheritance-keywords"></a>继承关键字
 
@@ -75,7 +75,7 @@ int S::*p;
 > [!NOTE]
 > 类的指向成员的指针表示形式的同一向前声明应出现在声明指向该类的成员的指针的每个翻译单元中，并且声明应在声明指向成员的指针之前出现。
 
-为了与早期版本兼容， **_single_inheritance**、 **_multiple_inheritance** 和 **_virtual_inheritance** 是、和的同义词， **`__single_inheritance`** **`__multiple_inheritance`** **`__virtual_inheritance`** 除非指定了编译器选项 [/za " \( 禁用语言) 扩展](../build/reference/za-ze-disable-language-extensions.md) "。
+为了与早期版本兼容，、和 **`_single_inheritance`** **`_multiple_inheritance`** **`_virtual_inheritance`** 是、和的同义词， **`__single_inheritance`** **`__multiple_inheritance`** **`__virtual_inheritance`** 除非指定了编译器选项 [/za " \( 禁用语言扩展")](../build/reference/za-ze-disable-language-extensions.md) 。
 
 **结束 Microsoft 专用**
 

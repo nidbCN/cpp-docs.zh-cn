@@ -5,12 +5,12 @@ ms.date: 10/18/2020
 helpviewer_keywords:
 - warnings, by compiler version
 - cl.exe compiler, setting warning options
-ms.openlocfilehash: 1fdc4f79a7ae3cd45b66cb312a9297754acfc964
-ms.sourcegitcommit: 1f85841f403e76d041c34a7c77089dab389960a2
+ms.openlocfilehash: 5dd869e7c6fd53e9d68a26c18bdb458a258d3dea
+ms.sourcegitcommit: bf6d8a220f6392f1f19c0c0605d1467d0221ef6c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94518812"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105551769"
 ---
 # <a name="compiler-warnings-by-compiler-version"></a>编译器警告（按编译器版本）
 
@@ -46,12 +46,41 @@ ms.locfileid: "94518812"
 | Visual Studio 2019 版本 16.5 | 19.25.28610.0 |
 | Visual Studio 2019 版本 16.6 | 19.26.28805.0 |
 | Visual Studio 2019 版本 16.7 | 19.27.29112.0 |
+| Visual Studio 2019 版本 16.8 | 19.28.29330.0 |
+| Visual Studio 2019 版本16。9 | 19.28.29500.0 |
 
 只能为选项指定主编号、主要版本号和次版本号，或者主要版本号、次要版本号和内部版本号 **`/Wv`** 。 编译器将报告与以指定数字开头的版本相匹配的所有警告。 它禁止显示超出指定数量的所有警告。 例如， **`/Wv:17`** 报告在任何 Visual Studio 2012 版本中引入的警告，并禁止 Visual Studio 2013 (版本 18) 或更高版本的任何编译器引入的警告。 若要禁止显示 Visual Studio 2015 update 2 及更高版本中引入的警告，可以使用 **`/Wv:19.00.23506`** 。 使用 **`/Wv:19.11`** 可报告 visual studio 2017 版本15.5 之前 Visual studio 的任何版本中引入的警告，但禁止显示 Visual studio 2017 版本15.5 和更高版本中引入的警告。
 
 以下部分列出了可以使用编译器选项取消的每个 Visual C++ 版本的所引入的警告 **`/Wv`** 。 **`/Wv`** 选项无法禁止显示未列出的警告，这 predate 了编译器的指定版本。
 
 ::: moniker range=">= msvc-160"
+
+## <a name="warnings-introduced-in-visual-studio-2019-version-169-compiler-version-1928297000"></a>Visual Studio 2019 版本16.9 中引入的警告 (编译器版本 19.28.29700.0) 
+
+以后的版本中的这些警告和所有警告都将使用编译器选项取消 **`/Wv:19.28.29500`** 。
+
+| 警告 | Message |
+|--|--|
+| C5232 | `in C++20 this comparison calls 'identifier' recursively` |
+
+## <a name="warnings-introduced-in-visual-studio-2019-version-168-compiler-version-1928293300"></a>Visual Studio 2019 版本16.8 中引入的警告 (编译器版本 19.28.29330.0) 
+
+以后的版本中的这些警告和所有警告都将使用编译器选项取消 **`/Wv:19.27`** 。
+
+| 警告 | Message |
+|--|--|
+| C5072 | `ASAN enabled without debug information emission. Enable debug info for better ASAN error reporting` |
+| C5211 | `'keyword-1' has been deprecated; prefer using 'keyword-2' instead` |
+| C5222 | `'attribute-name': all unscoped attribute names are reserved for future standardization` |
+| C5223 | `all attribute names in the attribute namespace 'msvc' are reserved for the implementation` |
+| C5224 | `all attribute names in the attribute namespace 'a-namespace' are reserved for future standardization` |
+| C5225 | `'symbol': exported inline function defined in a private module fragment is a non-standard extension` |
+| C5226 | `'symbol': exported template defined in private module fragment has no reachable instantiation` |
+| C5227 | `nonstandard extension, resolved 'symbol' to 'instance' which is not visible with /permissive- on.` |
+| C5228 | `nonstandard extension, 'identifier' resolved to a member of a dependent base. This lookup is not allowed under /permissive-.` |
+| C5229 | `nonstandard extension, the hidden friend function 'function-name' was found by name lookup which isn't allowed under /permissive-.` |
+| C5230 | `nonstandard extension, 'identifier' was resolved to 'symbol' under /permissive. Under /permissive- it would resolve to 'other-symbol'.` |
+| C5231 | `the expression 'co_await promise.final_suspend()' must be non-throwing`)
 
 ## <a name="warnings-introduced-in-visual-studio-2019-version-167-compiler-version-1927291120"></a>Visual Studio 2019 版本16.7 中引入的警告 (编译器版本 19.27.29112.0) 
 
@@ -102,7 +131,7 @@ ms.locfileid: "94518812"
 
 | 警告 | Message |
 |--|--|
-| C5200 | `feature 'feature-name' requires compiler flag 'option-name'` | 与语言功能的 C2429 等效的警告
+| C5200 | `feature 'feature-name' requires compiler flag 'option-name'` |
 | C5201 | `a module declaration can appear only at the start of a translation unit unless a global module fragment is used` |
 | C5202 | `a global module fragment can only contain preprocessor directives` |
 | C5203 | `a parenthesized declarator name after 'explicit' will be considered an explicit-specifier in C++20` |
