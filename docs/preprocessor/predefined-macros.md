@@ -240,12 +240,12 @@ no-loc:
 - _WIN64
 - _WINRT_DLL
 - __func__
-ms.openlocfilehash: e4577f7b74c6057df8ebe795ffa0056dbdeae298
-ms.sourcegitcommit: 48b897797b3132ae934b1d191e3870c3c2466335
+ms.openlocfilehash: 3e0dbda7ddcd7c428e0f83895d9ed5d4922a7ccb
+ms.sourcegitcommit: bf6d8a220f6392f1f19c0c0605d1467d0221ef6c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97514535"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105551756"
 ---
 # <a name="predefined-macros"></a>预定义宏
 
@@ -505,7 +505,8 @@ MSVC 支持以下其他预定义宏。
    | Visual Studio 2019 版本 16.5 | 1925 |
    | Visual Studio 2019 版本 16.6 | 1926 |
    | Visual Studio 2019 版本 16.7 | 1927 |
-   | Visual Studio 2019 版本 16.8 | 1928 |
+   | Visual Studio 2019 v16.8、v16.9 | 1928 |
+   | Visual Studio 2019 v16.10 预览版 | 1929 |
 
    要在指定的 Visual Studio 版本或更高版本中测试编译器版本或更新，请使用 `>=` 运算符。 可在条件指令中使用它来比较 `_MSC_VER` 与已知版本。 如果要比较多个互相排斥的版本，请按版本号的降序顺序进行比较。 例如，此代码将检查 Visual Studio 2017 和更高版本中发布的编译器。 接下来，它会检查 Visual Studio 2015 以及之后发布的编译器。 然后，它会检查 Visual Studio 2015 之前发布的所有编译器：
 
@@ -518,6 +519,8 @@ MSVC 支持以下其他预定义宏。
    // . . .
    #endif
    ```
+
+   要测试共享主要和次要版本号的编译器版本，请使用 `_MSC_FULL_VER` 中的主要、次要和内部版本号进行比较。 Visual Studio 2019 v16.9 中的编译器的 `_MSC_FULL_VER` 值为 192829500 或更大。
 
    有关详细信息，请参阅 Microsoft C++ 团队博客中的 [Visual C++ 编译器版本](https://devblogs.microsoft.com/cppblog/visual-c-compiler-version/)。
 
