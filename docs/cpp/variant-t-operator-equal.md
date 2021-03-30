@@ -1,159 +1,133 @@
 ---
 description: 了解详细信息： _variant_t：： operator =
-title: _variant_t::operator =
-ms.date: 11/04/2016
+title: _variant_t：： operator =
+ms.date: 03/23/2021
 f1_keywords:
 - _variant_t::operator=
 helpviewer_keywords:
 - operator= [C++], variant
 - operator = [C++], variant
 - = operator [C++], with specific Visual C++ objects
-ms.assetid: 77622723-6e49-4dec-9e0f-fa74028f1a3c
-ms.openlocfilehash: 3218d15f5b787709f1759bfda3a2501bcdda5406
-ms.sourcegitcommit: d775eac25552bd0fb7276703efa6931d6a1a59fd
+ms.openlocfilehash: c1cd581b386a3cf5d551fe8341ba588fc56b9c2e
+ms.sourcegitcommit: bb35a6c22d896c4640cff00a7321442c544ca219
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105099679"
+ms.lasthandoff: 03/29/2021
+ms.locfileid: "105744759"
 ---
-# <a name="_variant_toperator-"></a>_variant_t::operator =
+# `_variant_t::operator=`
 
-**Microsoft 专用**
+将新值分配给 `_variant_t` 实例。
+
+`_variant_t`类及其 `operator=` 成员是 **Microsoft 特定** 的。
 
 ## <a name="syntax"></a>语法
 
+```cpp
+_variant_t& operator=( const VARIANT& varSrc );
+_variant_t& operator=( const VARIANT* pVarSrc );
+_variant_t& operator=( const _variant_t& var_t_Src );
+_variant_t& operator=( short sSrc );
+_variant_t& operator=( long lSrc );
+_variant_t& operator=( float fltSrc );
+_variant_t& operator=( double dblSrc );
+_variant_t& operator=( const CY& cySrc );
+_variant_t& operator=( const _bstr_t& bstrSrc );
+_variant_t& operator=( const wchar_t* wstrSrc );
+_variant_t& operator=( const char* strSrc );
+_variant_t& operator=( IDispatch* pDispSrc );
+_variant_t& operator=( bool bSrc );
+_variant_t& operator=( IUnknown* pSrc );
+_variant_t& operator=( const DECIMAL& decSrc );
+_variant_t& operator=( BYTE byteSrc );
+_variant_t& operator=( char cSrc );
+_variant_t& operator=( unsigned short usSrc );
+_variant_t& operator=( unsigned long ulSrc );
+_variant_t& operator=( int iSrc );
+_variant_t& operator=( unsigned int uiSrc );
+_variant_t& operator=( __int64 i8Src );
+_variant_t& operator=( unsigned __int64 ui8Src );
 ```
-_variant_t& operator=(
-   const VARIANT& varSrc
-);
 
-_variant_t& operator=(
-   const VARIANT* pVarSrc
-);
+### <a name="parameters"></a>parameters
 
-_variant_t& operator=(
-   const _variant_t& var_t_Src
-);
+*`varSrc`*\
+对要 `VARIANT` 从中复制内容和类型的的引用 `VT_*` 。
 
-_variant_t& operator=(
-   short sSrc
-);
+*`pVarSrc`*\
+指向 `VARIANT` 要从中复制内容和类型的的指针 `VT_*` 。
 
-_variant_t& operator=(
-   long lSrc
-);
+*`var_t_Src`*\
+对要 `_variant_t` 从中复制内容和类型的的引用 `VT_*` 。
 
-_variant_t& operator=(
-   float fltSrc
-);
+*`sSrc`*\
+**`short`** 要复制的整数值。 `VT_BOOL`如果 `*this` 的类型为，则为给定类型 `VT_BOOL` 。 否则，将为其给定的类型 `VT_I2` 。
 
-_variant_t& operator=(
-   double dblSrc
-);
+*`lSrc`*\
+**`long`** 要复制的整数值。 `VT_BOOL`如果 `*this` 的类型为，则为给定类型 `VT_BOOL` 。 `VT_ERROR`如果 `*this` 的类型为，则为给定类型 `VT_ERROR` 。 否则为给定类型 `VT_I4` 。
 
-_variant_t& operator=(
-   const CY& cySrc
-);
+*`fltSrc`*\
+**`float`** 要复制的数值。 给定 `VT_R4` 的类型。
 
-_variant_t& operator=(
-   const _bstr_t& bstrSrc
-);
+*`dblSrc`*\
+**`double`** 要复制的数值。 `VT_DATE`如果 `this` 的类型为，则为给定类型 `VT_DATE` 。 否则为给定类型 `VT_R8` 。
 
-_variant_t& operator=(
-   const wchar_t* wstrSrc
-);
+*`cySrc`*\
+要复制的 `CY` 对象。 给定 `VT_CY` 的类型。
 
-_variant_t& operator=(
-   const char* strSrc
-);
+*`bstrSrc`*\
+要复制的 `BSTR` 对象。 给定 `VT_BSTR` 的类型。
 
-_variant_t& operator=(
-   IDispatch* pDispSrc
-);
+*`wstrSrc`*\
+要复制的 Unicode 字符串，存储为 `BSTR` 和给定类型 `VT_BSTR` 。
 
-_variant_t& operator=(
-   bool bSrc
-);
+*`strSrc`*\
+要复制的多字节字符串，存储为 `BSTR` 和给定类型 `VT_BSTR` 。
 
-_variant_t& operator=(
-   IUnknown* pSrc
-);
+*`pDispSrc`*\
+`IDispatch`要使用对的调用进行复制的指针 `AddRef` 。 给定 `VT_DISPATCH` 的类型。
 
-_variant_t& operator=(
-   const DECIMAL& decSrc
-);
+*`bSrc`*\
+**`bool`** 要复制的值。 给定 `VT_BOOL` 的类型。
 
-_variant_t& operator=(
-   BYTE bSrc
-);
+*`pSrc`*\
+`IUnknown`要使用对的调用进行复制的指针 `AddRef` 。 给定  `VT_UNKNOWN` 的类型。
 
-_variant_t& operator=(
-   char cSrc
-);
+*`decSrc`*\
+要复制的 `DECIMAL` 对象。 给定 `VT_DECIMAL` 的类型。
 
-_variant_t& operator=(
-   unsigned short usSrc
-);
+*`byteSrc`*\
+`BYTE`要复制的值。 给定 `VT_UI1` 的类型。
 
-_variant_t& operator=(
-   unsigned long ulSrc
-);
+*`cSrc`*\
+**`char`** 要复制的值。 给定 `VT_I1` 的类型。
 
-_variant_t& operator=(
-   int iSrc
-);
+*`usSrc`*\
+**`unsigned short`** 要复制的值。 给定 `VT_UI2` 的类型。
 
-_variant_t& operator=(
-   unsigned int uiSrc
-);
+*`ulSrc`*\
+**`unsigned long`** 要复制的值。 给定 `VT_UI4` 的类型。
 
-_variant_t& operator=(
-   __int64 i8Src
-);
+*`iSrc`*\
+**`int`** 要复制的值。 给定 `VT_INT` 的类型。
 
-_variant_t& operator=(
-   unsigned __int64 ui8Src
-);
-```
+*`uiSrc`*\
+**`unsigned int`** 要复制的值。 给定 `VT_UINT` 的类型。
+
+*`i8Src`*\
+**`__int64`** **`long long`** 要复制的或值。 给定 `VT_I8` 的类型。
+
+*`ui8Src`*\
+**`unsigned __int64`** **`unsigned long long`** 要复制的或值。 给定 `VT_UI8` 的类型。
 
 ## <a name="remarks"></a>备注
 
-此运算符将向 `_variant_t` 对象赋予新值：
+`operator=`赋值运算符将清除任何删除对象类型或调用和类型的现有值 `Release` `IDispatch*` `IUnknown*` 。 然后，它将新值复制到 `_variant_t` 对象中。 它会将 `_variant_t` 类型更改为与指定的值相匹配，但对于 **`short`** 、 **`long`** 和 **`double`** 参数没有说明。 直接复制值类型。 `VARIANT`或 `_variant_t` 指针或引用参数复制已分配对象的内容和类型。 其他指针或引用类型参数创建已分配对象的副本。 赋值运算符对 `AddRef` `IDispatch*` 和参数调用 `IUnknown*` 。
 
-- **operator = (** *varSrc* **)** 将现有分配 `VARIANT` 给 `_variant_t` 对象。    
+`operator=`[`_com_raise_error`](../cpp/com-raise-error.md)如果发生错误，则调用。
 
-- **operator = (** *pVarSrc* **)** 将现有分配 `VARIANT` 给 `_variant_t` 对象。    
+`operator=` 返回对已更新的对象的引用 `_variant_t` 。
 
-- **operator = (** *var_t_Src* **)** 将现有 `_variant_t` 对象赋给 `_variant_t` 对象。    
+## <a name="see-also"></a>另请参阅
 
-- **operator = (** *sSrc* **)** 将 **`short`** 整数值分配给 `_variant_t` 对象。    
-
-- **operator = (** `lSrc`**)****`long`** 为对象分配一个整数值 `_variant_t` 。    
-
-- **operator = (** *fltSrc* **)** 将 **`float`** 数值分配给 `_variant_t` 对象。    
-
-- **operator = (** *dblSrc* **)** 将 **`double`** 数值分配给 `_variant_t` 对象。    
-
-- **operator = (** *cySrc* **)** 将 `CY` 对象分配给 `_variant_t` 对象。    
-
-- **operator = (** *bstrSrc* **)** 将 `BSTR` 对象分配给 `_variant_t` 对象。    
-
-- **operator = (** *WstrSrc* **)** 将 Unicode 字符串分配给 `_variant_t` 对象。    
-
-- **operator = (** `strSrc`**)** 将多字节字符串分配给 `_variant_t` 对象。    
-
-- **operator = (** `bSrc`**)****`bool`** 为 `_variant_t` 对象赋值。  
-
-- **operator = (** *pDispSrc* **)** 将 `IDispatch*` 对象分配给 `_variant_t` 对象并调用 `AddRef` 。    
-
-- **operator = (** *pIUnknownSrc* **)** 将 `IUnknown*` 对象分配给 `_variant_t` 对象并调用 `AddRef` 。    
-
-- **operator = (** *decSrc* **)** 将值赋 `DECIMAL` 给 `_variant_t` 对象。    
-
-- **operator = (** `bSrc`**)**`BYTE`为 `_variant_t` 对象赋值。  
-
-**结束 Microsoft 专用**
-
-## <a name="see-also"></a>请参阅
-
-[_variant_t 类](../cpp/variant-t-class.md)
+[`_variant_t` 类](../cpp/variant-t-class.md)
